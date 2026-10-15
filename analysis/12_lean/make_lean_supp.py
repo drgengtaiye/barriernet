@@ -96,7 +96,7 @@ guide = """### Supplementary Tables in the workbook
 
 out = f"""# Supplementary Information
 
-**barriernet: an interpretable tumor-microenvironment score that separates prognostic from predictive information**
+**barriernet: marker-level dissociation of prognostic and predictive information in the tumor microenvironment**
 
 Contents: Supplementary Methods; Supplementary Tables S2–S4, S8 and S9 (the other supplementary tables are sheets of the accompanying workbook); Supplementary Figures S1–S20; Supplementary references.
 

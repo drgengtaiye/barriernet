@@ -1,8 +1,8 @@
 # barriernet
 
 Marker-level Barrier / Immune / NetImmune scoring for spatial, single-cell, bulk and protein
-data, together with the analysis code behind the manuscript *barriernet: an interpretable
-tumor-microenvironment score that separates prognostic from predictive information*.
+data, together with the analysis code behind the manuscript *barriernet: marker-level dissociation of
+prognostic and predictive information in the tumor microenvironment*.
 
 ## What is here
 
