@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barriernet"
+version = "0.2.1"
+description = "Barrier/NetImmune portable scoring and Visium spatial ring/peak summaries."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Gengtai Ye", email = "yegt@smu.edu.cn"}]
+maintainers = [{name = "Gengtai Ye", email = "yegt@smu.edu.cn"}]
+keywords = ["tumor microenvironment", "gene signature", "spatial transcriptomics",
+            "immune checkpoint blockade", "gastric cancer"]
+dependencies = ["numpy", "pandas", "pyyaml"]
+
+[project.urls]
+Homepage = "https://github.com/drgengtaiye/barriernet"
+Repository = "https://github.com/drgengtaiye/barriernet"
+
+[project.optional-dependencies]
+spatial = ["anndata", "scanpy"]
+test = ["pytest", "anndata"]
+
+[project.scripts]
+barriernet = "barriernet.cli:main"
+
+[tool.setuptools]
+packages = ["barriernet"]
+
+[tool.setuptools.package-data]
+barriernet = ["data/*.yaml"]

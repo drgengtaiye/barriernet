@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "barriernet: marker-level Barrier/NetImmune scoring for spatial, single-cell, bulk and protein data"
+version: 0.2.1
+date-released: 2026-02-01
+license: MIT
+repository-code: "https://github.com/drgengtaiye/barriernet"
+authors:
+  - family-names: Ye
+    given-names: Gengtai
+    email: yegt@smu.edu.cn
