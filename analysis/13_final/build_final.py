@@ -25,7 +25,7 @@ FINAL = ROOT / ("final" if VER == "lean" else f"final_{VER}")
 FIGDIR = ROOT / "figures" / VER
 WORKBOOK = FIGDIR / f"Supplementary_Tables_{VER}.xlsx"
 FONT = "Times New Roman"
-RUNNING_TITLE = "Stroma tracks prognosis, immunity tracks response"
+RUNNING_TITLE = "barriernet: prognostic versus predictive information"
 
 
 def sections(md):

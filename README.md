@@ -1,9 +1,8 @@
 # barriernet
 
 Marker-level Barrier / Immune / NetImmune scoring for spatial, single-cell, bulk and protein
-data, together with the analysis code behind the manuscript *Stroma tracks prognosis and immune
-programs track checkpoint response: an interpretable tumor-microenvironment score tested in ten
-gastric cohorts, 21 checkpoint-treated cohorts and six randomized comparisons*.
+data, together with the analysis code behind the manuscript *barriernet: an interpretable
+tumor-microenvironment score that separates prognostic from predictive information*.
 
 ## What is here
 

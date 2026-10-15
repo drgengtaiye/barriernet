@@ -96,7 +96,7 @@ guide = """### Supplementary Tables in the workbook
 
 out = f"""# Supplementary Information
 
-**Stroma tracks prognosis and immune programmes track checkpoint response: an interpretable tumour-microenvironment score tested in gastric cancer, 21 checkpoint cohorts and three randomised comparisons**
+**barriernet: an interpretable tumor-microenvironment score that separates prognostic from predictive information**
 
 Contents: Supplementary Methods; Supplementary Tables S2–S4, S8 and S9 (the other supplementary tables are sheets of the accompanying workbook); Supplementary Figures S1–S20; Supplementary references.
 
