@@ -55,3 +55,17 @@ def score_axes(module_scores: pd.DataFrame, axes: Dict[str, dict]) -> pd.DataFra
 def summarise_used_genes(used: Dict[str, List[str]]) -> pd.DataFrame:
     rows = [{"module": m, "n_used": len(g), "genes_used": ",".join(g)} for m, g in used.items()]
     return pd.DataFrame(rows)
+
+def score_weighted(expr_samples_by_genes: pd.DataFrame, weights: Dict[str, float], min_genes: int = 3,
+                   min_frac: float = 0.5, zscore: bool = True) -> Tuple[pd.Series, List[str]]:
+    """Weighted score = sum(w z) / sum(|w|) over the weighted genes present (z across samples); NaN when fewer than
+    `min_genes` or than `min_frac` of the weighted genes are present. Used for barriernet 0.3 (`barriernet03`)."""
+    X = expr_samples_by_genes.copy()
+    X.columns = [str(c).upper() for c in X.columns]
+    if zscore:
+        X = zscore_df_cols(X)
+    g = [x for x in weights if x in X.columns and X[x].notna().all() and X[x].std() > 0]
+    if len(g) < min_genes or len(g) < min_frac * len(weights):
+        return pd.Series(np.nan, index=X.index), g
+    w = np.array([weights[x] for x in g], float)
+    return pd.Series(X[g].to_numpy(float) @ w / np.abs(w).sum(), index=X.index), g

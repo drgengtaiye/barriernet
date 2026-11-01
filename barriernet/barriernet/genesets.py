@@ -25,3 +25,13 @@ def default_yaml(kind: str) -> str:
     if kind.lower() in ("ihc","if","protein","proteomics"):
         return str(here / "data" / "geneset_ihc.yaml")
     raise ValueError("kind must be rna|bulk|spatial or ihc|protein")
+
+
+def load_weights(path: str = None) -> dict:
+    """Gene weights of a weighted score (default: the bundled barriernet 0.3 weights) and its scoring rule."""
+    if path is None:
+        path = str(Path(__file__).resolve().parent / "data" / "geneset_rna_v03.yaml")
+    with open(path, "r") as f:
+        obj = yaml.safe_load(f)
+    return dict(weights={str(k).upper(): float(v) for k, v in obj["weights"].items()},
+                min_genes=int(obj.get("min_genes", 3)), min_frac=float(obj.get("min_frac", 0.5)), name=obj.get("name", ""))

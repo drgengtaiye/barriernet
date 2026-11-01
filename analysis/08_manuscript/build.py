@@ -43,7 +43,7 @@ R = {
  "delong1988": "DeLong ER, DeLong DM, Clarke-Pearson DL. Comparing the areas under two or more correlated receiver operating characteristic curves: a nonparametric approach. Biometrics. 1988;44:837–845.",
  "bh1995": gm[34],
  "pertpy": "pertpy: perturbation analysis in Python. https://github.com/scverse/pertpy.",
- "barriernet": "barriernet: marker-level Barrier/NetImmune scoring for spatial, single-cell, bulk and protein data (Python package, version 0.2.0). https://github.com/drgengtaiye/barriernet.",
+ "barriernet": "barriernet: marker-level Barrier/NetImmune scoring for spatial, single-cell, bulk and protein data (Python package, version 0.2.0). https://github.com/dryichen/barriernet.",
  "kalluri2016": "Kalluri R. The biology and function of fibroblasts in cancer. Nat Rev Cancer. 2016;16:582–598.",
  "companion": "[Companion manuscript] Immune gene-expression signatures carry treatment-specific information: a matched-null benchmark of 52 published signatures across checkpoint cohorts, randomized trials and 20 cancer types. Submitted.",
  "mantovani2017": "Mantovani A, Marchesi F, Malesci A, Laghi L, Allavena P. Tumour-associated macrophages as treatment targets in oncology. Nat Rev Clin Oncol. 2017;14:399–416.",

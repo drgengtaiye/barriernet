@@ -21,7 +21,8 @@ E5 <- read.csv(file.path(O, "E5_trials.csv"))
 E10 <- read.csv(file.path(O, "E10_ispy2_interactions.csv"))
 E21 <- read.csv(file.path(O, "E21_interactions.csv"))
 ORDER <- c("CAF_ECM", "TAM_SUP", "C1Q_arm", "SPP1_arm", "CXCL9_SPP1", "IFN", "APM", "TLS_B", "T_CELL",
-           "Barrier", "Immune", "NetImmune")
+           "Barrier", "Immune", "NetImmune",
+           "ESTIMATE", "TMEscore_PC", "TMEscore_z", "CD8A")   ## E23: published comparators
 
 ## --- inputs (E10_meta.R functions unchanged, plus one for E21)
 surv <- function(pat, lab) {

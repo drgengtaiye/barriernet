@@ -1,0 +1,3 @@
+q,expectation,result,held
+X1,"median ratio of bootstrap to theoretical variance in [0.67, 1.5]",1.451,yes
+X2,"median over comparisons of Spearman(v_boot, v_theory) >= 0.8",0.962,yes

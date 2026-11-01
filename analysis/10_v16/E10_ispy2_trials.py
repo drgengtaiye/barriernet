@@ -49,6 +49,8 @@ import warnings, functools; warnings.filterwarnings("ignore")
 print = functools.partial(print, flush=True)
 import numpy as np, pandas as pd
 from scipy.stats import norm
+import sys as _sys; _sys.path.insert(0, "/groups/adv2105_gp/yichen/Yi/com/gastric/2/analysis")
+from cmp_scores import comparators as _cmp, CMP_ORDER as _CMPO   # E23: published comparators
 
 V = "/groups/adv2105_gp/yichen/Yi/com/gastric/validation/cohorts"
 O = "/groups/adv2105_gp/yichen/Yi/com/gastric/2/analysis/results"
@@ -65,6 +67,7 @@ MOD = dict(
     SPP1_arm=["SPP1", "TREM2", "MARCO", "APOE", "LGALS3"])
 ORDER = ["CAF_ECM", "TAM_SUP", "C1Q_arm", "SPP1_arm", "CXCL9_SPP1", "IFN", "APM", "TLS_B", "T_CELL",
          "Barrier", "Immune", "NetImmune"]
+ORDER = ORDER + _CMPO                         # E23
 TRIALS = {"ISPY2_pembro": "I-SPY2: pembrolizumab + paclitaxel vs paclitaxel",
           "ISPY2_durva": "I-SPY2: durvalumab + olaparib + paclitaxel vs paclitaxel"}
 
@@ -79,6 +82,7 @@ def scores(Z):
     S["Immune"] = S[["APM", "IFN", "TLS_B", "T_CELL"]].mean(1)
     S["NetImmune"] = S.Immune - S.Barrier
     S["CXCL9_SPP1"] = Z.loc["CXCL9"] - Z.loc["SPP1"]
+    S = pd.concat([S, _cmp(Z)], axis=1)          # E23: ESTIMATE, TMEscore, CD8A
     return S
 
 

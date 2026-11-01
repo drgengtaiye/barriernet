@@ -1,0 +1,3 @@
+"q","expectation","result","held"
+"D1","no learned candidate exceeds the Immune axis by more than 0.10 (pooled held-out log-odds)","largest learned minus Immune axis = +0.043",TRUE
+"D2","fitted CAF_ECM weight (C2, all 20 cohorts) at most zero","CAF_ECM coefficient -0.1062",TRUE

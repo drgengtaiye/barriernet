@@ -1,0 +1,7 @@
+e,expectation,result,held
+E1,"S0 interaction rejection 2.5%-7.5%, each marker","{'CD8A': np.float64(0.025), 'T_CELL': np.float64(0.017), 'IFN': np.float64(0.021), 'APM': np.float64(0.019), 'TLS_B': np.float64(0.022), 'CAF_ECM': np.float64(0.025), 'NetImmune': np.float64(0.017)}",False
+E2,S1: CAF_ECM interaction <= 7.5%; checkpoint arm alone >= 50%,0.011; 0.949,True
+E3,S2 CD8A power increasing; >= 60% at 0.3,"[np.float64(0.167), np.float64(0.589), np.float64(0.859)]",True
+E4,S3 null: every marker exceeds <= 10%; CD8A truth: T_CELL >= 50%; diffuse: descriptive,"null {'CD8A': np.float64(0.06), 'T_CELL': np.float64(0.105), 'IFN': np.float64(0.09), 'APM': np.float64(0.1), 'TLS_B': np.float64(0.065), 'CAF_ECM': np.float64(0.095), 'NetImmune': np.float64(0.075)}; T_CELL 0.965",False
+E5,"S4 truth CD8A: module significantly above CD8A <= 5%, each","{'T_CELL': np.float64(0.0), 'IFN': np.float64(0.0), 'APM': np.float64(0.0), 'TLS_B': np.float64(0.005)}",True
+E6,S4 truth module: power >= 50% where oracle >= 0.20; <= 30% where <= 0.10,"T_CELL: oracle +0.019, power 0.100; IFN: oracle +0.064, power 0.255; APM: oracle +0.112, power 0.445; TLS_B: oracle +0.095, power 0.360",False

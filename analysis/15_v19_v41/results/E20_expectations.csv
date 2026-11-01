@@ -1,0 +1,16 @@
+"analysis","expectation","result","held"
+"primary (pre-registered duplicate exclusions)","X1 NetImmune HR < 1 in each added cohort (OS, unadjusted)","GSE13861 0.50 (0.33-0.77); GSE26901 0.71 (0.55-0.93); GSE26899 0.58 (0.39-0.85); GSE29272 0.72 (0.59-0.89)","4/4 (4/4 with P < 0.05)"
+"primary (pre-registered duplicate exclusions)","X2 CAF_ECM HR > 1 in each added cohort (OS, unadjusted)","GSE13861 2.00 (1.26-3.18); GSE26901 1.65 (1.22-2.23); GSE26899 1.41 (0.97-2.05); GSE29272 1.09 (0.89-1.33)","4/4 (2/4 with P < 0.05)"
+"primary (pre-registered duplicate exclusions)","X3 PRIMARY pooled NetImmune, locked 7 (unadjusted): HR < 1","HR 0.705 (0.623-0.797, HK), P = 0.000428, I2 = 7%","yes; conservative CI excludes 1"
+"primary (pre-registered duplicate exclusions)","Reported: pooled NetImmune, locked 7, adjusted","HR 0.754 (0.621-0.916, HK), P = 0.012, I2 = 43%",NA
+"primary (pre-registered duplicate exclusions)","Reported: pooled NetImmune, all 10 gastric","HR 0.724 (0.667-0.785, HK), P = 8.79e-06, I2 = 14%",NA
+"primary (pre-registered duplicate exclusions)","Reported: pooled CAF_ECM, locked 7","HR 1.337 (1.083-1.651, HK), P = 0.0151, I2 = 56%",NA
+"primary (pre-registered duplicate exclusions)","Reported: pooled CAF_ECM, all 10 gastric","HR 1.304 (1.169-1.455, HK), P = 0.000382, I2 = 34%",NA
+"primary (pre-registered duplicate exclusions)","Reported: random-gene null, locked 7 pooled / added 4 pooled","P = 0.0010 / 0.0010",NA
+"sensitivity (no duplicate exclusions)","X1 NetImmune HR < 1 in each added cohort (OS, unadjusted)","GSE13861 0.49 (0.32-0.75); GSE26901 0.71 (0.55-0.92); GSE26899 0.69 (0.48-0.98); GSE29272 0.77 (0.64-0.94)","4/4 (4/4 with P < 0.05)"
+"sensitivity (no duplicate exclusions)","X2 CAF_ECM HR > 1 in each added cohort (OS, unadjusted)","GSE13861 2.02 (1.28-3.20); GSE26901 1.64 (1.22-2.20); GSE26899 1.25 (0.89-1.75); GSE29272 1.07 (0.88-1.31)","4/4 (2/4 with P < 0.05)"
+"sensitivity (no duplicate exclusions)","X3 PRIMARY pooled NetImmune, locked 7 (unadjusted): HR < 1","HR 0.722 (0.641-0.813, HK), P = 0.00053, I2 = 6%","yes; conservative CI excludes 1"
+"sensitivity (no duplicate exclusions)","Reported: pooled NetImmune, locked 7, adjusted","HR 0.767 (0.641-0.918, HK), P = 0.0111, I2 = 38%",NA
+"sensitivity (no duplicate exclusions)","Reported: pooled NetImmune, all 10 gastric","HR 0.733 (0.678-0.792, HK), P = 7.96e-06, I2 = 9%",NA
+"sensitivity (no duplicate exclusions)","Reported: pooled CAF_ECM, locked 7","HR 1.316 (1.061-1.631, HK), P = 0.0205, I2 = 58%",NA
+"sensitivity (no duplicate exclusions)","Reported: pooled CAF_ECM, all 10 gastric","HR 1.295 (1.157-1.449, HK), P = 0.000563, I2 = 37%",NA

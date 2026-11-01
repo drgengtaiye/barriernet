@@ -1,0 +1,5 @@
+q,expectation,result,held
+Q1,seven-comparison counts within ±3 of 17 favoring / 1 against,18 favoring / 1 against,True
+Q2,at most 2 of 52 significantly above CD8A over seven,0/52,True
+Q3,fewer than 10 favoring in the four chemotherapy-backbone comparisons,1 favoring / 2 against; above CD8A 6/52,True
+Q4,descriptive,see E34_neopembrov_per_score.csv,

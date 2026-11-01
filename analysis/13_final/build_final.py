@@ -25,7 +25,7 @@ FINAL = ROOT / ("final" if VER == "lean" else f"final_{VER}")
 FIGDIR = ROOT / "figures" / VER
 WORKBOOK = FIGDIR / f"Supplementary_Tables_{VER}.xlsx"
 FONT = "Times New Roman"
-RUNNING_TITLE = "barriernet: prognostic versus predictive information"
+RUNNING_TITLE = "Stroma tracks prognosis, immunity tracks response"
 
 
 def sections(md):
@@ -49,7 +49,9 @@ def notes_below(tables_md):
             out.append(blk.strip("\n")); continue
         cap = lines[0]
         tab = [l for l in lines[1:] if l.startswith("|")]
-        notes = [l for l in lines[1:] if l.strip() and not l.startswith("|")]
+        notes = [l for l in lines[1:] if not l.startswith("|")]          # keep blank lines between note paragraphs
+        while notes and not notes[0].strip(): notes.pop(0)
+        while notes and not notes[-1].strip(): notes.pop()
         out.append("\n".join([cap, ""] + tab + [""] + notes))
     return "\n\n".join(x for x in out if x.strip()) + "\n\n"
 

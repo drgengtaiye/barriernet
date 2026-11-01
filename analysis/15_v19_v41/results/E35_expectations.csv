@@ -1,0 +1,5 @@
+q,expectation,result,held
+Q1 (primary),"breast: at most 2 of 52 above each of GZMB, IDO1, CXCL10","{'GZMB': 0, 'IDO1': 0, 'CXCL10': 0}",True
+Q2,breast: at least 5 of 13 T-cell genes exceeded by > 2 signatures,9/13,True
+Q3,descriptive,fewest: CD8B (0),
+Q4,"four chemotherapy-backbone: at most 2 of 52 above each of GZMB, IDO1, CXCL10","{'GZMB': 0, 'IDO1': 0, 'CXCL10': 0}",True

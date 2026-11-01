@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.3.0 (2026-10-31)
+
+### Added
+- **barriernet 0.3 weighted score** (`barriernet03`, `data/geneset_rna_v03.yaml`). The 48 genes of 0.2.0 with module
+  weights (IFN +0.362, APM +0.225, TLS_B +0.126, T_CELL +0.104, CAF_ECM −0.160, TAM_SUP −0.023; every gene of a module
+  weighted equally; sum of |w| = 1). Developed only on 20 single-arm checkpoint cohorts (ridge logistic regression with
+  cohort intercepts, chosen by leave-one-cohort-out validation) and frozen before any randomized trial was analyzed.
+  `barriernet bulk` now adds the `barriernet03` column (`--no-v03` to omit; `--weights` for another weight file);
+  `core.score_weighted` and `genesets.load_weights` give the same in Python.
+- **`barriernet.calibrate`** and **`barriernet calibrate --config trials.yaml`**: score × arm interaction in randomized
+  comparisons (Cox with Efron ties, or logistic with a Firth fallback on separation), random-effects pooling by the
+  conservative rule (wider of Hartung–Knapp and DerSimonian–Laird, larger P), size-matched random gene sets as the
+  reference for specificity, a within-arm paired bootstrap against single genes, and the detectable difference.
+- `calibrate.events_needed`: events a randomized survival comparison needs to detect a given difference between the
+  treatment interactions of two correlated scores (normal theory, optional inflation).
+
+### Changed
+- `scipy` is now a dependency.
+
 ## 0.2.1 (2026-09-23)
 
 ### Fixed

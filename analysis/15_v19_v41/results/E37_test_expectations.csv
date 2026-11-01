@@ -1,0 +1,6 @@
+q,expectation,result,held
+Q1 (primary),pooled six-comparison interaction > 0 with P < 0.05,+0.252 (+0.013 to +0.490); P = 0.0423,True
+Q2,paired difference from CD8A not significant,-0.005 (-0.093 to +0.084); P = 0.918,True
+Q3,paired difference from NetImmune 0.2.1 not significant,-0.016 (-0.104 to +0.071); P = 0.713,True
+Q4,"above the 95th percentile of 1,000 size-matched random gene sets","reference median -0.045, 95th +0.073; empirical P = 0.0010",True
+Q5,descriptive,see E37_test_pooled.csv,

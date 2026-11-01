@@ -1,6 +1,6 @@
-# barriernet v0.2.1
+# barriernet v0.3.0
 
-> 0.2.1 fixes the Visium neighbourhood used for TLS-centred rings (see CHANGELOG.md). Spatial results produced with 0.2.0 should be recomputed.
+> 0.3.0 adds the barriernet 0.3 weighted score (`barriernet03`) and `barriernet calibrate`, which tests a score against treatment interaction, size-matched random genes and single genes in randomized trials (see CHANGELOG.md). 0.2.1 fixed the Visium neighbourhood used for TLS-centred rings; spatial results produced with 0.2.0 should be recomputed.
 
 A portable, interpretable scoring toolkit that operationalizes **Barrier** and **NetImmune** axes across:
 
@@ -71,6 +71,42 @@ Outputs per input:
 
 Across inputs (three or more): `barriernet_sections.tsv` with the contrasts and BarrierIndex
 = z(CAF_ECM Ring1−Far) + z(SPP1 TAM Ring1−Far), standardised across the sections given.
+
+
+### 4) Calibrating a predictive claim over randomized trials
+```bash
+barriernet calibrate --config trials.yaml --out out_cal
+```
+`trials.yaml` lists each randomized comparison:
+```yaml
+trials:
+  - name: TRIAL1
+    expr: trial1_expr.tsv          # log-scale expression, samples x genes or genes x samples
+    clinical: trial1_clinical.tsv  # one row per sample
+    sample_col: sample_id
+    arm_col: arm                   # 1 = checkpoint-containing arm, 0 = control
+    time_col: pfs_months           # survival endpoint ...
+    event_col: pfs_event
+  - name: TRIAL2
+    expr: trial2_expr.tsv
+    clinical: trial2_clinical.tsv
+    arm_col: arm
+    response_col: pcr              # ... or a binary benefit endpoint (1 = benefit)
+    covariates: [hormone_receptor] # kept in the logistic model
+n_random: 1000                     # size-matched random gene sets
+n_boot: 300                        # within-arm bootstrap resamples
+scores: {}                         # optional extra scores, name -> {gene: weight}
+```
+Genes are z-scored within each trial across both arms. Scored by default: `barriernet03`, `NetImmune` and the 27 single
+genes of the T-cell and interferon-γ panels. Outputs: `calibrate_per_trial.tsv` (interaction per SD, benefit-oriented:
+−log HR or log OR), `calibrate_pooled.tsv` (pooled interaction; random-gene reference median, 95th percentile,
+empirical P) and `calibrate_paired.tsv` (difference of each score from each single gene, P and detectable difference).
+The same is available in Python as `barriernet.calibrate.calibrate(trials, scores, genes)`.
+
+Planning a trial: `barriernet.calibrate.events_needed(delta, rho)` gives the events a 1 : 1 randomized survival comparison
+needs to detect a difference `delta` per SD between the interactions of two scores correlated at `rho` (80% power,
+two-sided 0.05, normal theory; pass `inflation=1.17` for the excess variance observed in the manuscript's survival
+comparisons). For example, `events_needed(0.10, 0.81)` ≈ 1,190 for barriernet 0.3 against CD8A.
 
 ## Default must-appear panels (YAML)
 - RNA/spatial: `barriernet/data/geneset_rna.yaml` — the 48 marker genes of the six modules

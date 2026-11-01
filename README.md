@@ -1,15 +1,17 @@
 # barriernet
 
-Marker-level Barrier / Immune / NetImmune scoring for spatial, single-cell, bulk and protein
-data, together with the analysis code behind the manuscript *barriernet: marker-level dissociation of
-prognostic and predictive information in the tumor microenvironment*.
+Marker-level Barrier / Immune / NetImmune scoring for spatial, single-cell, bulk and protein data, a framework that
+calibrates predictive claims for expression scores in randomized trials (`barriernet calibrate`), and the analysis code
+behind the manuscript *Calibrating predictive immune signatures against random and single genes in randomized
+checkpoint-inhibitor trials*.
 
 ## What is here
 
 | Path | Contents |
 |---|---|
-| `barriernet/` | the Python package, version 0.2.1 (see `barriernet/CHANGELOG.md`; 0.2.1 corrects the Visium neighborhood of 0.2.0, and every spatial result in the paper was computed on the corrected lattice) |
-| `barriernet-0.2.1-py3-none-any.whl`, `barriernet_0.2.1.zip` | built wheel and source archive of that version |
+| `barriernet/` | the Python package, version 0.3.0 (see `barriernet/CHANGELOG.md`): the frozen barriernet 0.3 weights and the calibration framework; 0.2.1 corrected the Visium neighborhood of 0.2.0, and every spatial result in the paper was computed on the corrected lattice |
+| `barriernet-0.3.0-py3-none-any.whl`, `barriernet_0.3.0.zip` | built wheel and source archive of 0.3.0 (0.2.1 kept beside them) |
+| `analysis/15_v19_v41/protocols/` | the later analysis protocols with their SHA-256 hashes and outcomes, the frozen barriernet 0.3 weights' hash, and the **analysis plan for the controlled-access randomized trials** (`E37_registration.md` and `E37_registration_addendum.md`) |
 | `analysis/` | every analysis and figure script behind the manuscript, grouped by stage |
 | `analysis/README.md` | **the run order and the map from each table, figure and reported number to the script that produces it** |
 
@@ -32,10 +34,26 @@ least three are present. The axes are `Barrier = mean(CAF_ECM, TAM_SUP)`,
 within each dataset on a log2 scale and never across datasets. Nothing is fitted to outcome: the
 gene lists, the weights within and across modules and the sign of the subtraction are all fixed.
 
+## barriernet 0.3 and its analysis plan
+
+barriernet 0.3 keeps the 48 genes and gives each module a weight learned only in 20 single-arm checkpoint cohorts
+(IFN +0.362, APM +0.225, TLS_B +0.126, T_CELL +0.104, CAF_ECM −0.160, TAM_SUP −0.023; every gene of a module weighted
+equally). The weights were frozen, and their SHA-256 hash logged, before any randomized trial was scored:
+
+| File | SHA-256 |
+|---|---|
+| `analysis/15_v19_v41/results/E37_frozen_weights.tsv` (the same weights ship in `barriernet/barriernet/data/geneset_rna_v03.yaml`) | `500264cc627b3ef0240c0340296dc001bceb02748e3f3b0e83892b234b2f63bd` |
+| `analysis/15_v19_v41/protocols/E37_registration.md` (analysis plan) | `c24bb4141a734c103f8e3f30681bfd39e2a191ac95bbe54713b028f9e962abc5` |
+| `analysis/15_v19_v41/protocols/E37_registration_addendum.md` (events needed, reporting rules) | `c07e4e8cd9e663c249c43ed90b7a8a7de0afc1639198a26027aa248d3d7157f0` |
+
+The analysis plan fixes the primary analysis of barriernet 0.3 in the larger randomized trials whose expression is held
+under controlled access (OAK and POPLAR, IMvigor010, IMmotion151, CheckMate 649). It was made public here before any of
+those datasets was requested or obtained; the result will be reported whatever it is.
+
 ## Install
 
 ```bash
-pip install barriernet-0.2.1-py3-none-any.whl     # or, from the source tree:
+pip install barriernet-0.3.0-py3-none-any.whl     # or, from the source tree:
 cd barriernet && pip install -e .                 # add [spatial] for anndata and scanpy
 ```
 
@@ -51,8 +69,9 @@ barriernet ihc     --panel panel.tsv --out out_ihc
 barriernet spatial --h5ad section.h5ad --out out_spatial   # adds TLS ring/peak summaries
 ```
 
-Each writes the six module scores and the Barrier, Immune and NetImmune axes, together with the
-genes actually used. `--log2p1` log-transforms linear input; a warning is printed when values look
+Each writes the six module scores and the Barrier, Immune and NetImmune axes (and, for bulk, the
+`barriernet03` score), together with the genes actually used. `barriernet calibrate --config trials.yaml` tests scores
+against treatment interaction, size-matched random genes and single genes over randomized comparisons. `--log2p1` log-transforms linear input; a warning is printed when values look
 un-logged. See `barriernet/README.md` for the full options and output files.
 
 ## Tests

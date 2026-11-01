@@ -236,7 +236,7 @@ comparison = pd.DataFrame({
         'Via ring enrichment metrics',
         'Via ring/peak assignment',
         'Via ring-based gradient analysis',
-        '✓ (github.com/drgengtaiye/barriernet)',
+        '✓ (github.com/dryichen/barriernet)',
     ],
     'Squidpy': [
         'Spatial statistics + neighborhood graphs',

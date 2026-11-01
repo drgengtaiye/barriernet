@@ -4,9 +4,9 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 
-from .genesets import load_yaml, default_yaml
+from .genesets import load_yaml, default_yaml, load_weights
 from .io import load_expr_matrix, read_table, looks_linear
-from .core import score_modules, score_axes, summarise_used_genes
+from .core import score_modules, score_axes, summarise_used_genes, score_weighted
 from .spatial import infer_spatial_keys, assign_rings, ring_summary, barrier_index
 
 def _ensure_out(out: str) -> Path:
@@ -28,6 +28,9 @@ def cmd_bulk(args) -> int:
     axes = score_axes(scores, gs.axes)
 
     out_df = pd.concat([scores, axes], axis=1)
+    if not args.no_v03:
+        wt = load_weights(args.weights)
+        out_df["barriernet03"], _ = score_weighted(expr, wt["weights"], wt["min_genes"], wt["min_frac"], zscore=not args.no_zscore)
     out_df.index.name = "sample_id"
     out_df.to_csv(out/"barriernet_bulk_scores.tsv", sep="\t")
 
@@ -37,6 +40,47 @@ def cmd_bulk(args) -> int:
         expr.loc[:, [g for g in panel_genes if g in expr.columns]].to_csv(out/"barriernet_bulk_panel_matrix.tsv", sep="\t")
 
     print(f"[barriernet bulk] wrote outputs to: {out}")
+    return 0
+
+def cmd_calibrate(args) -> int:
+    """Calibrate scores over randomized trials described in a YAML file (see README, 'calibrate')."""
+    import yaml
+    from .calibrate import Trial, calibrate
+    out = _ensure_out(args.out)
+    cfg = yaml.safe_load(open(args.config))
+    trials = []
+    for t in cfg["trials"]:
+        expr, _ = load_expr_matrix(t["expr"], gene_col=t.get("gene_col"), orientation=t.get("orientation", "auto"))
+        if t.get("log2p1"):
+            expr = np.log2(expr.clip(lower=0) + 1)
+        clin = read_table(t["clinical"]).set_index(t.get("sample_col", "sample_id"))
+        ids = [i for i in expr.index if i in clin.index]
+        if len(ids) < 10:
+            raise SystemExit(f"{t['name']}: fewer than 10 samples shared by expression and clinical tables")
+        X = expr.loc[ids].T; X = X[X.std(axis=1) > 0]
+        Z = X.sub(X.mean(axis=1), axis=0).div(X.std(axis=1), axis=0)
+        c = clin.loc[ids]; cov = t.get("covariates") or []
+        trials.append(Trial(t["name"], Z, c[t["arm_col"]].to_numpy(float),
+                            time=c[t["time_col"]].to_numpy(float) if t.get("time_col") else None,
+                            event=c[t["event_col"]].to_numpy(int) if t.get("event_col") else None,
+                            response=c[t["response_col"]].to_numpy(float) if t.get("response_col") else None,
+                            covariates=c[cov].to_numpy(float) if cov else None))
+    gs = load_yaml(default_yaml("rna")); wt = load_weights(cfg.get("weights"))
+    scores = {"barriernet03": wt["weights"]}
+    net = {g: 0.25 / len(gs.modules[m]) for m in ("APM", "IFN", "TLS_B", "T_CELL") for g in gs.modules[m]}
+    net.update({g: -0.5 / len(gs.modules[m]) for m in ("CAF_ECM", "TAM_SUP") for g in gs.modules[m]})
+    scores["NetImmune"] = net
+    for nm, w in (cfg.get("scores") or {}).items():
+        scores[nm] = {str(k).upper(): float(v) for k, v in w.items()}
+    genes = cfg.get("genes") or ["CD8A", "CD8B", "CD3D", "CD3E", "CD3G", "CD2", "CD247", "GZMA", "GZMB", "GZMH", "GZMK",
+                                 "PRF1", "NKG7", "IFNG", "CXCL9", "CXCL10", "CXCL11", "CXCL13", "CCR5", "STAT1", "IDO1",
+                                 "CD274", "PDCD1", "LAG3", "TIGIT", "CTLA4", "HAVCR2"]
+    res = calibrate(trials, scores, genes, n_random=int(cfg.get("n_random", 1000)), n_boot=int(cfg.get("n_boot", 300)),
+                    seed=int(cfg.get("seed", 0)))
+    for k, df in res.items():
+        df.to_csv(out / f"calibrate_{k}.tsv", sep="\t", index=False)
+    print(res["pooled"].round(3).to_string(index=False))
+    print(f"[barriernet calibrate] wrote outputs to: {out}")
     return 0
 
 def cmd_ihc(args) -> int:
@@ -159,8 +203,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_bulk.add_argument("--min-genes", type=int, default=3)
     p_bulk.add_argument("--no-zscore", action="store_true")
     p_bulk.add_argument("--log2p1", action="store_true", help="Apply log2(x + 1) before z-scoring (use for linear TPM/counts).")
+    p_bulk.add_argument("--weights", default=None, help="Weighted-score YAML (default: bundled barriernet 0.3 weights).")
+    p_bulk.add_argument("--no-v03", action="store_true", help="Do not add the barriernet03 weighted score column.")
     p_bulk.add_argument("--out", required=True)
     p_bulk.set_defaults(func=cmd_bulk)
+
+    p_cal = sub.add_parser("calibrate", help="Calibrate scores against treatment interaction, random genes and single genes "
+                                             "over randomized trials (YAML config).")
+    p_cal.add_argument("--config", required=True, help="YAML listing the trials (expression, clinical table, columns).")
+    p_cal.add_argument("--out", required=True)
+    p_cal.set_defaults(func=cmd_calibrate)
 
     p_ihc = sub.add_parser("ihc", help="Compute Barrier/NetImmune axes from IHC/IF/protein panel table.")
     p_ihc.add_argument("--table", required=True, help="Long table with marker columns + sample_id column (ROI/cell rows allowed).")

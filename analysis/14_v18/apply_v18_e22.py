@@ -26,6 +26,8 @@ def main(s):
             "  - An adjuvant durvalumab cohort in oesophageal and gastro-oesophageal junction adenocarcinoma, with relapse-free survival, was analysed separately[@mamdani2021].")
     s = rep(s, "independent single-cell atlases, PD-L1 CPS and robustness analyses were specified",
             "independent single-cell atlases, further gastro-oesophageal checkpoint cohorts, PD-L1 CPS and robustness analyses were specified")
+    s = rep(s, "the pooled NetImmune interaction across all primary randomised comparisons, the prognostic effect",
+            "the pooled NetImmune interaction across all primary randomised comparisons, the NetImmune response effect in further gastro-oesophageal checkpoint cohorts, the prognostic effect")
     # results
     s = rep(s, "### In gastric cancer, fibroblast content tracks prognosis and immune programmes track response",
             "### In gastric cancer, fibroblast content tracks prognosis; the response association did not replicate")
@@ -42,7 +44,9 @@ def main(s):
             "The gastro-oesophageal checkpoint data therefore do not show that the score predicts response beyond MSI/EBV status and CPS, so we turned to other cancers.")
     # discussion and limitations
     s = rep(s, "In gastric cancer, PD-L1 CPS and MSI/EBV status had higher AUCs than NetImmune, which was not shown to add to them; the score's value lies less in selecting patients than in showing which component of the microenvironment carries which information.",
-            "In gastric cancer the score did not hold up as a response marker. PD-L1 CPS and MSI/EBV status had higher AUCs, and NetImmune did not add to them. In a second, mostly microsatellite-stable cohort it did not predict response at all, although chemotherapy may account for much of the response in that cohort. The score's value lies less in selecting patients than in showing which component of the microenvironment carries which information.")
+            "In gastric cancer the score did not hold up as a response marker. PD-L1 CPS and MSI/EBV status had higher AUCs, and NetImmune did not add to them. In a second, mostly microsatellite-stable cohort it did not predict response at all, although chemotherapy may account for much of the response in that cohort. The score's value lies less in selecting patients than in showing which component of the microenvironment carries which information.\n\nTwo further points concern the macrophage module and the spatial data:")
+    s = rep(s, "and modestly favour checkpoint benefit in randomised comparisons.",
+            "and modestly favour checkpoint benefit in randomised comparisons, although in gastric cancer they did not add to the clinical biomarkers.")
     i = s.index("- **Checkpoint cohorts.** Gastro-oesophageal"); j = s.index("\n", i)
     s = s[:i] + ("- **Checkpoint cohorts.** Gastro-oesophageal checkpoint data comprise two small, single-arm gastric cohorts whose results disagreed, and two small oesophageal cohorts. In the cohort treated with chemotherapy and pembrolizumab, response cannot be attributed to the checkpoint inhibitor.") + s[j:]
     # data availability

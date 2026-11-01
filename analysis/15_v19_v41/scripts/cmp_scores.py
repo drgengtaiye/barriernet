@@ -1,0 +1,65 @@
+"""Published comparator scores on the same engine as the barriernet modules (E23).
+
+The three comparators were previously put through the prognostic head-to-head only (Harrell's C in
+the gastric cohorts). This module scores them from the same within-trial row-z matrix the modules
+use, so that the score x arm interaction is estimated for them exactly as for NetImmune.
+
+  ESTIMATE     immune-stromal contrast: z-mean(141 immune genes) - z-mean(141 stromal genes),
+               the implementation described in the Methods (the official ssGSEA routine is not used).
+  TMEscore_PC  first principal component of the TMEscore A genes minus that of the B genes
+               (64 + 179 genes), each PC oriented to correlate positively with the mean z of its
+               own genes and standardised, as in E8_prognostic_hardening.R.
+  TMEscore_z   z-mean(A) - z-mean(B), the same-engine check of the same contrast.
+  CD8A         the single gene, row-z.
+
+All four are oriented immune-high, like Immune and NetImmune, so a benefit-oriented interaction
+above zero means the same thing for every score in the table.
+"""
+import numpy as np, pandas as pd
+
+GENES = pd.read_csv("/groups/adv2105_gp/yichen/Yi/com/gastric/2/analysis/results/E23_comparator_genes.csv")
+ALIAS = {"WARS1": "WARS", "HLA_DPB1": "HLA-DPB1"}
+CMP_ORDER = ["ESTIMATE", "TMEscore_PC", "TMEscore_z", "CD8A"]
+
+
+def _genes(name, index):
+    g = [ALIAS.get(x, x) for x in GENES.gene[GENES.set == name]]
+    return [x for x in dict.fromkeys(g) if x in index]
+
+
+def _pc1(Z, g):
+    """prcomp(center = TRUE, scale. = FALSE)$x[, 1], sign-fixed on the mean z, then standardised."""
+    X = Z.loc[g].T.to_numpy(float)
+    X = np.nan_to_num(X, nan=0.0)
+    X = X - X.mean(0)
+    u, s, _ = np.linalg.svd(X, full_matrices=False)
+    p = u[:, 0] * s[0]
+    mz = Z.loc[g].mean(0).to_numpy(float)
+    if np.corrcoef(p, np.nan_to_num(mz))[0, 1] < 0:
+        p = -p
+    return (p - p.mean()) / p.std(ddof=1)
+
+
+def comparators(Z, min_genes=3):
+    """Comparator scores for a row-z gene x sample matrix; NaN where a list is not scorable."""
+    nan = pd.Series(np.nan, index=Z.columns)
+    out = {}
+    imm, strm = _genes("ESTIMATE_immune", Z.index), _genes("ESTIMATE_stromal", Z.index)
+    out["ESTIMATE"] = (Z.loc[imm].mean(0) - Z.loc[strm].mean(0)
+                       if min(len(imm), len(strm)) >= min_genes else nan)
+    a, b = _genes("TMEscore_A", Z.index), _genes("TMEscore_B", Z.index)
+    if min(len(a), len(b)) >= min_genes:
+        out["TMEscore_PC"] = pd.Series(_pc1(Z, a) - _pc1(Z, b), index=Z.columns)
+        out["TMEscore_z"] = Z.loc[a].mean(0) - Z.loc[b].mean(0)
+    else:
+        out["TMEscore_PC"] = out["TMEscore_z"] = nan
+    out["CD8A"] = Z.loc["CD8A"] if "CD8A" in Z.index else nan
+    return pd.DataFrame(out)
+
+
+def coverage(Z):
+    return {"ESTIMATE_immune": len(_genes("ESTIMATE_immune", Z.index)),
+            "ESTIMATE_stromal": len(_genes("ESTIMATE_stromal", Z.index)),
+            "TMEscore_A": len(_genes("TMEscore_A", Z.index)),
+            "TMEscore_B": len(_genes("TMEscore_B", Z.index)),
+            "CD8A": int("CD8A" in Z.index)}

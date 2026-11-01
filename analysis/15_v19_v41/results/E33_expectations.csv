@@ -1,0 +1,8 @@
+q,expectation,result,held
+Q1 (primary),"CD8A not ranked first among the T-cell genes, and >= 7 of 13 at P < 0.05 favoring the checkpoint arm",CD8A rank 2/13; 7/13 at P < 0.05,True
+Q2,CD8A and the T-cell panel median above the 90th percentile of all genes measured in all six,2082 genes; CD8A 99.1%; T-cell median 94.2%,True
+Q3,"for >= 7 of the 13 T-cell genes, at most 2 of 52 signatures exceed the gene at P < 0.05",11/13 genes,True
+Q4,descriptive,"{""max_upper"": 0.3, ""max_upper_sig"": ""IRG_Yang"", ""median_upper"": 0.048, ""median_se"": 0.076, ""mdd80"": 0.212, ""cd8a_est"": 0.226}",
+Q5,at most 2 of 52 exceed CD8A over the five comparisons without IMmotion150,0/52,True
+Q6,fewer than 10 of 52 signatures at P < 0.05 favoring the checkpoint arm in the three breast comparisons,1/52; exceeding CD8A 6/52,True
+Q7,Q2 count changes by at most 3 with audited directions,"26 -> 28 (flipped: CD39-CD8Tcell_Chow, CYT_Davoli, IMS_Cui)",True

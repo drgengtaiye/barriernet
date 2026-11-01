@@ -4,7 +4,7 @@ Re-run after any source script changes:  python collect.py
 Sources stay where they are; the scripts keep their absolute input/output paths, so they
 run from here exactly as from their original location. Missing sources are listed, not fatal.
 """
-import glob, os, shutil
+import filecmp, glob, os, re, shutil
 
 G = "/groups/adv2105_gp/yichen/Yi/com/gastric"
 GC = f"{G}/GC_TME_Reprogrammer"
@@ -81,6 +81,20 @@ MANIFEST = {
               + [f"{G}/2/figures/make_v18_fig1.py", f"{G}/2/figures/supp/make_v18_workbook.py",
                  f"{G}/2/data_download/validation/bulk_PRJEB60680_Samsung_NCT04249739/quant/aggregate_qc.py",
                  f"{G}/2/data_download/validation/bulk_PRJEB60680_Samsung_NCT04249739/quant/quant_watch.py"],
+    # protocols E25-E40 (written and hash-logged after the earlier results, before each analysis), their scripts and
+    # outcomes, the frozen barriernet 0.3 weights and the controlled-access analysis plan; figure and build scripts of
+    # the current manuscript (v41: calibration framework, simulation, barriernet 0.3, source-paper evidence)
+    "15_v19_v41/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256"))
+                                   and "/E17_E22" not in f) + [f"{G}/2/analysis/E33_direction_audit.csv",
+                                                               f"{G}/2/analysis/E38_sources.csv"],
+    "15_v19_v41/scripts": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".py", ".R"))
+                                 and int(re.match(r"E(\d+)", os.path.basename(f)).group(1)) >= 23)
+                          + [f"{G}/2/analysis/cmp_scores.py", f"{G}/2/analysis/E17b_bcell_reassignment.py"],
+    "15_v19_v41/results": [f"{G}/2/analysis/results/E37_frozen_weights.tsv", f"{G}/2/analysis/results/E38_adjudicated.csv",
+                           f"{G}/2/analysis/E38_pass1.csv", f"{G}/2/analysis/E38_pass2.csv"]
+                          + sorted(glob.glob(f"{G}/2/analysis/results/E[234]*_expectations.csv")),
+    "15_v19_v41/figures": [f"{G}/2/figures/cns/cns_style.py", f"{G}/figstyle.py"],
+    "15_v19_v41/build": sorted(glob.glob(f"{G}/2/final_v41/build_v41/*.py")) + [f"{G}/2/manuscript/COVER_LETTER_v41.md"],
     # kept for provenance, not used for any v14 number
     "99_superseded": [f"{G}/revision/scripts/A1_ici_roc.R",          # read the stale PRJEB25780 score file
                       f"{G}/revision/scripts/v2_random_logrank.R",   # new gene set per cohort; replaced by E2
@@ -90,13 +104,24 @@ MANIFEST = {
                       f"{G}/2/figures/make_fig8_with_model.py"],
 }
 
+# whole trees (figure scripts of several versions share file names, so their folders are kept)
+TREES = {"15_v19_v41/figure_scripts": f"{G}/2/final_v41/figure_scripts"}
+
 missing = []
+for sub, src in TREES.items():
+    if os.path.isdir(src):
+        shutil.copytree(src, os.path.join(HERE, sub), dirs_exist_ok=True,
+                        ignore=shutil.ignore_patterns("*.png", "*.pdf", "__pycache__", "*.pyc"))
+    else:
+        missing.append(src)
 for sub, files in MANIFEST.items():
     d = os.path.join(HERE, sub)
     os.makedirs(d, exist_ok=True)
     for f in files:
         if os.path.exists(f):
-            shutil.copy2(f, d)
+            dst = os.path.join(d, os.path.basename(f))
+            if not (os.path.exists(dst) and filecmp.cmp(f, dst, shallow=False)):   # protocols are read-only once logged
+                shutil.copy2(f, d)
         else:
             missing.append(f)
 n = sum(len(v) for v in MANIFEST.values())

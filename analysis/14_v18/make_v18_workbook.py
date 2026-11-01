@@ -1,13 +1,14 @@
 """Supplementary_Tables_v18.xlsx: the lean workbook renumbered by figures/v18/numbering.json (written by
 manuscript/build_v18.py), plus sheets for the pre-registered validation analyses (E17, E19, E20, E21; E22 when run).
 Internal analysis codes are removed from cell values and README text."""
-import json, re, pathlib
+import json, re, sys, pathlib
 import pandas as pd
 from openpyxl.styles import Font, Alignment
 
 G = pathlib.Path("/groups/adv2105_gp/yichen/Yi/com/gastric/2")
 R = G / "analysis/results"
-num = json.loads((G / "figures/v18/numbering.json").read_text())["ST"]
+VER = sys.argv[1] if len(sys.argv) > 1 else "v18"          # v19 reuses this script
+num = json.loads((G / f"figures/{VER}/numbering.json").read_text())["ST"]
 LEAN_KEY = {1: "headtohead_cohort", 5: "locked", 6: "modules", 7: "prjeb_nulls", 10: "icb", 11: "perfect_metabric",
             12: "tcga", 13: "trials", 14: "imc", 15: "gdsc"}
 lean = pd.read_excel(G / "figures/lean/Supplementary_Tables_lean.xlsx", sheet_name=None)
@@ -29,6 +30,7 @@ NEW = {
         ("d_share_by_patient", "E17_share_by_patient_summary.csv", "Share of each module's signal in its intended class, per patient (median, IQR)."),
         ("e_expectations", "E17_expectations.csv", "Pre-specified expectations, held or not, per atlas."),
         ("f_sensitivity", "E17_sensitivity.csv", "Sensitivity analyses (enriched libraries dropped, scales, chemistries, reweighting)."),
+        ("g_bcell_reassign", "E17b_bcell_reassignment.csv", "Discovery atlas: shares and z with B-labelled cells that express myeloid but no B-cell markers reassigned to macrophages (v19; E17b_bcell_reassignment.py)."),
     ],
     "robust": [
         ("a_dropout_summary", "E19_summary.csv", "Pooled estimates under random gene dropout (10%, 20%, 30%; 1,000 draws each)."),
@@ -63,9 +65,11 @@ NEW = {
         ("f_pooled", "E22_pooled.csv", "Pooled response estimates with PRJEB25780, and with PERFECT."),
         ("g_GSE183924", "E22_GSE183924_cox.csv", "Adjuvant durvalumab cohort: relapse-free survival HR per SD."),
         ("h_expectations", "E22_expectations.csv", "Pre-specified expectations, held or not."),
+        ("i_posthoc_pooled_24", "E23_pooled_with_gastric.csv", "Post hoc (v20; E23_gastric_consistency.R): the three gastro-oesophageal cohorts pooled with the 21 other checkpoint cohorts, the 21 alone, the three alone, and the meta-regression difference between them."),
+        ("j_posthoc_power", "E23_power_consistency.csv", "Post hoc (v20): each gastro-oesophageal cohort against the 21-cohort pooled effect: P for a difference (variance SE^2 + SE(pooled)^2 + tau^2), power to detect it (two-sided alpha 0.05) and patients needed for 80% power."),
     ],
 }
-SRC = {"gastric_icb": "analysis/E22_gastric_icb.R, analysis/E22_firth_cps.py", "sc_indep": "analysis/E17_singlecell_attribution.py", "robust": "analysis/E19_robustness.R",
+SRC = {"gastric_icb": "analysis/E22_gastric_icb.R, analysis/E22_firth_cps.py, analysis/E23_gastric_consistency.R", "sc_indep": "analysis/E17_singlecell_attribution.py", "robust": "analysis/E19_robustness.R",
        "locked": "analysis/E20_extended_replication.R", "trials": "analysis/E21_trials.py, analysis/E21_meta.R"}
 CLEAN = [(r"locked \(first 3\), E15 reference", "locked (first 3), reference"),
          (r"reproduction: 3 published primary", "first three primary comparisons"),
@@ -96,7 +100,7 @@ sheets.sort(key=lambda x: (x[0], x[1]))
 readme.sort(key=lambda x: (x[0], x[1]))
 rd = pd.DataFrame([r[1:] for r in readme], columns=["Sheet", "Content", "Source"])
 rd["Content"] = rd["Content"].str.replace(r"\bE1[0-9]\b", "", regex=True)
-out = G / "figures/v18/Supplementary_Tables_v18.xlsx"
+out = G / f"figures/{VER}/Supplementary_Tables_{VER}.xlsx"
 with pd.ExcelWriter(out, engine="openpyxl") as w:
     for name, df in [("README", rd)] + [(s[1], s[2]) for s in sheets]:
         df.to_excel(w, sheet_name=name, index=False)

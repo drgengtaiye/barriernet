@@ -1,0 +1,4 @@
+q,expectation,result,held
+C1,more signatures at P < 0.05 in the checkpoint arm alone than in the interaction,7 vs 18,no
+C2,"Spearman(single-arm log-OR, interaction) > 0 and < 0.8",0.834,no
+C3,< 60% of single-arm-significant signatures have a same-direction interaction at P < 0.05,17/34 (50%),yes
