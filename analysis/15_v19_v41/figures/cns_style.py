@@ -72,20 +72,32 @@ def apply():
 
 apply()
 
+LETTER, TITLE, SUBTITLE = 8, 6.5, 5.4   # panel letter, panel title and subtitle sizes (pt)
+
+
+def apply_large():
+    """v43 type scale, one step up (body 7 pt, ticks 6.5 pt, nothing below 6 pt, letters 9 pt): the manuscript file shows
+    the 180 mm figures at text width, so the v19 scale read too small. Earlier scripts keep the v19 scale."""
+    global LETTER, TITLE, SUBTITLE
+    apply()
+    plt.rcParams.update({"font.size": 7.0, "axes.labelsize": 7.0, "axes.titlesize": 7.5,
+                         "xtick.labelsize": 6.5, "ytick.labelsize": 6.5, "legend.fontsize": 6.5})
+    LETTER, TITLE, SUBTITLE = 9, 7.5, 6.3
+
 
 def letter(fig, ax, s, dx_mm=6.0, dy_mm=1.5):
     """Panel letter a fixed physical distance left of / above the axes box, so letters in a
     row align whatever the width of each panel's tick labels."""
     bb = ax.get_position()
     W, H = fig.get_size_inches()
-    fig.text(bb.x0 - dx_mm * MM / W, bb.y1 + dy_mm * MM / H, s, fontsize=8, fontweight="bold",
+    fig.text(bb.x0 - dx_mm * MM / W, bb.y1 + dy_mm * MM / H, s, fontsize=LETTER, fontweight="bold",
              va="bottom", ha="left", color=INK)
 
 
 def letter_at(fig, x_mm, y_mm_from_top, s):
     """Panel letter at an absolute position (mm from the left edge and from the top)."""
     W, H = fig.get_size_inches()
-    fig.text(x_mm * MM / W, 1 - y_mm_from_top * MM / H, s, fontsize=8, fontweight="bold",
+    fig.text(x_mm * MM / W, 1 - y_mm_from_top * MM / H, s, fontsize=LETTER, fontweight="bold",
              va="top", ha="left", color=INK)
 
 
@@ -98,10 +110,10 @@ def ax_mm(fig, x, y, w, h, **kw):
 
 def title(ax, s, sub=None):
     """Short bold panel title, optional muted subtitle on the line below."""
-    ax.set_title(s, loc="left", fontsize=6.5, fontweight="bold", color=INK,
+    ax.set_title(s, loc="left", fontsize=TITLE, fontweight="bold", color=INK,
                  pad=9 if sub else 3)
     if sub:
-        ax.text(0, 1.0, sub, transform=ax.transAxes, fontsize=5.4, color=SLATE, va="bottom",
+        ax.text(0, 1.0, sub, transform=ax.transAxes, fontsize=SUBTITLE, color=SLATE, va="bottom",
                 ha="left")
 
 

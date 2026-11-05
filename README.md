@@ -13,7 +13,8 @@ checkpoint-inhibitor trials*.
 | `barriernet-0.3.0-py3-none-any.whl`, `barriernet_0.3.0.zip` | built wheel and source archive of 0.3.0 (0.2.1 kept beside them) |
 | `analysis/15_v19_v41/protocols/` | the later analysis protocols with their SHA-256 hashes and outcomes, the frozen barriernet 0.3 weights' hash, and the **analysis plan for the controlled-access randomized trials** (`E37_registration.md` and `E37_registration_addendum.md`) |
 | `analysis/` | every analysis and figure script behind the manuscript, grouped by stage |
-| `analysis/README.md` | **the run order and the map from each table, figure and reported number to the script that produces it** |
+| `analysis/16_v42_v46/` | the protocols with their hashes, outcomes, scripts and figure scripts added after the v0.3.0 release (published randomized trials, barriernet 0.3 against each signature, absolute benefit, gastric and gastroesophageal cancer) |
+| `analysis/README_v46_map.md` | **the map from each table, figure panel and reported number of the current manuscript to the script that produces it** (`analysis/README.md`: the earlier version) |
 
 ## The score
 

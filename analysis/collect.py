@@ -10,6 +10,12 @@ G = "/groups/adv2105_gp/yichen/Yi/com/gastric"
 GC = f"{G}/GC_TME_Reprogrammer"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
+def enum(f):
+    """Protocol number of an analysis file (E41b_x.py -> 41), 0 if it has none."""
+    m = re.match(r"E(\d+)", os.path.basename(f))
+    return int(m.group(1)) if m else 0
+
+
 MANIFEST = {
     # upstream inputs produced before the revision (only those whose script exists)
     "00_upstream": [f"{GC}/validation/benchmark_barriernet_official.py",
@@ -85,16 +91,25 @@ MANIFEST = {
     # outcomes, the frozen barriernet 0.3 weights and the controlled-access analysis plan; figure and build scripts of
     # the current manuscript (v41: calibration framework, simulation, barriernet 0.3, source-paper evidence)
     "15_v19_v41/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256"))
-                                   and "/E17_E22" not in f) + [f"{G}/2/analysis/E33_direction_audit.csv",
-                                                               f"{G}/2/analysis/E38_sources.csv"],
+                                   and "/E17_E22" not in f and enum(f) <= 40) + [f"{G}/2/analysis/E33_direction_audit.csv",
+                                                                                 f"{G}/2/analysis/E38_sources.csv"],
     "15_v19_v41/scripts": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".py", ".R"))
-                                 and int(re.match(r"E(\d+)", os.path.basename(f)).group(1)) >= 23)
-                          + [f"{G}/2/analysis/cmp_scores.py", f"{G}/2/analysis/E17b_bcell_reassignment.py"],
+                                 and 23 <= enum(f) <= 40)
+                          + [f"{G}/2/analysis/cmp_scores.py", f"{G}/2/analysis/E17b_bcell_reassignment.py",
+                             f"{G}/2/analysis/text_numbers_check.py"],
     "15_v19_v41/results": [f"{G}/2/analysis/results/E37_frozen_weights.tsv", f"{G}/2/analysis/results/E38_adjudicated.csv",
                            f"{G}/2/analysis/E38_pass1.csv", f"{G}/2/analysis/E38_pass2.csv"]
-                          + sorted(glob.glob(f"{G}/2/analysis/results/E[234]*_expectations.csv")),
+                          + sorted(f for f in glob.glob(f"{G}/2/analysis/results/E[234]*_expectations.csv") if enum(f) <= 40)
+                          + [f"{G}/2/analysis/results/{x}" for x in ("text_numbers_check.csv", "E37_export_step0_rerun.csv",
+                             "E38_agreement.csv", "E38_crosstab.csv", "E39_pooled.csv", "E39_required.csv", "E40_concordance.csv")],
     "15_v19_v41/figures": [f"{G}/2/figures/cns/cns_style.py", f"{G}/figstyle.py"],
-    "15_v19_v41/build": sorted(glob.glob(f"{G}/2/final_v41/build_v41/*.py")) + [f"{G}/2/manuscript/COVER_LETTER_v41.md"],
+    # later protocols of the current manuscript (v46). The build scripts hold the manuscript text, so they go with the
+    # submission and are not copied here before publication.
+    "16_v42_v46/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256")) and 41 <= enum(f) <= 44)
+                            + [f"{G}/2/analysis/later_protocol_tally.md"],
+    "16_v42_v46/scripts": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".py", ".R")) and 41 <= enum(f) <= 44),
+    "16_v42_v46/results": [f"{G}/2/analysis/results/E{n}_expectations.csv" for n in (41, 42, 43, 44)],
+    "16_v42_v46/figure_scripts": [f"{G}/2/final_v46/figure_scripts/cns_style.py"],
     # kept for provenance, not used for any v14 number
     "99_superseded": [f"{G}/revision/scripts/A1_ici_roc.R",          # read the stale PRJEB25780 score file
                       f"{G}/revision/scripts/v2_random_logrank.R",   # new gene set per cohort; replaced by E2
@@ -105,7 +120,9 @@ MANIFEST = {
 }
 
 # whole trees (figure scripts of several versions share file names, so their folders are kept)
-TREES = {"15_v19_v41/figure_scripts": f"{G}/2/final_v41/figure_scripts"}
+TREES = {**{f"16_v42_v46/figure_scripts/v{v}": f"{G}/2/final_v46/figure_scripts/v{v}" for v in (42, 43, 44, 45, 46)},
+         "15_v19_v41/figure_scripts": f"{G}/2/final_v41/figure_scripts",
+         "15_v19_v41/E24_archived": f"{G}/2/final_v41/analysis_E24_archived"}   # the earlier unreported analysis declared in the fifth protocol
 
 missing = []
 for sub, src in TREES.items():

@@ -1,0 +1,513 @@
+"""v19 Fig. 5 - stroma tracks prognosis, immune programs track checkpoint response.
+
+a  effect matrix of the 21 checkpoint cohorts (E12_icb_per_cohort.csv, E12_icb_pooled.csv)
+b  overall survival in untreated TCGA tumors, 24 types (E11_per_type.csv, E11_pooled.csv)
+c  prognosis (ten gastric cohorts, E20_pooled.csv "all 10 gastric", unadjusted, pre-registered
+   duplicate exclusions; CXCL9:SPP1 k = 9) against response (all 21 cohorts)
+d  the same within tumor type (E11_dissociation_by_tumour.csv)
+e  leave-one-cohort-out range of the pooled response effects, all 21 (E12_icb_loo.csv)
+f  pooled CAF_ECM and Immune response effects in cohort subsets (E12_icb_pooled.csv; + PERFECT from
+   E16_perfect_pooled.csv)
+g  size-matched random-gene null, pooled response in the first 11 cohorts (E5_icb_null_*.csv)
+h  random-gene null, pooled adjusted OS HR in the five checkpoint cancer types (E11_null*.csv)
+
+Pooled intervals throughout: the wider of the Hartung-Knapp and DerSimonian-Laird 95% CIs and
+the larger P, as in the text and Table 2. Per-cohort / per-type P values are Wald P values of
+the stored estimates (log-OR / SE), used only to ring points at P < 0.05.
+"""
+import sys
+sys.path.insert(0, "/groups/adv2105_gp/yichen/Yi/com/gastric/2/figures/cns")
+import numpy as np, pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Rectangle, FancyBboxPatch
+from matplotlib.colors import TwoSlopeNorm, to_rgb
+from scipy import stats
+import cns_style as S
+from cns_style import INK, SLATE, GREY, LIGHT, PAPER, IMMUNE, STROMA, MACRO, fmt_p
+
+R = S.RES
+W, H = 180, 230
+fig = plt.figure(figsize=(W * S.MM, H * S.MM))
+cv = fig.add_axes([0, 0, 1, 1]); cv.set_xlim(0, W); cv.set_ylim(H, 0); cv.axis("off")
+CMAP = S.DIV.reversed()                   # positive (favorable) -> blue
+
+COLS = [("CAF_ECM", "CAF_ECM", STROMA), ("TAM_SUP", "TAM_SUP", MACRO), ("CXCL9_SPP1", "CXCL9:SPP1", MACRO),
+        ("APM", "APM", IMMUNE), ("IFN", "IFN", IMMUNE), ("TLS_B", "TLS_B", IMMUNE), ("T_CELL", "T_CELL", IMMUNE),
+        ("Immune", "Immune", IMMUNE), ("NetImmune", "NetImmune", IMMUNE)]
+CW = 6.0                                  # column width, mm
+
+
+def txt(x, y, s, size=5.0, color=INK, ha="left", va="center", **kw):
+    return cv.text(x, y, s, fontsize=size, color=color, ha=ha, va=va, **kw)
+
+
+from matplotlib.textpath import TextPath
+from matplotlib.font_manager import FontProperties
+PT = 25.4 / 72                    # mm per point
+
+
+def _ink_top(s, size):
+    """Height of the inked part of a bold string above its baseline, mm."""
+    return TextPath((0, 0), s, size=size, prop=FontProperties(family=S.fs.SANS, weight="bold")).get_extents().y1 * PT
+
+
+def heading(xl, xt, ytop, letter, title):
+    """Panel letter (8 pt) and bold title (6.5 pt) with their inked tops level at ytop (mm from the top)."""
+    W_, H_ = fig.get_size_inches() / S.MM
+    fig.text(xl / W_, 1 - (ytop + _ink_top(letter, 8)) / H_, letter, fontsize=8, fontweight="bold",
+             va="baseline", ha="left", color=INK)
+    cv.text(xt, ytop + _ink_top(title, 6.5), title, fontsize=6.5, fontweight="bold", va="baseline", ha="left",
+            color=INK)
+
+
+def ink_on(c):
+    r, g, b = to_rgb(c)
+    return "white" if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.45 else INK
+
+
+def headers(x0, ybot):
+    for i, (_, lab, col) in enumerate(COLS):
+        xc = x0 + (i + 0.5) * CW
+        txt(xc, ybot, lab, size=5.4, ha="center", va="bottom", rotation=90)
+        cv.add_patch(Rectangle((x0 + i * CW + 0.35, ybot + 0.6), CW - 0.7, 0.9, color=col, lw=0))
+
+
+def sgn(v, nd=2):
+    return f"{v:+.{nd}f}".replace("-", "−")
+
+
+def tile(x0, i, yc, h, val, norm, text, ring, sub=None):
+    fc = CMAP(norm(np.clip(val, norm.vmin, norm.vmax)))
+    cv.add_patch(Rectangle((x0 + i * CW + 0.3, yc - h / 2), CW - 0.6, h, fc=fc,
+                           ec=INK if ring else "none", lw=0.6, zorder=2))
+    tc = ink_on(fc)
+    if sub is None:
+        txt(x0 + (i + 0.5) * CW, yc, text, size=5.0, color=tc, ha="center",
+            fontweight="bold" if ring else "normal", zorder=3)
+    else:
+        txt(x0 + (i + 0.5) * CW, yc - 0.85, text, size=5.0, color=tc, ha="center",
+            fontweight="bold" if ring else "normal", zorder=3)
+        txt(x0 + (i + 0.5) * CW, yc + 1.05, sub, size=5.0, color=tc, ha="center", zorder=3)
+
+
+def wald_p(b, se):
+    return 2 * stats.norm.sf(abs(b / se))
+
+
+# =========================================================================================
+# a  21 checkpoint cohorts
+# =========================================================================================
+per = pd.read_csv(R / "E12_icb_per_cohort.csv")
+pool = pd.read_csv(R / "E12_icb_pooled.csv")
+per = per[per.set.isin(["E5", "new"])]
+NAME = {"ICB_Braun": "Braun", "ICB_Gide": "Gide", "ICB_Hugo": "Hugo", "ICB_Jung": "Jung", "ICB_Limagne1": "Limagne 1",
+        "ICB_Liu": "Liu", "ICB_Mariathasan": "Mariathasan", "ICB_Miao1": "Miao", "ICB_Puch": "Puch",
+        "ICB_Riaz": "Riaz", "ICB_Van_Allen": "Van Allen", "ICB_Nathanson": "Nathanson", "ICB_Snyder": "Snyder",
+        "ICB_Limagne2": "Limagne 2", "ICB_Shiuan": "Shiuan", "GSE176307": "GSE176307", "GSE161537": "GSE161537",
+        "GSE159067": "GSE159067", "GSE215868": "GSE215868", "GSE93157": "GSE93157",
+        "brca_iatlas_anders_2022": "Anders"}
+TUM = {"kidney": "renal", "melanoma": "melanoma", "lung": "NSCLC", "bladder": "urothelial", "urothelial": "urothelial",
+       "head and neck": "HNSCC", "mixed (lung, HNSCC, melanoma)": "mixed", "breast": "breast"}
+PANEL = {"GSE161537", "GSE159067", "GSE215868", "GSE93157"}
+meta = per.drop_duplicates("cohort").set_index("cohort")
+meta["tum"] = meta.tumour.map(TUM)
+TORD = ["melanoma", "NSCLC", "urothelial", "renal", "HNSCC", "breast", "mixed"]
+
+
+def order(setname):
+    m = meta[meta.set == setname].copy()
+    m["t"] = m.tum.map(TORD.index)
+    return m.sort_values(["t", "n"], ascending=[True, False]).index.tolist()
+
+
+XA = 42.0                     # matrix a left edge
+YH = 21.0                     # bottom of the column headers
+RH = 2.85                     # row height
+normA = TwoSlopeNorm(vcenter=0, vmin=-1.0, vmax=1.0)
+
+heading(1.0, 5.0, 1.7, "a", "Checkpoint response")
+
+headers(XA, YH)
+txt(4.2, YH + 0.8, "cohort", size=5.0, color=GREY, va="bottom")
+txt(20.2, YH + 0.8, "tumor", size=5.0, color=GREY, va="bottom")
+txt(39.8, YH + 0.8, "n / resp.", size=5.0, color=GREY, va="bottom", ha="right")
+
+y = YH + 3.5
+rows_a = []
+for setname, head in [("E5", "First 11 cohorts"), ("new", "Replication cohorts")]:
+    txt(2.0, y + 1.5, head, size=5.4, fontweight="bold")
+    cv.plot([2.0, XA + 9 * CW], [y + 3.0, y + 3.0], color=LIGHT, lw=0.4)
+    y += 3.3
+    prev = None
+    for c in order(setname):
+        yc = y + RH / 2
+        m = meta.loc[c]
+        if prev is not None and m.tum != prev:
+            cv.plot([4.2, XA + 9 * CW], [y, y], color=LIGHT, lw=0.3, ls=(0, (1, 1)))
+        txt(4.2, yc, NAME[c] + ("†" if c in PANEL else ""), size=5.0)
+        if m.tum != prev:
+            txt(20.2, yc, m.tum, size=5.0, color=SLATE)
+        prev = m.tum
+        txt(39.8, yc, f"{int(m.n)}/{int(m.n_resp)}", size=5.0, color=SLATE, ha="right")
+        for i, (k, _, _) in enumerate(COLS):
+            r = per[(per.cohort == c) & (per.score == k)]
+            xc = XA + (i + 0.5) * CW
+            if r.empty or not np.isfinite(r.iloc[0].logOR):
+                txt(xc, yc, "n.c.", size=5.0, color=GREY, ha="center"); continue
+            r = r.iloc[0]
+            rad = float(np.clip(0.2 / r.se, 0.6, 1.1))
+            sig = wald_p(r.logOR, r.se) < 0.05
+            cv.add_patch(Circle((xc, yc), rad, fc=CMAP(normA(np.clip(r.logOR, -1, 1))), ec="none", zorder=3))
+            if sig:
+                cv.add_patch(Circle((xc, yc), rad + 0.3, fc="none", ec=INK, lw=0.5, zorder=4))
+            rows_a.append(dict(cohort=c, score=k, logOR=r.logOR, se=r.se, wald_p=wald_p(r.logOR, r.se)))
+        y += RH
+    y += 1.0
+
+y += 0.6
+cv.plot([2.0, XA + 9 * CW], [y, y], color=INK, lw=0.4)
+y += 0.6
+POOLS = [("E5 11 (reference)", "Pooled, first 11"), ("new only (replication)", "Pooled, replication 10"),
+         ("all", "Pooled, all 21")]
+for key, lab in POOLS:
+    yc = y + 2.35
+    txt(4.2, yc, lab, size=5.2, fontweight="bold")
+    for i, (k, _, _) in enumerate(COLS):
+        q = pool[(pool.set == key) & (pool.score == k)].iloc[0]
+        p = max(q.p_DL, q.p_HK)
+        tile(XA, i, yc, 4.3, q.logOR, normA, sgn(q.logOR), p < 0.05, sub=f"{int(q.n_pos)}/{int(q.k)}")
+    y += 4.7
+YA_END = y
+
+# =========================================================================================
+# b  TCGA overall survival, 24 cancer types
+# =========================================================================================
+pt = pd.read_csv(R / "E11_per_type.csv")
+pt = pt[(pt.endpoint == "OS") & (pt.model == "adjusted")]
+pp = pd.read_csv(R / "E11_pooled.csv")
+pp = pp[(pp.endpoint == "OS") & (pp.model == "adjusted")]
+G1 = ["SKCM", "LUAD", "LUSC", "BLCA", "KIRC"]
+G2 = ["ESCA_AC", "ESCA_SCC", "STAD"]
+G3 = sorted(["ACC", "BRCA", "CESC", "COAD", "GBM", "HNSC", "KIRP", "LGG", "LIHC", "MESO", "OV", "PAAD", "PRAD",
+             "READ", "SARC", "THCA", "UCEC"])
+LAB = {"SKCM": "SKCM*", "ESCA_AC": "ESCA adeno.", "ESCA_SCC": "ESCA squam."}
+XB = 121.0
+RB = 2.3
+normB = TwoSlopeNorm(vcenter=0, vmin=-0.5, vmax=0.5)
+
+heading(101.0, 105.0, 1.7, "b", "Survival, untreated tumors")
+
+headers(XB, YH)
+txt(105.0, YH + 0.8, "cancer type", size=5.0, color=GREY, va="bottom")
+
+y = YH + 3.5
+rows_b = []
+for units, head, gkey, glab in [(G1, "Checkpoint cancer types", "(i) SKCM KIRC LUAD LUSC BLCA", "Pooled, 5 types"),
+                                (G2, "Esophagogastric", "(ii) ESCA-AC ESCA-SCC STAD", "Pooled, 3 types"),
+                                (G3, "Other cancer types", "(iii) all 24", "Pooled, all 24")]:
+    txt(103.0, y + 1.5, head, size=5.4, fontweight="bold")
+    cv.plot([103.0, XB + 9 * CW], [y + 2.9, y + 2.9], color=LIGHT, lw=0.4)
+    y += 3.2
+    for u in units:
+        yc = y + RB / 2
+        txt(105.0, yc, LAB.get(u, u), size=5.0)
+        for i, (k, _, _) in enumerate(COLS):
+            r = pt[(pt.unit == u) & (pt.score == k)].iloc[0]
+            b = -r.logHR
+            cv.add_patch(Rectangle((XB + i * CW + 0.3, y + 0.18), CW - 0.6, RB - 0.36,
+                                   fc=CMAP(normB(np.clip(b, -0.5, 0.5))), ec=INK if r.p < 0.05 else "none",
+                                   lw=0.5, zorder=2))
+            rows_b.append(dict(unit=u, score=k, HR=r.HR, lo=r.lo, hi=r.hi, p=r.p))
+        y += RB
+    yc = y + 2.1
+    txt(105.0, yc, glab, size=5.2, fontweight="bold")
+    for i, (k, _, _) in enumerate(COLS):
+        q = pp[(pp.group == gkey) & (pp.score == k)].iloc[0]
+        tile(XB, i, yc, 3.5, -np.log(q.HR), normB, f"{q.HR:.2f}", q.p < 0.05)
+    y += 4.2 + 1.0
+YB_END = y - 1.0
+
+# ---- legends under a and b ---------------------------------------------------------------
+YL = max(YA_END, YB_END) + 3.2
+
+
+def cbar(x0, w, yb, norm, ticks, labels, left, right, title_):
+    n = 120
+    for j in range(n):
+        v = norm.vmin + (norm.vmax - norm.vmin) * (j + 0.5) / n
+        cv.add_patch(Rectangle((x0 + w * j / n, yb), w / n + 0.02, 1.6, color=CMAP(norm(v)), lw=0))
+    for t, l in zip(ticks, labels):
+        xx = x0 + w * (t - norm.vmin) / (norm.vmax - norm.vmin)
+        cv.plot([xx, xx], [yb + 1.6, yb + 2.2], color=INK, lw=0.4)
+        txt(xx, yb + 3.3, l, size=5.0, ha="center")
+    txt(x0, yb - 1.4, left, size=5.0, color=SLATE, ha="left")
+    txt(x0 + w, yb - 1.4, right, size=5.0, color=SLATE, ha="right")
+    txt(x0 + w / 2, yb + 5.6, title_, size=5.0, color=SLATE, ha="center")
+
+
+cbar(XA, 30, YL, normA, [-1, -0.5, 0, 0.5, 1], ["−1", "", "0", "", "+1"],
+     "non-resp. higher", "resp. higher", "log-odds per SD")
+# size key
+xs = XA + 36
+txt(xs, YL - 1.4, "SE", size=5.0, color=SLATE)
+for j, se in enumerate([0.15, 0.3, 0.6]):
+    rad = float(np.clip(0.2 / se, 0.6, 1.1))
+    cv.add_patch(Circle((xs + 1.0 + j * 5.0, YL + 0.8), rad, fc=GREY, ec="none"))
+    txt(xs + 1.0 + j * 5.0, YL + 3.3, f"{se:g}", size=5.0, ha="center")
+cv.add_patch(Circle((xs + 1.0, YL + 6.6), 0.9, fc=GREY, ec="none"))
+cv.add_patch(Circle((xs + 1.0, YL + 6.6), 1.2, fc="none", ec=INK, lw=0.5))
+txt(xs + 2.6, YL + 6.6, "P < 0.05", size=5.0, color=SLATE)
+hr_t = [1.5, 1.25, 1.0, 0.8, 0.67]
+cbar(XB, 34, YL, normB, [-np.log(h) for h in hr_t], ["1.5", "", "1", "", "0.67"],
+     "shorter survival", "longer survival", "HR per SD (cell outline, P < 0.05)")
+
+# =========================================================================================
+# c  prognosis (gastric) against response (21 cohorts)
+# =========================================================================================
+e20 = pd.read_csv(R / "E20_pooled.csv")
+e20 = e20[(e20.set == "all 10 gastric") & (e20.model == "unadjusted")
+          & (e20.duplicate_rule == "pre-registered exclusions (primary)")].set_index("score")
+prog = {}                         # HR, lo, hi are already the wider of the HK and DL intervals
+for k in ["CAF_ECM", "TAM_SUP", "Barrier", "APM", "IFN", "TLS_B", "T_CELL", "Immune", "NetImmune", "CXCL9_SPP1"]:
+    r = e20.loc[k]
+    prog[k] = (np.log(r.HR), np.log(r.lo), np.log(r.hi))
+allp = pool[pool.set == "all"].set_index("score")
+resp = {k: (allp.loc[k].logOR, min(allp.loc[k].lo_DL, allp.loc[k].lo_HK), max(allp.loc[k].hi_DL, allp.loc[k].hi_HK))
+        for k in prog}
+
+YC0 = YL + 12.5                 # title line of panels c and d
+YAX = YC0 + 7.5                 # top of the c axes
+YBOT = YAX + 37.0               # bottom of the c and d axes
+heading(1.0, 5.0, YC0 - 0.85, "c", "Prognosis against response")
+axc = S.ax_mm(fig, 16, YAX, 70, YBOT - YAX)
+S.rule(axc, 0); S.hrule(axc, 0)
+SHOWCI = {"CAF_ECM", "Immune"}
+for k in prog:
+    x, xl, xh = prog[k]; yv, yl, yh = resp[k]
+    col = S.MODCOL.get(k, MACRO if k == "CXCL9_SPP1" else IMMUNE)
+    if k in SHOWCI:
+        axc.plot([xl, xh], [yv, yv], color=col, lw=0.7, alpha=0.55, solid_capstyle="butt", zorder=2)
+        axc.plot([x, x], [yl, yh], color=col, lw=0.7, alpha=0.55, solid_capstyle="butt", zorder=2)
+    big = k in ("CAF_ECM", "Immune", "NetImmune")
+    axc.scatter([x], [yv], s=26 if big else 12, color=col, ec="white", lw=0.5, zorder=4,
+                marker="s" if k in ("Barrier", "Immune", "NetImmune") else "o")
+LABPOS = {"CAF_ECM": (0.15, -0.175, "right"), "Barrier": (0.085, 0.075, "left"), "TAM_SUP": (0.15, 0.22, "left"),
+          "CXCL9_SPP1": (-0.50, 0.20, "left"), "APM": (0.03, 0.43, "left"), "IFN": (-0.06, 0.58, "left"),
+          "TLS_B": (0.03, 0.36, "left"), "T_CELL": (0.03, 0.29, "left"), "Immune": (-0.55, 0.53, "left"),
+          "NetImmune": (-0.575, 0.31, "left")}
+DISP = {"CXCL9_SPP1": "CXCL9:SPP1"}
+for k, (lx, ly, ha) in LABPOS.items():
+    x, yv = prog[k][0], resp[k][0]
+    big = k in ("CAF_ECM", "Immune", "NetImmune")
+    axc.annotate(DISP.get(k, k), (x, yv), (lx, ly), fontsize=5.4 if big else 5.0, color=INK,
+                 fontweight="bold" if big else "normal", ha=ha, va="center",
+                 arrowprops=dict(arrowstyle="-", color=GREY, lw=0.4, shrinkA=0.5, shrinkB=2.2))
+axc.set_xlim(np.log(0.55), np.log(1.5)); axc.set_ylim(-0.36, 0.72)
+xt = [0.6, 0.7, 0.8, 1.0, 1.25, 1.5]
+axc.set_xticks(np.log(xt)); axc.set_xticklabels([f"{v:g}" for v in xt])
+txt(16 + 35, YBOT + 6.4, "Gastric survival, HR per SD (10 cohorts)", size=6.0, ha="center")
+axc.set_ylabel("Response, log-odds per SD (21 cohorts)")
+
+
+
+# =========================================================================================
+# d  within tumor type (TCGA prognosis vs response in the same tumor type)
+# =========================================================================================
+bt = pd.read_csv(R / "E11_dissociation_by_tumour.csv")
+TT = [("melanoma", "Melanoma", "SKCM*"), ("lung", "NSCLC", "LUAD + LUSC"),
+      ("bladder", "Urothelial", "BLCA"), ("kidney", "Renal", "KIRC")]
+YD = YC0 + 10.5                 # top of the first row of small multiples (room for their titles)
+x0d, wd, gx, gy = 112, 29, 8, 9.5
+hd = (YBOT - YD - gy) / 2
+XL0, XL1 = np.log(0.5), np.log(1.45)
+axd = []
+for j, (t, lab, tc) in enumerate(TT):
+    cx, cy = j % 2, j // 2
+    ax = S.ax_mm(fig, x0d + cx * (wd + gx), YD + cy * (hd + gy), wd, hd)
+    axd.append(ax)
+    S.rule(ax, 0); S.hrule(ax, 0)
+    for k, col, mk in [("CAF_ECM", STROMA, "o"), ("Immune", IMMUNE, "s")]:
+        r = bt[(bt.tumour == t) & (bt.score == k)].iloc[0]
+        xl, xh = r.prog_logHR - 1.96 * r.prog_se, r.prog_logHR + 1.96 * r.prog_se
+        yl, yh = r.resp_logOR - 1.96 * r.resp_se, r.resp_logOR + 1.96 * r.resp_se
+        ax.plot([max(xl, XL0), min(xh, XL1)], [r.resp_logOR] * 2, color=col, lw=0.7, solid_capstyle="butt")
+        ax.plot([r.prog_logHR] * 2, [max(yl, -1.15), min(yh, 1.45)], color=col, lw=0.7, solid_capstyle="butt")
+        for xe, ye, cond, m_ in ((r.prog_logHR, -1.15, yl < -1.15, "v"), (r.prog_logHR, 1.45, yh > 1.45, "^"),
+                                 (XL0, r.resp_logOR, xl < XL0, "<"), (XL1, r.resp_logOR, xh > XL1, ">")):
+            if cond:
+                ax.plot(xe, ye, m_, color=col, ms=2.0, mew=0, clip_on=False)
+        ax.scatter([r.prog_logHR], [r.resp_logOR], s=14, marker=mk, color=col, ec="white", lw=0.4, zorder=4)
+    ax.set_xlim(XL0, XL1); ax.set_ylim(-1.15, 1.45)
+    ax.set_xticks(np.log([0.5, 0.7, 1.0, 1.4])); ax.set_yticks([-1, 0, 1])
+    ax.set_xticklabels(["0.5", "0.7", "1", "1.4"] if cy == 1 else [])
+    ax.set_yticklabels(["−1", "0", "+1"] if cx == 0 else [])
+    n_icb = int(bt[(bt.tumour == t)].n_icb.iloc[0])
+    t1 = ax.text(0.0, 1.04, lab, transform=ax.transAxes, fontsize=5.4, fontweight="bold", va="bottom")
+    ax.annotate(f"  {tc}, {n_icb} cohort{'s' if n_icb > 1 else ''}", xycoords=t1, xy=(1, 0), va="bottom",
+                fontsize=5.0, color=SLATE)
+heading(99.0, 103.0, YC0 - 0.85, "d", "Within tumor type")
+
+fig.text((x0d + wd + gx / 2) / W, 1 - (YBOT + 6.4) / H, "TCGA overall survival, HR per SD (adjusted)",
+         ha="center", va="center", fontsize=6.0)
+fig.text((x0d - 8.0) / W, 1 - (YD + hd + gy / 2) / H, "Response, log-odds per SD", rotation=90,
+         ha="center", va="center", fontsize=6.0)
+# shared key for d
+kx, ky = x0d + 2 * wd + gx - 24, YC0
+for j, (lab, col, mk) in enumerate([("CAF_ECM", STROMA, "o"), ("Immune", IMMUNE, "s")]):
+    cv.scatter([kx + j * 13], [ky], s=12, marker=mk, color=col, ec="white", lw=0.4)
+    txt(kx + j * 13 + 1.4, ky, lab, size=5.0)
+
+
+# =========================================================================================
+# row 3: e leave-one-out, f cohort sets, g response null, h survival null
+# =========================================================================================
+YE0 = YBOT + 13.5                   # title line of the third row
+YEA = YE0 + 8.0                     # top of the third-row axes
+YEB = H - 11.5                      # bottom of the third-row axes
+YXL = H - 5.0                       # x-axis labels of the third row
+
+
+def chip(x, y, col):
+    cv.add_patch(Rectangle((x, y - 0.75), 1.5, 1.5, color=col, lw=0))
+
+
+def mrk(k):
+    return "s" if k in ("Barrier", "Immune", "NetImmune") else "o"
+
+
+def colof(k):
+    return S.MODCOL.get(k.replace("_arm", " arm"), MACRO if k == "CXCL9_SPP1" else IMMUNE)
+
+
+DISPN = {"CXCL9_SPP1": "CXCL9:SPP1", "SPP1_arm": "SPP1 subset", "C1Q_arm": "C1Q subset"}
+
+# ---- e  leave one cohort out -------------------------------------------------------------
+heading(1.0, 5.0, YE0 - 0.85, "e", "Leave one cohort out")
+
+loo = pd.read_csv(R / "E12_icb_loo.csv"); loo = loo[loo.set == "all"].set_index("score")
+axe = S.ax_mm(fig, 22.0, YEA, 21.5, YEB - YEA)
+ORD_E = [k for k, _, _ in COLS]
+rows_e = []
+for i, k in enumerate(ORD_E):
+    yy = -i
+    q = allp.loc[k]; lo_, hi_ = min(q.lo_DL, q.lo_HK), max(q.hi_DL, q.hi_HK)
+    r = loo.loc[k]; col = colof(k)
+    axe.plot([lo_, hi_], [yy, yy], color=col, lw=0.6, solid_capstyle="butt", zorder=2)
+    axe.plot([r.loo_min, r.loo_max], [yy, yy], color=col, lw=3.2, alpha=0.35, solid_capstyle="butt", zorder=1)
+    axe.scatter([q.logOR], [yy], s=11, marker=mrk(k), color=col, ec="white", lw=0.4, zorder=3)
+    yc = YEA + (YEB - YEA) * (i + 0.5) / len(ORD_E)
+    chip(4.0, yc, col); txt(6.4, yc, DISPN.get(k, k) + (f" ({int(q.k)})" if int(q.k) != 21 else ""), size=5.0)
+    rows_e.append(dict(score=k, logOR=q.logOR, lo=lo_, hi=hi_, loo_min=r.loo_min, loo_max=r.loo_max,
+                       loo_max_p=max(r.max_p_DL, r.max_p_HK), most_influential=r.most_influential))
+axe.set_ylim(-len(ORD_E) + 0.5, 0.5); axe.set_yticks([]); axe.spines["left"].set_visible(False)
+axe.set_xlim(-0.3, 0.75); axe.set_xticks([0, 0.5]); axe.set_xticklabels(["0", "0.5"])
+S.rule(axe, 0)
+txt(22.0 + 10.75, YXL, "log-odds per SD", size=6.0, ha="center")
+
+# ---- f  cohort sets -----------------------------------------------------------------------
+XF = 48.0
+heading(XF - 4.0, XF, YE0 - 0.85, "f", "Cohort sets")
+
+p16 = pd.read_csv(R / "E16_perfect_pooled.csv")
+SETS = [("all", "All cohorts", "E12"), ("all, whole transcriptome", "Whole transcriptome", "E12"),
+        ("all, panel only", "Panels only", "E12"), ("all, without kidney", "Without renal", "E12"),
+        ("all + chemo-ICB", "+ chemo–checkpoint", "E12"), ("all + chemo-ICB + PERFECT", "+ PERFECT", "E16")]
+axf = S.ax_mm(fig, 75.0, YEA, 20.0, YEB - YEA)
+rows_f = []
+for i, (sk, sl, src) in enumerate(SETS):
+    yy = -i
+    yc = YEA + (YEB - YEA) * (i + 0.5) / len(SETS)
+    kk = {}
+    for k, col, dy in [("CAF_ECM", STROMA, 0.17), ("Immune", IMMUNE, -0.17)]:
+        if src == "E12":
+            q = pool[(pool.set == sk) & (pool.score == k)].iloc[0]
+            est, lo_, hi_, pv = q.logOR, min(q.lo_DL, q.lo_HK), max(q.hi_DL, q.hi_HK), max(q.p_DL, q.p_HK)
+        else:
+            q = p16[(p16.set == sk) & (p16.score == k)].iloc[0]
+            est, lo_, hi_, pv = q.logOR, q.lo, q.hi, q.p
+        sig = pv < 0.05
+        axf.plot([lo_, hi_], [yy + dy, yy + dy], color=col, lw=0.6, solid_capstyle="butt")
+        axf.scatter([est], [yy + dy], s=10, marker=mrk(k), color=col if sig else "white", ec=col, lw=0.6, zorder=3)
+        rows_f.append(dict(set=sk, score=k, k=int(q.k), logOR=est, lo=lo_, hi=hi_, p=pv))
+        kk[k] = int(q.k)
+    txt(73.6, yc, f"{sl} ({kk['Immune']}/{kk['CAF_ECM']})", size=5.0, ha="right",
+        fontweight="bold" if i == 0 else "normal")
+txt(73.6, YEA - 1.3, "cohorts, Immune/CAF_ECM", size=5.0, color=GREY, ha="right")
+axf.set_ylim(-len(SETS) + 0.5, 0.5); axf.set_yticks([]); axf.spines["left"].set_visible(False)
+axf.set_xlim(-0.6, 1.15); axf.set_xticks([-0.5, 0, 0.5, 1]); axf.set_xticklabels(["−0.5", "0", "0.5", "1"])
+S.rule(axf, 0)
+txt(85.0, YXL, "log-odds per SD", size=6.0, ha="center")
+
+# ---- g  response null, first 11 cohorts ----------------------------------------------------
+XG = 102.0
+heading(XG - 4.0, XG, YE0 - 0.85, "g", "Response null")
+
+ns = pd.read_csv(R / "E5_icb_null_summary.csv").set_index("score")
+nd = pd.read_csv(R / "E5_icb_null_draws.csv")
+
+
+def fmtp(p, n=1000):
+    if p <= 1 / (n + 1) + 1e-9:
+        return "P ≤ 0.001"
+    return "P = " + (f"{p:#.2g}" if 0.001 <= p < 0.1 else fmt_p(p, lead=""))
+
+
+def nullpanel(ax, draws, obs, xmax, lab):
+    """Histogram of |null| with its 95th percentile (tick) and the observed |estimate| (diamonds)."""
+    a = np.abs(draws)
+    ax.hist(a, bins=np.linspace(0, xmax, 36), color=LIGHT, lw=0)
+    top = ax.get_ylim()[1]
+    ax.plot([np.quantile(a, 0.95)] * 2, [0, top * 0.9], color=GREY, lw=0.6)
+    ax.set_xlim(0, xmax); ax.set_ylim(0, top * (1.9 + 0.3 * (len(obs) - 1))); ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+    if lab:
+        ax.text(0.98, 0.06, lab, transform=ax.transAxes, fontsize=5.0, color=SLATE, va="bottom", ha="right")
+    for j, (k, v, pv) in enumerate(obs):
+        yv = top * (1.15 + 0.62 * j)
+        ax.scatter([abs(v)], [yv], s=13, marker="D", color=colof(k), ec="white", lw=0.4, zorder=3, clip_on=False)
+        ha = "right" if abs(v) > 0.55 * xmax else "left"
+        dx = -0.035 * xmax if ha == "right" else 0.035 * xmax
+        ax.text(abs(v) + dx, yv, f"{DISPN.get(k, k)}  {fmtp(pv)}", fontsize=5.0, va="center", ha=ha)
+
+
+GSETS = [("size11", "11 genes", ["CAF_ECM", "TAM_SUP"]), ("size5", "5 genes", ["SPP1_arm"]),
+         ("size3", "3 genes", ["C1Q_arm"])]
+hg = (YEB - YEA - 2 * 2.5) / 3
+rows_g = []
+for j, (col_, lab, ks) in enumerate(GSETS):
+    ax = S.ax_mm(fig, XG, YEA + j * (hg + 2.5), 34.0, hg)
+    nullpanel(ax, nd[col_].values, [(k, ns.loc[k].obs, ns.loc[k].p_emp) for k in ks], 0.3, lab)
+    ax.set_xticks([0, 0.1, 0.2, 0.3]); ax.set_xticklabels(["0", "0.1", "0.2", "0.3"] if j == 2 else [])
+    for k in ks:
+        rows_g.append(dict(score=k, set_size=col_, obs=ns.loc[k].obs, null_p95=np.quantile(np.abs(nd[col_]), 0.95),
+                           p_emp=ns.loc[k].p_emp))
+txt(XG + 17.0, YXL, "Absolute pooled log-odds per SD", size=6.0, ha="center")
+
+# ---- h  survival null, TCGA checkpoint cancer types ------------------------------------------
+XH = 143.0
+heading(XH - 4.0, XH, YE0 - 0.85, "h", "Survival null")
+
+n11 = pd.read_csv(R / "E11_null.csv"); n11 = n11[n11.model == "adjusted"].set_index("score")
+d11 = pd.read_csv(R / "E11_null_draws.csv")
+hh = (YEB - YEA - 2.5) / 2
+rows_h = []
+for j, k in enumerate(["CAF_ECM", "Immune"]):
+    ax = S.ax_mm(fig, XH, YEA + j * (hh + 2.5), 34.0, hh)
+    r = n11.loc[k]
+    nullpanel(ax, d11[f"{k}_adjusted"].values, [(k, r.b, r.P_null)], 0.2, "")
+    ax.set_xticks([0, 0.1, 0.2]); ax.set_xticklabels(["0", "0.1", "0.2"] if j == 1 else [])
+    rows_h.append(dict(score=k, obs_logHR=r.b, HR=np.exp(r.b), null_p95=np.quantile(np.abs(d11[f"{k}_adjusted"]), 0.95),
+                       P_null=r.P_null, rank=r["rank"]))
+txt(XH + 17.0, YXL, "Absolute pooled log HR per SD", size=6.0, ha="center")
+
+out = S.save(fig, "Fig5")
+pd.DataFrame(rows_e).to_csv(S.OUT / "data/fig5e_loo.csv", index=False)
+pd.DataFrame(rows_f).to_csv(S.OUT / "data/fig5f_sets.csv", index=False)
+pd.DataFrame(rows_g).to_csv(S.OUT / "data/fig5g_null.csv", index=False)
+pd.DataFrame(rows_h).to_csv(S.OUT / "data/fig5h_null.csv", index=False)
+pd.DataFrame(rows_a).to_csv(S.OUT / "data/fig5a_cells.csv", index=False)
+pd.DataFrame(rows_b).to_csv(S.OUT / "data/fig5b_cells.csv", index=False)
+pd.DataFrame([dict(score=k, prog_logHR=prog[k][0], prog_lo=prog[k][1], prog_hi=prog[k][2],
+                   resp_logOR=resp[k][0], resp_lo=resp[k][1], resp_hi=resp[k][2]) for k in prog]
+             ).to_csv(S.OUT / "data/fig5c_points.csv", index=False)
+print(out, "a ends", YA_END, "b ends", YB_END, "legend", YL)

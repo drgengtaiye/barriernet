@@ -1,0 +1,6 @@
+"id","expectation","observed","held"
+"M1","at least 10 eligible comparisons with a survival endpoint","18 (independent of the six)",TRUE
+"M2","pooled y positive with 95% CI excluding 0","+0.247 (+0.088 to +0.406)",TRUE
+"M3","pooled per-SD estimate between +0.10 and +0.30","+0.146 (+0.057 to +0.235)",TRUE
+"M4","fewer than half of eligible comparisons report a formal interaction test","1 of 18",TRUE
+"M5","signature and PD-L1 pooled y differ by less than 0.20 (comparisons reporting both)","+0.238 vs +0.164 (k = 10)",TRUE

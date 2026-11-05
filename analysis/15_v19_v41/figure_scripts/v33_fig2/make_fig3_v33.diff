@@ -1,0 +1,54 @@
+13c13
+< sys.path.insert(0, "/groups/adv2105_gp/yichen/Yi/com/gastric/2/figures/cns")
+---
+> sys.path.insert(0, "/groups/adv2105_gp/yichen/tmp/claude-3874/-groups-adv2105-gp-yichen-Yi-com-gastric-2/727be15e-8d67-407e-a66a-a54d26cc1ebb/scratchpad/v33fig/code")
+123a124,127
+> # v33: the first three locked cohorts as first analyzed (with the eight GSE26253 arrays later found to be shared with
+> # GSE62254) - the value on which the extension was decided - drawn beside the duplicate-free estimate
+> PL_OFF = pd.read_csv(S.ROOT / "analysis/results/E30_dedup_runs/off/E20_pooled.csv")
+> PL_OFF = PL_OFF[(PL_OFF.model == "unadjusted") & (PL_OFF.duplicate_rule == PRIM)]
+146c150,155
+< def pooled(setname):
+---
+> def ci2(v):
+>     """Two decimals, or three where two would print a limit of 1.00 on the other side of 1."""
+>     return f"{v:.3f}" if round(v, 2) == 1.0 and v != 1.0 else f"{v:.2f}"
+> 
+> 
+> def pooled(setname, mode=None):
+147a157
+>     T = PL_OFF if mode == "off" else PL
+149c159
+<         r = PL[(PL.set == setname) & (PL.score == sc)].iloc[0]
+---
+>         r = T[(T.set == setname) & (T.score == sc)].iloc[0]
+158c168,169
+<            ("locked (first 3), E15 reference", "Pooled, first three")),
+---
+>            [("locked (first 3), E15 reference", "Pooled, as first analyzed", "off"),
+>             ("locked (first 3), E15 reference", "Pooled, without shared patients", None)]),
+175c186,189
+<         rows.append(("pool", pl[1], "", pooled(pl[0]), y + 0.15)); y += 1.75
+---
+>         pls = pl if isinstance(pl, list) else [(pl[0], pl[1], None)]
+>         for i, (setname, lab, mode) in enumerate(pls):
+>             rows.append(("pool", lab, "", pooled(setname, mode), y + 0.15))
+>             y += 1.75
+198c212
+<             ax.text(1.04, yy - 0.05, f"{hr:.2f} ({lo:.2f}–{hi_:.2f})", transform=tr, fontsize=FS, va="bottom",
+---
+>             ax.text(1.04, yy - 0.05, f"{hr:.2f} ({ci2(lo)}–{ci2(hi_)})", transform=tr, fontsize=FS, va="bottom",
+202c216,217
+<             rec(f"d {sc} {lab}", f"{hr:.2f} ({lo:.2f}–{hi_:.2f}), {fmt_p(p)}", "E20_pooled.csv (unadjusted, primary)")
+---
+>             rec(f"d {sc} {lab}", f"{hr:.2f} ({ci2(lo)}–{ci2(hi_)}), {fmt_p(p)}",
+>                 "E30_dedup_runs/off/E20_pooled.csv (as first analyzed)" if "first analyzed" in lab else "E20_pooled.csv (unadjusted, primary)")
+245c260
+< yp3 = [yy for kind, lab, _, _, yy in rows if lab == "Pooled, first three"][0]
+---
+> yp3 = [yy for kind, lab, _, _, yy in rows if lab == "Pooled, without shared patients"][0]
+247,248c262
+< axN.annotate("", xy=(-0.97, yp3 + 0.95), xytext=(-0.97, yp3 + 0.3), xycoords=tr, textcoords=tr,
+<              arrowprops=dict(arrowstyle="-|>", lw=0.5, color=SLATE, mutation_scale=4), annotation_clip=False)
+---
+> # v33: no arrow; the row "Pooled, as first analyzed" is the result on which the extension was decided

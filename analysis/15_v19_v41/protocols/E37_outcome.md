@@ -57,3 +57,5 @@ The frozen score, developed without randomized data, predicted benefit in them a
 was no better than CD8A or than NetImmune 0.2.1 over the six comparisons; its gain was in the chemotherapy-backbone
 comparisons, where CD8A is weak, and even there it did not exceed the best single genes. Its development gain in
 single-arm cohorts (+0.03 to +0.05 log-odds over the fixed axes) did not carry into a measurable gain in the trials.
+
+Note (2026-11-01): the step-0 table of E37_export.R (78 per-cohort log-odds) was saved as results/E37_step0_reproduction.csv and later overwritten by E37_test.py, which writes a file of the same name (now the trial step 0). The export step 0 was re-run unchanged into results/E37_export_step0_rerun.csv by E37_export_step0_rerun.R: 78 values, largest difference 3.8 × 10⁻¹⁵, as reported.

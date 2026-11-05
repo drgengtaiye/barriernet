@@ -41,3 +41,5 @@ the abstracts by hand.
 Rules applied: the main text says single T-cell genes in general were not outperformed, with the Q3 count, and that
 CD8A ranked second of 13; reports the breast result in the main text; keeps the E32 SignatureSets labels as primary
 with the audit as sensitivity; puts the detectable difference and the upper limits in the abstract.
+
+Correction (2026-11-01): CD8A with CheckMate 025 on overall survival is +0.18 (file value 0.1845; the manuscript prints +0.18), not +0.19 as above.

@@ -28,4 +28,4 @@ Outputs: `results/E39_per_comparison.csv`, `E39_pooled.csv`, `E39_required.csv`,
   adds two rules: the minimum detectable difference is reported with the result, and "no meaningful difference" is
   claimed only if the 95% CI lies within ±0.10.
 
-Later-protocol tally after E39: 11 protocols, 35 of 45 expectations held.
+Later-protocol tally after E39 (before E38 and E40 were counted): 35 of 45 in the protocols then complete; with E38 and E40, 13 protocols, 39 of 52.

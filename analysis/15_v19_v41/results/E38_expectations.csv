@@ -1,0 +1,5 @@
+q,expectation,result,held
+L1,at most 3 of 52 with D1 = A,0,yes
+L2,at least 38 of 52 with D1 = D or E,45,yes
+L3,at most 12 of 52 with D2 = yes,18,no
+L4,at most 3 of 52 with D3 = yes,2,yes

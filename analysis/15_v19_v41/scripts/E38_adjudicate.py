@@ -11,11 +11,11 @@ _h = hashlib.sha256(open(f"{A}/E38_prereg.md", "rb").read()).hexdigest()
 assert _h == open(f"{A}/E38_prereg.sha256").read().split()[0], "E38 protocol hash mismatch"
 print("E38 protocol sha256 verified:", _h[:12])
 ITEMS = ["D1", "D2", "D3", "D4"]
-P1 = pd.read_csv(f"{A}/E38_pass1.csv", dtype=str).set_index("signature")
-P2 = pd.read_csv(f"{A}/E38_pass2.csv", dtype=str).set_index("signature")
+P1 = pd.read_csv(f"{A}/E38_pass1.csv", dtype=str, keep_default_na=False).set_index("signature")
+P2 = pd.read_csv(f"{A}/E38_pass2.csv", dtype=str, keep_default_na=False).set_index("signature")
 SRC = pd.read_csv(f"{A}/E38_sources.csv", dtype=str).set_index("signature")
 assert set(P1.index) == set(P2.index) == set(SRC.index) and len(SRC) == 52
-norm_ = lambda x: str(x).strip().upper().replace("N/A", "NA") if str(x).strip() else "NA"
+norm_ = lambda x: "NA" if str(x).strip().upper() in ("", "NAN", "N/A", "NA", "NONE") else str(x).strip().upper()
 for P in (P1, P2):
     for c in ITEMS:
         P[c] = P[c].map(norm_)
@@ -36,7 +36,23 @@ for c in ITEMS:
 AG = pd.DataFrame(AG); AG.to_csv(f"{O}/E38_agreement.csv", index=False); print(AG.round(3).to_string(index=False))
 
 # (signature, item) -> (value, reason); filled after reading the disagreements
-RESOLVE = {}
+RESOLVE = {
+    ("ADO_Sidders", "D2"): ("YES", "pass 1 read the full text (journal site): CD274 mRNA hazard ratio shown beside the signature; pass 2 had the abstract only"),
+    ("APM_Thompson", "D2"): ("NO", "single-gene results are cited from the authors' earlier study, not reported in this paper"),
+    ("CRMA_Shukla", "D2"): ("NO", "only the signature's own component genes are reported individually; a decomposition is not a comparison with a single-gene marker"),
+    ("CRMA_Shukla", "D4"): ("NO", "adjusted for neoantigen load, which is neither tumor mutational burden nor PD-L1 immunohistochemistry as the rubric specifies"),
+    ("ImmunoScore_Hao", "D2"): ("YES", "pass 1 read the full text (journal site): predictive power stated as comparable with expression of the immunotherapy target genes; pass 2 had the abstract only"),
+    ("MHC-II_Liu", "D2"): ("NO", "only component HLA class II genes reported individually (decomposition, as for CRMA_Shukla)"),
+    ("MHC-I_Liu", "D2"): ("NO", "only component MHC-I genes reported individually (decomposition, as for CRMA_Shukla)"),
+    ("NonResponse_Chen", "D1"): ("D", "the full text reports a test in ICB-treated bulk cohorts (no significant association), so checkpoint-outcome data exist"),
+    ("NonResponse_Chen", "D2"): ("NO", "follows D1 = D; no single-gene comparison reported"),
+    ("NonResponse_Chen", "D3"): ("NO", "follows D1 = D; no random gene sets"),
+    ("NonResponse_Chen", "D4"): ("NO", "follows D1 = D; no PD-L1 or TMB comparison"),
+    ("Response_Chen", "D1"): ("D", "as NonResponse_Chen (same paper and test)"),
+    ("Response_Chen", "D2"): ("NO", "follows D1 = D"),
+    ("Response_Chen", "D3"): ("NO", "follows D1 = D"),
+    ("Response_Chen", "D4"): ("NO", "follows D1 = D"),
+}
 
 rows, unresolved = [], []
 for s in SRC.index:
@@ -52,6 +68,7 @@ for s in SRC.index:
     r["quote_pass1"], r["quote_pass2"] = P1.loc[s, "quote_D1"], P2.loc[s, "quote_D1"]
     r["note_pass1"], r["note_pass2"] = P1.loc[s, "note"], P2.loc[s, "note"]
     r["source_pass1"], r["source_pass2"] = P1.loc[s, "source"], P2.loc[s, "source"]
+    r["abstract_only_both"] = (P1.loc[s, "source"] == "abstract_only_no_fulltext") and (P2.loc[s, "source"] == "abstract_only_no_fulltext")
     rows.append(r)
 if unresolved:
     print(f"\n{len(unresolved)} unresolved disagreements:")

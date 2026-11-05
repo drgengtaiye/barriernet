@@ -1,0 +1,5 @@
+q,expectation,result,held
+B1,"M_CD8A pooled C-for-benefit > 0.5, CI excluding 0.5",0.572 (0.476 to 0.668),False
+B2 (primary),M_2AX - M_CD8A: CI includes 0,-0.012 (-0.048 to +0.025); MDD 0.052,True
+B3,|M_CD8A_CAF - M_CD8A| < 0.02,-0.011,True
+B4,M_RISK pooled C-for-benefit CI includes 0.5,0.441 (0.232 to 0.650),True

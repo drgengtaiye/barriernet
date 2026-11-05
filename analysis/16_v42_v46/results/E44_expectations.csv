@@ -1,0 +1,5 @@
+q,expectation,result,held
+G1 (primary),"CD8A pooled log-odds > 0 with P < 0.05 (fixed effect, three cohorts)","+0.580 (+0.117 to +1.043), P = 0.014",yes
+G2,"no library signature significantly above CD8A (pooled paired difference > 0, P < 0.05)",0 above (none); 10 below,yes
+G3,Spearman correlation with the six-comparison randomized interaction > 0 with P < 0.05,0.760 (P = 6.2e-11; 52 signatures),yes
+G4,"barriernet 0.3 pooled log-odds > 0 with P < 0.05, and its paired difference from CD8A P >= 0.05","+0.672 (+0.208 to +1.136), P = 0.0045; minus CD8A -0.070 (-0.744 to +0.603), P = 0.84",yes

@@ -37,4 +37,4 @@
 ### Reading
 Single-arm validation ranks published immune signatures roughly as randomized interaction does, but it does not establish that a given signature is predictive. For these signatures the specific danger of prognostic confounding did not materialize in the control arms. The simulation's 94.9% applies to markers that are prognostic in the control arm (in the simulation, the fibroblast module made prognostic by construction), not to the immune signatures tested here. Both expectations that failed were more pessimistic about single-arm evidence than the data proved to be.
 
-Later-protocol tally after E40: 12 protocols, 36 of 48 expectations held (E38 pending).
+Later-protocol tally with E38 (3 of 4 held): 13 protocols, 39 of 52 expectations held.

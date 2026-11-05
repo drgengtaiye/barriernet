@@ -1,0 +1,14 @@
+item,key,value,check
+S26c predicted power,T_CELL,0.098,max |diff| vs file 1.4e-05
+S26c predicted power,IFN,0.2551,max |diff| vs file 1.4e-05
+S26c predicted power,APM,0.434,max |diff| vs file 1.4e-05
+S26c predicted power,TLS_B,0.3632,max |diff| vs file 1.4e-05
+signatures above the 95th percentile of random sets,IMM150,19/27,as figures/cns/v34/Fig3_numbers.md panel b
+signatures above the 95th percentile of random sets,CM025,4/52,as figures/cns/v34/Fig3_numbers.md panel b
+signatures above the 95th percentile of random sets,JR101,28/52,as figures/cns/v34/Fig3_numbers.md panel b
+signatures above the 95th percentile of random sets,ISPY2_pembro,18/52,as figures/cns/v34/Fig3_numbers.md panel b
+signatures above the 95th percentile of random sets,ISPY2_durva,4/52,as figures/cns/v34/Fig3_numbers.md panel b
+signatures above the 95th percentile of random sets,NeoTRIP,3/52,as figures/cns/v34/Fig3_numbers.md panel b
+breast detectable difference (80% power),GZMB,0.594,2.80 x median paired SE
+breast detectable difference (80% power),IDO1,0.729,2.80 x median paired SE
+breast detectable difference (80% power),CXCL10,0.709,2.80 x median paired SE

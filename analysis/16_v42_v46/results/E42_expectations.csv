@@ -1,0 +1,3 @@
+q,expectation,result,held
+A1 (primary),"conservative orientation: significantly above >= 5 of the 52, below none","above 6, below 0 of 52",True
+A2,"declared direction: significantly above >= 10 of the 52, below none","above 16, below 0 of 52",True
