@@ -1,9 +1,11 @@
 # barriernet — map of the current manuscript to scripts and outputs
 
 This file maps every table, figure panel and reported number of the current manuscript to the script that
-produces it and to that script's output file. The manuscript text is `manuscript/v46_text.py`; the built package is
-`final_v46/`. `README.md` in this folder maps the v14 paper; rows here point to it only where nothing has changed.
-Rows for E38–E40 (Fig. 2g–i) are in section 8; the later protocols E41–E44 are in sections 4, 6 and 9.
+produces it and to that script's output file. The manuscript text is `manuscript/v48_text.py`; the built package is
+`final_v48/`. `README.md` in this folder maps the v14 paper; rows here point to it only where nothing has changed.
+Rows for E38–E40 (Fig. 2g–i) are in section 8; the later protocols E41–E44 are in sections 4, 6 and 9, and E45–E46 in sections 4, 6 and 10.
+
+**Counts.** The manuscript counts 51 distinct signatures, because the rows `TIS_Damotte` and `Tcell-inflamed_Ayers` hold the same 18 genes. The result files keep all 52 rows. `A/E46_E_distinct.csv` (from `E46_distinct.py`) gives every count in the text both ways. Rows in section 4 outside the abstract, the key messages, the gastric section and section 10 give the 52-row value of the file.
 
 **Conventions**
 
@@ -12,11 +14,12 @@ Rows for E38–E40 (Fig. 2g–i) are in section 8; the later protocols E41–E44
 - Scripts are given by their repository path:
   - E23–E40 and `cmp_scores.py`: `analysis/15_v19_v41/scripts/`;
   - E41–E44: `analysis/16_v42_v46/scripts/`;
-  - protocols and outcomes: `analysis/15_v19_v41/protocols/` (E41–E44: `analysis/16_v42_v46/protocols/`);
-  - figure scripts: `analysis/15_v19_v41/figure_scripts/`, with the same layout as `final_v41/figure_scripts/`; versions v42–v46 and the current `cns_style.py`: `analysis/16_v42_v46/figure_scripts/`;
+  - E45–E46: `analysis/17_v47_v48/scripts/`;
+  - protocols and outcomes: `analysis/15_v19_v41/protocols/` (E41–E44: `analysis/16_v42_v46/protocols/`; E45–E46: `analysis/17_v47_v48/protocols/`);
+  - figure scripts: `analysis/15_v19_v41/figure_scripts/`, with the same layout as `final_v41/figure_scripts/`; versions v42–v46 and the current `cns_style.py`: `analysis/16_v42_v46/figure_scripts/`; versions v47–v48: `analysis/17_v47_v48/figure_scripts/`;
   - earlier scripts: their stage folders (`analysis/05_v14/`, `09_v15/`, `10_v16/`, `11_v17/`, `14_v18/`, …).
 - Build scripts are named by their lab path, `manuscript/<file>`. They contain the manuscript text, so they are provided
-  with the submission (package folder `build_v46/`) and are not in this repository before publication.
+  with the submission (package folder `build_v48/`) and are not in this repository before publication.
 - **How each mapping was checked.**
   - "Written by": the write call (`to_csv`, `write.csv`, `write.table`, `savez`) was found in that script.
   - "Input": the read call was found in the figure or build script.
@@ -57,6 +60,8 @@ reproduced. Running a script overwrites its `A/` outputs.
 | 18d | `E37_test.py`, then `E37_refdraws.py` | `exec` of `E34_trials.py` up to `def fit(task):` (step 0 and coverage → `E37_step0_reproduction.csv`, `E37_coverage_check.csv`); check the weights hash | `E37_frozen_weights.tsv`, `E32_primary.csv` | `E37_test_per_comparison.csv`, `E37_test_pooled.csv`, `E37_test_expectations.csv`; `E37_reference_draws.csv` |
 | 18e | `E37_panel_extra.py` (added after the test); `E37_package_check.py` | `exec` of `E34_trials.py` (`E37x_*`, `E37p_*` step-0 names); the package check imports the repository's `barriernet` 0.3.0 | `E37_frozen_weights.tsv`, `E37_test_*.csv` | `E37_panel_extra.csv`; `E37_package_check.csv` |
 | 19 | `E39_design.py`; `E40_export.R` → `E40_concordance.py` | `E39_design.py` and `E40_concordance.py` `exec` `E34_trials.py` up to `def fit(task):` | — | mapped separately (E38–E40) |
+| 20 | `E45_export.R` → `E45_select.py` → `E45_test.py` | `E45_test.py` `exec`s `E34_trials.py` up to `def fit(task):`; checks the protocol, frozen-gene and frozen-weight hashes | `E45_reference_genes.tsv`, `E32_primary.csv`, `E33_pooled.csv`, `E37_frozen_weights.tsv`, `E44_Z_*`, `E44_labels.csv`, `E44_B_per_cohort.csv` | section 10 |
+| 21 | `E46_test.py` → `E46_distinct.py`; `E46b_ispy2.py`; `E46c_pembro_pairs.py` | `exec` of `E34_trials.py` up to `def fit(task):`; each checks its protocol hash; `E46_distinct.py` fits nothing | `E32_primary.csv`, `E33_pooled.csv`, `E44_Z_*`, `E44_labels.csv`, `E44_B_per_cohort.csv`, `E46_D_ispy2_flags.csv` | section 10 |
 
 **Gastric and single-arm results used in the current text.** The upstream steps are in `README.md`:
 
@@ -79,20 +84,22 @@ The duplicate-free values are re-run by the E30–E31 scripts below:
 
 ## 2. Tables
 
-Both tables are filled by `manuscript/apply_v46.py`. Its starting document is `final_v33/BarrierNet_Manuscript.docx`.
+Both tables are filled by `manuscript/apply_v48.py`. Its starting document is `final_v33/BarrierNet_Manuscript.docx`.
 
 | Item | Columns | Script | Output read |
 |---|---|---|---|
 | Table 1, six primary rows, PRINCE and DUTRENEO | Trial, cancer, arms, endpoint, n | carried as text from v33 Table 3; built by `analysis/14_v18/make_v18_tables.py` (`TRIALS`, `trial_effect`) | n = `n_ici` / `n_ctrl` from `A/E5_trials.csv`, `A/E10_ispy2_interactions.csv`, `A/E21_interactions.csv` |
-| Table 1, same rows | Signatures scored; CD8A interaction, given as exp(∓y) | `analysis/15_v19_v41/scripts/E33_extras.py` | `A/E33_trial_table.csv` (from `E32_coverage.csv` and `E32_per_comparison.csv`) |
+| Table 1, same rows | Signatures scored (the file's count minus 1: the same 18 genes count once); CD8A interaction, given as exp(∓y) | `analysis/15_v19_v41/scripts/E33_extras.py` | `A/E33_trial_table.csv` (from `E32_coverage.csv` and `E32_per_comparison.csv`) |
 | Table 1, NeoPembrOv row | CD8A interaction | `analysis/15_v19_v41/scripts/E34_trials.py` | `A/E34_neopembrov_per_score.csv` (`kind == gene`, `CD8A`, `primary`) |
-| Table 1, NeoPembrOv row | n "32 / 21"; "52" signatures | typed in `apply_v46.py` | consistent with `analysis/15_v19_v41/protocols/E34_outcome.md` |
+| Table 1, NeoPembrOv row | n "32 / 21"; "51" signatures | typed in `apply_v48.py` | consistent with `analysis/15_v19_v41/protocols/E34_outcome.md` |
 | Table 2: ESTIMATE, TMEscore (z-mean), NetImmune, Immune axis, CAF_ECM | Six comparisons; favoring; reference P (`emp_p_declared`); minus CD8A | `analysis/15_v19_v41/scripts/E32_trials.py` | `A/E32_primary.csv` |
 | Table 2, same rows | Breast comparisons | `E33_extras.py` | `A/E33_breast_extras.csv` |
 | Table 2: barriernet 0.3 | Six and breast pools; reference P; minus CD8A | `analysis/15_v19_v41/scripts/E37_test.py` | `A/E37_test_pooled.csv` (`six (primary)`, `breast three`) |
 | Table 2: barriernet 0.3 | Comparisons favoring | `E37_test.py` | `A/E37_test_per_comparison.csv` (`BN03`, NeoPembrOv excluded) |
 | Table 2: CD8A, PRF1, NKG7, CD8B, GZMB, STAT1, CXCL13, CXCL9 | Six and breast pools; favoring | `analysis/15_v19_v41/scripts/E33_trials.py` | `A/E33_pooled.csv` (`six (primary)` and `breast three`, `kind == gene`) |
-| Table 2, single genes | Percentile among the 2,082 genes | computed in `apply_v46.py`: floor(100 × share of `all_six` genes with a lower estimate) | `A/E33_pooled.csv` |
+| Table 2: CD8A, PRF1, GZMA mean; 13 T-cell gene mean | Six and breast pools; favoring; percentile; minus CD8A | `analysis/17_v47_v48/scripts/E46_test.py` | `A/E46_A_reference_pooled.csv`, `A/E46_A_counts.csv` |
+| Table 2: CXCL10 | Minus CD8A | `analysis/17_v47_v48/scripts/E45_test.py` | `A/E45_A_counts.csv` (`CXCL10 minus CD8A`); the other columns as the single genes |
+| Table 2, single genes | Percentile among the 2,082 genes | computed in `apply_v48.py`: floor(100 × share of `all_six` genes with a lower estimate) | `A/E33_pooled.csv` |
 | Supplementary Table S24 (SI document; cited in the Table 1 footnote) | NetImmune and CAF_ECM per comparison, I-SPY2 adjusted for hormone receptor only | `analysis/14_v18/make_v18_tables.py` `table3()`; carried as v33 Table 3 → v34 Table 3 → S24 | `A/E5_trials.csv`, `A/E10_ispy2_interactions.csv`, `A/E21_interactions.csv` |
 | Supplementary Tables S22, S23 (SI document) | gastric survival; components | v33 Tables 1–2: `make_v18_tables.py` `table1_rows()` (E20 files), rows patched in `manuscript/apply_v32.py` from `manuscript/v32_fills.json` and in `apply_v33.py` | `v32_fills.json` holds typed E30 values; its writer, and the full source of S23, not established |
 
@@ -100,27 +107,29 @@ Both tables are filled by `manuscript/apply_v46.py`. Its starting document is `f
 
 ## 3. Figures
 
+**Numbering.** Figs 6 and 7 of v46 are Supplementary Figs S37 and S38 here. Rows below and in later sections that cite panels of those figures read accordingly. All v48 figure scripts are written by `analysis/17_v47_v48/figure_scripts/v48/make_v48_scripts.py` from the earlier scripts named in each heading; it removes `TIS_Damotte` so that counts are of 51 signatures.
+
 **Fig. 1** is a BioRender schematic. `analysis/15_v19_v41/figure_scripts/v33_fig1/patch_fig1_v33.py` changed
-"2,152" to "2,144" on the supplied image. The patient counts in the legend are typed: 1,828 is in `A/E32.log`; the
+"2,152" to "2,144" on the supplied image, `analysis/17_v47_v48/figure_scripts/v47/patch_fig1_v47.py` reworded panel d and `analysis/17_v47_v48/figure_scripts/v48/patch_fig1_v48.py` reworded the titles of panels b, c and d. The patient counts in the legend are typed: 1,828 is in `A/E32.log`; the
 source of the other legend counts is not established.
 
-### Fig. 2a–f: `analysis/16_v42_v46/figure_scripts/v43/make_fig2.py` (from `v42/make_fig2.py`, type one step larger; panels b–f as in `v40/make_fig2.py`; g–i in section 8)
+### Fig. 2a–f: `analysis/17_v47_v48/figure_scripts/v48/make_fig2.py` (from `v43/make_fig2.py`; panels b–f as in `v40/make_fig2.py`; g–i in section 8)
 
-Lab render: `figures/cns/v43/Fig2.png`. Numbers file: `analysis/16_v42_v46/figure_scripts/v43/Fig2_numbers.md`. Inputs of panels b–f are
+Lab render: `figures/cns/v48/Fig2.png`. Numbers file: `analysis/17_v47_v48/figure_scripts/v48/Fig2_numbers.md`. Inputs of panels b–f are
 written by `analysis/15_v19_v41/scripts/E36_sim.py`; the protocol is `analysis/15_v19_v41/protocols/E36_prereg.md`.
 
 | Panel | Content | Input |
 |---|---|---|
-| a | the three references applied to the T-cell-inflamed expression profile | `A/E32_primary.csv`; `A/E40_concordance.csv`; `A/E33_pooled_reference_estimates.npz`; `A/E33_paired.csv` |
+| a | the three references applied to the T-cell-inflamed gene list | `A/E32_primary.csv`; `A/E40_concordance.csv`; `A/E33_pooled_reference_estimates.npz`; `A/E33_paired.csv`; `A/E46_A_paired.csv` (T-cell mean) |
 | b | null and prognostic-only rejection | `A/E36_S0_S2.csv` (S0, S1) |
 | c | power, CD8A truth | `A/E36_S0_S2.csv` (S2 β 0.1–0.3) |
 | d | random-reference exceedance | `A/E36_S3.csv` |
 | e | paired test, CD8A truth | `A/E36_S4.csv` (`S4 truth CD8A`) |
 | f | paired-test power against normal theory | `A/E36_S4.csv`. The curves for SE 0.029, 0.062 and 0.076 are typed in the script: the first two are the `median_se` of T_CELL and APM in `E36_S4.csv`; 0.076 is `A/E33_expectations.csv` Q4. The predicted power, Φ(Δ/SE − 1.96), is computed in the script |
 
-### Fig. 3a–f: `analysis/16_v42_v46/figure_scripts/v43/make_fig3.py` (from `v39/make_fig2.py`, type one step larger)
+### Fig. 3a–f: `analysis/17_v47_v48/figure_scripts/v48/make_fig3.py` (from `v47/make_fig3.py`)
 
-Lab render: `figures/cns/v43/Fig3.png`. Numbers file: `analysis/16_v42_v46/figure_scripts/v43/Fig3_numbers.md`.
+Lab render: `figures/cns/v48/Fig3.png`. Numbers file: `analysis/17_v47_v48/figure_scripts/v48/Fig3_numbers.md`. Panel b also reads `A/E45_B_coexpression.csv` and `A/E46_A_counts.csv`.
 
 | Panel | Content | Input | Written by |
 |---|---|---|---|
@@ -131,9 +140,9 @@ Lab render: `figures/cns/v43/Fig3.png`. Numbers file: `analysis/16_v42_v46/figur
 | e | paired difference from CD8A; detectable-difference band | `A/E32_primary.csv`; `A/E33_expectations.csv` (Q4) | `E32_trials.py`; `analysis/15_v19_v41/scripts/E33_trials.py` |
 | f | each comparison against random sets | `A/E32_per_comparison.csv`, `A/E32_reference_draws.npz` | `E32_trials.py` |
 
-### Fig. 4a–f: `analysis/16_v42_v46/figure_scripts/v43/make_fig4.py` (from `v39/make_fig3.py`, type one step larger)
+### Fig. 4a–f: `analysis/17_v47_v48/figure_scripts/v48/make_fig4.py` (from `v43/make_fig4.py`)
 
-Lab render: `figures/cns/v43/Fig4.png`. Numbers file: `analysis/16_v42_v46/figure_scripts/v43/Fig4_numbers.md`.
+Lab render: `figures/cns/v48/Fig4.png`. Numbers file: `analysis/17_v47_v48/figure_scripts/v48/Fig4_numbers.md`. The counts of signatures above each gene are recomputed without `TIS_Damotte` from `A/E33_paired.csv` (panels b, d) and `A/E35_paired.csv` (panel f).
 
 | Panel | Content | Input | Written by |
 |---|---|---|---|
@@ -144,9 +153,9 @@ Lab render: `figures/cns/v43/Fig4.png`. Numbers file: `analysis/16_v42_v46/figur
 | e | CD8A's rank among the 13 T-cell genes | `A/E33_per_comparison.csv`; `A/E33_pooled.csv` (six, five, breast) | `E33_trials.py` |
 | f | breast: signatures above each gene; with NeoPembrOv | `A/E35_by_gene.csv` (`breast three`, `four chemotherapy-backbone`) | `analysis/15_v19_v41/scripts/E35_trials.py` |
 
-### Fig. 5a–f: `analysis/16_v42_v46/figure_scripts/v44/make_fig5.py` (from `v43/make_fig5.py`, with panel f replaced)
+### Fig. 5a–f: `analysis/17_v47_v48/figure_scripts/v48/make_fig5.py` (from `v44/make_fig5.py`)
 
-Lab render: `figures/cns/v44/Fig5.png`. Numbers file: `analysis/16_v42_v46/figure_scripts/v44/Fig5_numbers.md`.
+Lab render: `figures/cns/v48/Fig5.png`. Numbers file: `analysis/17_v47_v48/figure_scripts/v48/Fig5_numbers.md`. All counts are recomputed without `TIS_Damotte` from the input files below.
 
 | Panel | Content | Input | Written by |
 |---|---|---|---|
@@ -157,7 +166,20 @@ Lab render: `figures/cns/v44/Fig5.png`. Numbers file: `analysis/16_v42_v46/figur
 | e | before and after ESTIMATE-immune adjustment | `A/E32_primary.csv` (`est_estimate_adj`, `p_estimate_adj`) | `E32_trials.py` |
 | f | inflamed signatures in 18 published randomized trials | `A/E41_inputs.csv`; `A/E41_meta.csv` | `analysis/16_v42_v46/scripts/E41_meta.R` |
 
-### Fig. 6a–f: `analysis/16_v42_v46/figure_scripts/v43/make_fig6.py` (from `v40/make_fig6.py`, type one step larger)
+### Fig. 6a–f: `analysis/17_v47_v48/figure_scripts/v48/make_fig6.py` (from `v47/make_fig6.py`)
+
+Lab render: `figures/cns/v48/Fig6.png`. Numbers file: `analysis/17_v47_v48/figure_scripts/v48/Fig6_numbers.md`.
+
+| Panel | Content | Input | Written by |
+|---|---|---|---|
+| a | prognosis, seven and ten gastric cohorts | `A/E30_dedup_runs/primary/E20_pooled.csv` | `E30_dedup_E20.R` |
+| b | published gastric trials | `A/E44_A_gastric_trials.csv` | `E44_gastric.py` |
+| c | single-arm cohorts, pooled, adjusted and MSS/EBV-negative | `A/E44_B_per_cohort.csv`, `A/E44_B_pooled.csv`, `A/E44_B_adjusted.csv`, `A/E46_C_pooled.csv` | `E44_gastric.py`, `E46_test.py` |
+| d | responders by MSI-H or EBV-positive status | `A/E44_labels.csv` | `E44_export.R` |
+| e | adjustment for MSI-H or EBV-positive status | `A/E44_B_adjusted.csv`, `A/E32_primary.csv` | `E44_gastric.py`, `E32_trials.py` |
+| f | agreement with the randomized comparisons | `A/E44_B_pooled.csv`, `A/E32_primary.csv`, `A/E37_test_pooled.csv` | `E44_gastric.py`, `E32_trials.py`, `E37_test.py` |
+
+### Supplementary Fig. S37a–f: `analysis/16_v42_v46/figure_scripts/v43/make_fig6.py` (Fig. 6 of v46; from `v40/make_fig6.py`, type one step larger)
 
 Lab render: `figures/cns/v43/Fig6.png`. Numbers file: `analysis/16_v42_v46/figure_scripts/v43/Fig6_numbers.md`. The script imports
 `barriernet.calibrate.pool` from the repository's package.
@@ -171,7 +193,7 @@ Lab render: `figures/cns/v43/Fig6.png`. Numbers file: `analysis/16_v42_v46/figur
 | e | random reference (1,000 draws) | `A/E37_reference_draws.csv`; `A/E37_test_pooled.csv` | `analysis/15_v19_v41/scripts/E37_refdraws.py`; `E37_test.py` |
 | f | paired difference from each panel gene (added after the test) | `A/E37_panel_extra.csv` | `analysis/15_v19_v41/scripts/E37_panel_extra.py` |
 
-### Fig. 7a–h: `analysis/16_v42_v46/figure_scripts/v43/make_fig7.py` (from `v41/make_fig7.py`, type one step larger; panel c reads the duplicate-free pool)
+### Supplementary Fig. S38a–h: `analysis/16_v42_v46/figure_scripts/v43/make_fig7.py` (Fig. 7 of v46; from `v41/make_fig7.py`, type one step larger; panel c reads the duplicate-free pool)
 
 Lab render: `figures/cns/v43/Fig7.png`. The script does not write a numbers file. Its seven data tables (`analysis/16_v42_v46/figure_scripts/v43/data/`)
 are byte-identical to those of `v41/data/`.
@@ -199,22 +221,24 @@ Scripts are under `analysis/15_v19_v41/scripts/` unless another folder is given.
 | Numbers | Source file | Script |
 |---|---|---|
 | six comparisons, 1,828 patients | `A/E32.log` | `E32_trials.py` |
-| 52 signatures | `A/E32_primary.csv` | `E32_trials.py` |
-| prognostic marker: interaction 1.1%, checkpoint arm alone 94.9% | `A/E36_S0_S2.csv` (S1) | `E36_sim.py` |
-| no source paper read in full tested a treatment interaction | `A/E38_adjudicated.csv`; `E38_outcome.md` | `E38_adjudicate.py` |
-| 17 favoring; 26 above random genes; none above CD8A; CD8A +0.23 (0.05–0.40) | `A/E32_primary.csv` | `E32_trials.py` |
+| 51 distinct signatures; 16 favoring; 25 above size-matched random genes; none above CD8A | `A/E46_E_distinct.csv` (from `A/E32_primary.csv`) | `E46_distinct.py`; `E32_trials.py` |
+| none favoring with CheckMate 025 overall survival | `A/E32_pooled_all_sets.csv` | `E32_trials.py` |
+| 15 above coexpression-matched random genes | `A/E45_B_coexpression.csv`; `A/E46_E_distinct.csv` | `E45_test.py`; `E46_distinct.py` |
+| T-cell mean +0.22 (0.07–0.37); detectable difference 0.20; none above it | `A/E46_A_reference_pooled.csv`; `A/E46_A_counts.csv` | `E46_test.py` |
+| 7 above CXCL10 | `A/E45_A_paired.csv`; `A/E46_E_distinct.csv` | `E45_test.py`; `E46_distinct.py` |
 | 18 other trials: ratio of hazard ratios 0.78 (0.67–0.92) | `A/E41_meta.csv` (`primary: survival, independent of the six`, as exp(−y)) | `E41_meta.R` |
-| single-arm ranking ρ = 0.83; half of the significant signatures without a significant interaction (17 of 34) | `A/E40_concordance.csv`; log `E40_concordance.log` | `E40_concordance.py` |
-| barriernet 0.3: +0.25 (0.01–0.49), −0.005 against CD8A | `A/E37_test_pooled.csv` | `E37_test.py` |
-| barriernet 0.3 above 6 of 52; CD8A above 4 | `A/E42_counts.csv` (`six (primary)`, `conservative`) | `E42_signatures.py` |
-| 1,200–2,800 events for 0.10 per SD; 744 events in the renal trials | `A/E39_required.csv`; log `E39_design.log` | `E39_design.py` |
+| prognostic marker: interaction 1.1% | `A/E36_S0_S2.csv` (S1) | `E36_sim.py` |
+| NetImmune HR 0.70 (0.62–0.79), seven cohorts; ESTIMATE | `A/E30_dedup_runs/primary/E20_pooled.csv` (`locked 7 (primary)`, unadjusted) | `E30_dedup_E20.R` |
+| CD8A by the main rule, P = 0.22 | `A/E44_B_pooled.csv` (`cons_p`) | `E44_gastric.py` |
+| 73 MSS, EBV-negative patients: no signature significant | `A/E46_C_pooled.csv`; `A/E46_C_counts.csv` | `E46_test.py` |
+| each published trial under 50% power | `A/E44b_checks.csv` | `E44b_checks.py` |
 
 ### Key messages
 
 | Numbers | Source file | Script |
 |---|---|---|
-| four of the 52 tested in randomized data; two against random genes | `A/E38_adjudicated.csv`; `E38_outcome.md` | `E38_adjudicate.py` |
-| 18 other randomized trials; 6 of 52 and CD8A 4; about 1,200 to 2,800 events | as in the abstract | as in the abstract |
+| 7 of 51 above CXCL10; none above the T-cell mean or CD8A | as in the abstract | as in the abstract |
+| 18 other randomized trials; about 1,200 to 2,800 events | `A/E41_meta.csv`; `A/E39_required.csv`, log `E39_design.log` | `E41_meta.R`; `E39_design.py` |
 
 ### Materials and Methods
 
@@ -382,10 +406,13 @@ See section 8 (E38 and E40).
 | CD8A +0.58 (0.12 to 1.04); barriernet 0.3 +0.67 (0.21 to 1.14), fixed effect | `A/E44_B_pooled.csv` | `E44_gastric.py` |
 | barriernet 0.3 minus CD8A −0.07 (P = 0.84); none above CD8A, 10 below | `A/E44_B_paired.csv` | `E44_gastric.py` |
 | ρ = 0.76; all four expectations held | `A/E44_expectations.csv`; `A/E44b_checks.csv` | `E44_gastric.py`; `E44b_checks.py` |
-| main-text rule: P = 0.22 and 0.18; 2 of the 21 significant signatures remain | `A/E44_B_pooled.csv` (`cons_p`); `A/E44b_checks.csv` | `E44_gastric.py`; `E44b_checks.py` |
+| main-text rule: CD8A +0.65 (−0.94 to 2.24; P = 0.22), barriernet 0.3 P = 0.18, CXCL10 P = 0.12; 2 of the 51 signatures, and 20 by fixed effect | `A/E44_B_pooled.csv` (`cons_est`, `cons_p`); `A/E45_A_gastric_pooled.csv`; `A/E46_E_distinct.csv` | `E44_gastric.py`; `E45_test.py`; `E46_distinct.py` |
 | 13 of 14 MSI-H or EBV-positive patients responded, 28 of 73 others | `A/E44_labels.csv` (patient-level, not in the repository; recounted); see section 7 | `E44_export.R` |
-| adjusted: CD8A +0.81 to +0.44 (P = 0.19); signatures at P < 0.05 from 17 to 1 | `A/E44_B_adjusted.csv`; `A/E44.log` | `E44_gastric.py` |
+| adjusted: CD8A +0.81 to +0.44 (P = 0.19); signatures at P < 0.05 from 16 to 1; 45 of 51 positive | `A/E44_B_adjusted.csv`; `A/E46_E_distinct.csv` | `E44_gastric.py`; `E46_distinct.py` |
+| CXCL10 +0.89 (0.39 to 1.39); minus CD8A +0.33 (P = 0.29); adjusted +0.88 to +0.62 (P = 0.058) | `A/E45_A_gastric_pooled.csv` | `E45_test.py` |
+| 73 other patients: CD8A +0.40 (P = 0.23), T-cell mean +0.42, barriernet 0.3 +0.39, Immune axis +0.40; 45 of 51 positive, none at P < 0.05; 28 responders, 26 in one cohort | `A/E46_C_pooled.csv`; `A/E46_C_counts.csv`; `A/E46_C_per_cohort.csv` | `E46_test.py` |
 | CD8A prognostic in ten gastric survival cohorts: HR 0.90 (0.84–0.96) | `A/E44_C_prognosis.csv` | `E44_gastric.py` |
+| seven cohorts: NetImmune 0.70 (0.62–0.79), fibroblast module 1.34 (1.09–1.65), CD8A 0.88 (0.80–0.97), ESTIMATE 0.73 (0.62–0.85); ten cohorts: 0.72, 1.31, 0.90 | `A/E30_dedup_runs/primary/E20_pooled.csv` | `E30_dedup_E20.R` |
 | TMEscore minus CD8A +0.06 (P = 0.44) | `A/E44_D_tmescore.csv` | `E44_gastric.py` |
 
 ### Discussion
@@ -398,14 +425,14 @@ See section 8 (E38 and E40).
 | First ten later protocols: 43 expectations, 33 held (later tally below) | E28–E31 6 of 11 and E32 6 of 8 (`E32_outcome.md`); E33 6 of 6, E34 3 of 3, E35 3 of 3, E36 3 of 6 (`A/E33…E36_expectations.csv`); E37 2 of 2 + 4 of 4 (`A/E37_dev_expectations.csv`, `A/E37_test_expectations.csv`) | the total is not written by any script |
 | IMmotion151 823 tumors; OAK and POPLAR 891 | cited publications (refs 101, 102) | — |
 | gastric trials: each below 50% power for an interaction of CD8A's size (47%, 26%) | `A/E44b_checks.csv` | `E44b_checks.py` |
-| Limitations: 67 expectations in the seventeen later protocols, 53 held | `analysis/16_v42_v46/protocols/later_protocol_tally.md` | — |
+| Limitations: 84 expectations in the nineteen later protocols, 68 held | `analysis/17_v47_v48/protocols/later_protocol_tally.md` | — |
 | Limitations: without PRJEB25780 neither CD8A nor barriernet 0.3 was significant | `A/E44b_checks.csv` (`leave one out`) | `E44b_checks.py` |
 
 ---
 
 ## 5. Supplementary figures
 
-Each package file `final_v46/figures/supplementary/FigureS<n>.png` was matched by MD5 to its lab render (S1–S33 are also byte-identical to `final_v41/`). Figure
+Each package file `final_v48/figures/supplementary/FigureS<n>.png` was matched by MD5 to its lab render (S1–S33 are also byte-identical to `final_v41/`). Figure
 scripts are under `analysis/15_v19_v41/figure_scripts/`. The supplementary scripts take a key (`python
 make_supp_<x>.py <key>`), write `figures/cns/supp/FigS_<key>.png`, and write a numbers file
 `FigS_<key>_numbers.md` beside it.
@@ -454,17 +481,19 @@ Short names:
 | S33 | `v34/Fig6` | `v33_fig2/make_fig3_v33.py` (its diff from `make_fig3.py` is in `v33_fig2/make_fig3_v33.diff`), run on the dedup overlay, with panel e extended by `A/E32_locked_bionull.csv` / `_draws.rds` and the label "pre-specified extension" (`v34/README.md`). That edited copy is not saved, and the saved script reads neither `E32_locked_bionull` file: the exact script is not established | sources listed in `v34/Fig6_numbers.md`: (a–c) `FD/km_*.csv` → `analysis/07_figures/export_fig4_data.R`, `A/E8_univariate.csv` → E8; (d, j) E15/E20 files of the overlay → `E30_dedup_E15.R`, `E30_dedup_E20.R`, and `A/E30_dedup_runs/off/E20_pooled.csv`; (e) `A/E2_null_joint.csv` → E2, `E8_biology_null.csv` → `E8b_biology_null.R`, overlay `E20_null*.csv`, `E32_locked_bionull.*` → `E32_locked_bionull.R`, `FD/null_draws.csv` → `export_fig4_data.R`, `FD/bio_null_draws.csv` → not established; (f) `A/E1_paired_dC.csv`, `E8_h2h_TMEscore.csv`, overlay `E15_deltaC.csv`, `E20_deltaC.csv`; (g) `A/E19_*summary.csv`; (h) `A/E6_model_classes.csv`, `E6_learning_*.csv`; (i) `R1/B4_cindex.csv`, `A/E8_lrt.csv` |
 | S34 | `v44/FigS34` | `analysis/16_v42_v46/figure_scripts/v44/make_figS34.py` | `A/E32_ispy2.csv` → `E32_trials.py` (Fig. 5f until v43) |
 | S35 | `v45/FigS35` | `analysis/16_v42_v46/figure_scripts/v45/make_figS35.py` | (a) `A/E42_paired.csv` → `E42_signatures.py`; (b, c) `A/E43b_contrasts.csv` → `E43b_null.py`, `A/E43_contrasts.csv` → `E43_benefit.py` |
-| S36 | `v46/FigS36` | `analysis/16_v42_v46/figure_scripts/v46/make_figS36.py` | `A/E44_A_gastric_trials.csv`, `E44_B_per_cohort.csv`, `E44_B_pooled.csv`, `E44_B_adjusted.csv` → `E44_gastric.py`; `A/E32_primary.csv` → `E32_trials.py`; `A/E37_test_pooled.csv` → `E37_test.py` |
+| S36 | `v48/FigS36` | `analysis/17_v47_v48/figure_scripts/v48/make_figS36.py` | (a) `A/E45_single_arm_gene_pooled.csv`, `E33_pooled.csv`; (b) `A/E45_A_paired.csv`; (c) `A/E45_B_coexpression.csv`; (d) `A/E45_C_within_arm.csv`, `E45_C_pooled.csv` → `E45_select.py`, `E45_test.py`; (e) `A/E46_A_steadiness.csv`; (f) `A/E46_B_pooled.csv`, `E46_B_held_out.csv`, `E46_A_reference_pooled.csv`, `E32_primary.csv` → `E46_test.py` |
+| S37 | `v43/Fig6` | `analysis/16_v42_v46/figure_scripts/v43/make_fig6.py` | Fig. 6 of v46; see section 3 |
+| S38 | `v43/Fig7` | `analysis/16_v42_v46/figure_scripts/v43/make_fig7.py` | Fig. 7 of v46; see section 3 |
 
 ---
 
 ## 6. Workbook `BarrierNet_Supplementary_Tables.xlsx`
 
-The workbook has 174 sheets. Its README sheet names a source script for each sheet; this table restates them
+The workbook has 197 sheets. Its README sheet names a source script for each sheet; this table restates them
 with repository paths.
 
 - Sheets S1–S25 are copied from the v39 workbook.
-- Sheets S27a–j (`manuscript/make_v41_workbook.py`), S28a–i (`make_v44_workbook.py`), S29a–c and S30a–i (`make_v45_workbook.py`) and S31a–i (`make_v46_workbook.py`) are copied from the files in sections 8 and 9.
+- Sheets S27a–j (`manuscript/make_v41_workbook.py`), S28a–i (`make_v44_workbook.py`), S29a–c and S30a–i (`make_v45_workbook.py`) and S31a–i (`make_v46_workbook.py`) are copied from the files in sections 8 and 9, and S32a–l (`make_v47_workbook.py`) and S32m–w (`make_v48_workbook.py`) from the files in section 10.
 - Sheets S26a–l are added by `manuscript/make_v40_workbook.py`, which copies them from `A/E36_*` and `A/E37_*`
   without recomputing anything.
 - Tables S3, S5, S6, S10, S11 and S22–S24 are tables in the Supplementary Information document, not sheets
@@ -530,6 +559,11 @@ with repository paths.
 | S30f–S30i | absolute benefit, post hoc correction | `E43b_null.py` | `E43b_cv_null.csv`, `E43b_apparent.csv`, `E43b_pooled.csv`, `E43b_contrasts.csv` |
 | S31a–S31h | gastric and gastroesophageal cancer | `E44_gastric.py` | `E44_A_gastric_trials.csv`, `E44_B_per_cohort.csv`, `E44_B_pooled.csv`, `E44_B_paired.csv`, `E44_B_adjusted.csv`, `E44_C_prognosis.csv`, `E44_D_tmescore.csv`, `E44_expectations.csv` |
 | S31i | post hoc checks | `E44b_checks.py` | `E44b_checks.csv` |
+| S32a–S32l | reference gene from single-arm data, coexpression-matched reference, renal arms | `E45_select.py`, `E45_test.py` | `E45_single_arm_gene_pooled.csv`, `E45_reference_genes.tsv`, `E45_A_reference_pooled.csv`, `E45_A_paired.csv`, `E45_A_counts.csv`, `E45_A_gastric_pooled.csv`, `E45_B_coexpression.csv`, `E45_B_counts.csv`, `E45_C_within_arm.csv`, `E45_C_pooled.csv`, `E45_C_enrichment.csv`, `E45_expectations.csv` |
+| S32m–S32r | T-cell means, renal against breast pools, gene chosen in advance | `E46_test.py` | `E46_A_reference_pooled.csv`, `E46_A_paired.csv`, `E46_A_counts.csv`, `E46_A_steadiness.csv`, `E46_B_held_out.csv`, `E46_B_pooled.csv` |
+| S32s–S32t | MSS, EBV-negative gastric patients | `E46_test.py` | `E46_C_per_cohort.csv`, `E46_C_pooled.csv` |
+| S32u | I-SPY2 expression checks | `E46_test.py`, `E46b_ispy2.py`, `E46c_pembro_pairs.py` | `E46_D_ispy2_twins.csv`, `E46b_ispy2.csv`, `E46c_pembro_pairs.csv`, `E46c_sensitivity.csv` |
+| S32v–S32w | counts as 52 rows and as 51 distinct signatures; expectations | `E46_distinct.py`, `E46_test.py` | `E46_E_distinct.csv`, `E46_expectations.csv` |
 
 ---
 
@@ -591,3 +625,38 @@ not in the repository; the extraction tables are provided with the submission.
 | addendum to the seventeenth (post hoc, descriptive) | `E44b_prereg.md`, `.sha256` | `E44b_checks.py` | `E44b_checks.csv`, `E44b.log` |
 | Tally: seventeen later protocols, 67 expectations, 53 held | `later_protocol_tally.md` | — | — |
 | Manuscript, SI, cover letter | — | `manuscript/make_v46_text.py` → `v46_text.py` → `apply_v46.py`, `apply_v46_si.py`, `make_v46_workbook.py`, `make_v46_package.py`, `scrub_v46_metadata.py` (provided with the submission) | `final_v46/` (not in the repository) |
+
+---
+
+## 10. Additions in v47–v48
+
+v47 gave the paper two parts (framework and randomized comparisons, then gastric cancer), with a new Fig. 6. v48 counts 51 distinct signatures, adds the simple T-cell mean as a reference and corrects the empirical P equation to the one-sided form that `E32_trials.py` computes. The protocols below were written after the tag v0.3.0 release. Their outputs in `A/` are not in the repository, apart from the expectation tables and the frozen reference gene (`analysis/17_v47_v48/results/`). The results are in the workbook, sheet S32. `A/E45_single_arm_genes*` and the other patient-level exports are not in the repository.
+
+| Protocol | Files in `analysis/17_v47_v48/protocols/` | Scripts in `analysis/17_v47_v48/scripts/` | Output (`A/`) |
+|---|---|---|---|
+| eighteenth: reference gene from single-arm data, coexpression-matched reference, renal arms | `E45_prereg.md`, `.sha256`, `E45_frozen.sha256`, `E45_outcome.md` | `E45_export.R`, `E45_select.py`, `E45_test.py` | `E45_single_arm_gene_pooled.csv`, `E45_reference_genes.tsv`, `E45_A_*.csv`, `E45_B_*.csv`, `E45_C_*.csv`, `E45_expectations.csv`, `E45_test.log` |
+| nineteenth: T-cell means, gene chosen in advance, MSS/EBV-negative gastric patients, I-SPY2 controls, distinct counts | `E46_prereg.md`, `.sha256`, `E46_outcome.md` | `E46_test.py`, `E46_distinct.py` | `E46_A_*.csv`, `E46_B_*.csv`, `E46_C_*.csv`, `E46_D_*.csv`, `E46_E_distinct.csv`, `E46_expectations.csv`, `E46_test.log` |
+| addendum: is the I-SPY2 flag a shared-patient signal (post hoc, no expectations) | `E46b_addendum.md`, `.sha256` | `E46b_ispy2.py` | `E46b_ispy2.csv`, `E46b_ispy2.log` |
+| addendum: near-identical samples inside the I-SPY2 pembrolizumab comparison (post hoc, no expectations) | `E46c_addendum.md`, `.sha256` | `E46c_pembro_pairs.py` | `E46c_pembro_pairs.csv`, `E46c_sensitivity.csv` |
+| Tally: nineteen later protocols, 84 expectations, 68 held | `later_protocol_tally.md` | — | — |
+| Manuscript, SI, cover letter | — | `manuscript/make_v48_text.py` → `v48_text.py` → `apply_v48.py`, `apply_v48_si.py`, `make_v48_workbook.py`, `make_v48_package.py`, `scrub_v48_metadata.py` (provided with the submission) | `final_v48/` |
+
+**Numbers new in the text of v47 and v48**
+
+| Numbers | Source file | Script |
+|---|---|---|
+| 14 of 26 scored in all six; 2 of 25 not scored in IMmotion150; 18 of 19 inflamed positive | `A/E46_E_distinct.csv` | `E46_distinct.py` |
+| 25 above size-matched (14 inflamed, 11 other); 27 with audited directions; 11 of 25 not nominal | `A/E46_E_distinct.csv`; `A/E33_Q7_audited_directions.csv` | `E46_distinct.py`; `E33_trials.py` |
+| coexpression-matched: 15 (9 inflamed, 6 other), references centered at −0.02, 10 lost, none gained | `A/E45_B_coexpression.csv`; `A/E46_E_distinct.csv` | `E45_test.py`; `E46_distinct.py` |
+| CXCL10: +0.47 (0.26 to 0.68) in 1,996 eligible genes; CD8A 19th, +0.35 | `A/E45_single_arm_gene_pooled.csv` | `E45_select.py` |
+| CXCL10 in the randomized comparisons: +0.17; minus CD8A −0.13; renal +0.11, breast +0.45; above 7, 11, 0; below 2, 1, 9 | `A/E45_A_reference_pooled.csv`; `A/E45_A_counts.csv`; `A/E46_E_distinct.csv` | `E45_test.py`; `E46_distinct.py` |
+| three-gene mean +0.22 (0.07 to 0.37), renal +0.24, breast +0.18; 0 above, 16 below; detectable 0.20 | `A/E46_A_reference_pooled.csv`; `A/E46_A_counts.csv` | `E46_test.py` |
+| 13-gene mean +0.18 (0.04 to 0.32); one above (+0.06, P = 0.046), 11 below | `A/E46_A_reference_pooled.csv`; `A/E46_A_counts.csv`; `A/E46_A_paired.csv` | `E46_test.py` |
+| breast comparisons: 1 above and 3 below the three-gene mean; 7 above the 13-gene mean; 6 above CD8A | `A/E46_A_counts.csv`; `A/E46_E_distinct.csv` | `E46_test.py`; `E46_distinct.py` |
+| renal against breast: median 0.14 (panel genes), 0.09 (inflamed signatures), P = 0.27; 0.06 for each mean | `A/E46_A_steadiness.csv`; `A/E46_test.log` | `E46_test.py` |
+| gene chosen in advance: +0.19 (0.04 to 0.34) against +0.28; chosen genes; −0.02 and −0.01 against the mean and the gene list | `A/E46_B_pooled.csv`; `A/E46_B_held_out.csv` | `E46_test.py` |
+| I-SPY2: 15 of 29 flagged; 32 of 71 treated flagged; best correlation 0.60; duplicates at least 0.91; three pairs inside the pembrolizumab comparison | `A/E46_D_ispy2_twins.csv`; `A/E46b_ispy2.csv`; `A/E46c_pembro_pairs.csv`; `A/E46c_sensitivity.csv` | `E46_test.py`; `E46b_ispy2.py`; `E46c_pembro_pairs.py` |
+| renal arms: CD8A slopes by arm; control-arm pool; angiogenesis score | `A/E45_C_within_arm.csv`; `A/E45_C_pooled.csv` | `E45_test.py` |
+| Spearman ρ of random-gene significance with set size 0.41 on 51 signatures | recomputed from `A/E32_primary.csv` and `A/E32_coverage.csv` in `figure_scripts/v48/make_fig5.py` | `E32_trials.py` |
+| sensitivity sets on 51: 19 and 2; 17 and 1; 13 and 1; 22 and 1 | `A/E46_E_distinct.csv` | `E46_distinct.py` |
+| barriernet 0.3 minus the three-gene mean +0.006 (P = 0.89) | `A/E46_A_paired.csv` | `E46_test.py` |

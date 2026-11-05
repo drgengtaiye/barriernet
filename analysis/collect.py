@@ -105,11 +105,15 @@ MANIFEST = {
     "15_v19_v41/figures": [f"{G}/2/figures/cns/cns_style.py", f"{G}/figstyle.py"],
     # later protocols of the current manuscript (v46). The build scripts hold the manuscript text, so they go with the
     # submission and are not copied here before publication.
-    "16_v42_v46/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256")) and 41 <= enum(f) <= 44)
-                            + [f"{G}/2/analysis/later_protocol_tally.md"],
+    "16_v42_v46/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256")) and 41 <= enum(f) <= 44),
     "16_v42_v46/scripts": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".py", ".R")) and 41 <= enum(f) <= 44),
     "16_v42_v46/results": [f"{G}/2/analysis/results/E{n}_expectations.csv" for n in (41, 42, 43, 44)],
     "16_v42_v46/figure_scripts": [f"{G}/2/final_v46/figure_scripts/cns_style.py"],
+    # later protocols of the current manuscript (v48)
+    "17_v47_v48/protocols": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".md", ".sha256")) and 45 <= enum(f) <= 46)
+                            + [f"{G}/2/analysis/later_protocol_tally.md"],
+    "17_v47_v48/scripts": sorted(f for f in glob.glob(f"{G}/2/analysis/E*") if f.endswith((".py", ".R")) and 45 <= enum(f) <= 46),
+    "17_v47_v48/results": [f"{G}/2/analysis/results/E{n}_expectations.csv" for n in (45, 46)] + [f"{G}/2/analysis/results/E45_reference_genes.tsv"],
     # kept for provenance, not used for any v14 number
     "99_superseded": [f"{G}/revision/scripts/A1_ici_roc.R",          # read the stale PRJEB25780 score file
                       f"{G}/revision/scripts/v2_random_logrank.R",   # new gene set per cohort; replaced by E2
@@ -121,6 +125,7 @@ MANIFEST = {
 
 # whole trees (figure scripts of several versions share file names, so their folders are kept)
 TREES = {**{f"16_v42_v46/figure_scripts/v{v}": f"{G}/2/final_v46/figure_scripts/v{v}" for v in (42, 43, 44, 45, 46)},
+         **{f"17_v47_v48/figure_scripts/v{v}": f"{G}/2/final_v48/figure_scripts/v{v}" for v in (47, 48)},
          "15_v19_v41/figure_scripts": f"{G}/2/final_v41/figure_scripts",
          "15_v19_v41/E24_archived": f"{G}/2/final_v41/analysis_E24_archived"}   # the earlier unreported analysis declared in the fifth protocol
 

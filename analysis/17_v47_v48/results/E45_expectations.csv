@@ -1,0 +1,9 @@
+q,expectation,result,held
+A1,G1 has a positive pooled interaction in the six comparisons,"CXCL10 +0.171 (-0.044 to +0.386), P = 0.0957",yes
+A2,at most 2 of the 52 signatures are significantly above G1,"8.0 above, 2.0 below",no
+A4,G1 has a positive pooled log-odds in the three gastroesophageal cohorts (fixed effect),"+0.887 (+0.387 to +1.386), P = 0.0005",yes
+B1,fewer than 26 of the 52 exceed the coexpression-matched reference,16 of 52,yes
+B2,at least 5 of the 20 inflamed signatures still exceed it,10 of 20,yes
+C1,CD8A has a negative pooled control-arm slope over the three renal comparisons,"-0.065 (-0.292 to +0.162), P = 0.344",yes
+C2,the Angio score has a negative pooled interaction in the three renal comparisons,"-0.267 (-0.560 to +0.026), P = 0.0594",yes
+C3,"TUMOR-VASCULATURE-UP_Lu genes enriched among control-favoring (P < 0.05), not among checkpoint-favoring","control OR 6.64, P = 0.0182; checkpoint OR 1.79, P = 0.45",yes

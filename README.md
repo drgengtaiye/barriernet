@@ -14,7 +14,8 @@ checkpoint-inhibitor trials*.
 | `analysis/15_v19_v41/protocols/` | the later analysis protocols with their SHA-256 hashes and outcomes, the frozen barriernet 0.3 weights' hash, and the **analysis plan for the controlled-access randomized trials** (`E37_registration.md` and `E37_registration_addendum.md`) |
 | `analysis/` | every analysis and figure script behind the manuscript, grouped by stage |
 | `analysis/16_v42_v46/` | the protocols with their hashes, outcomes, scripts and figure scripts added after the v0.3.0 release (published randomized trials, barriernet 0.3 against each signature, absolute benefit, gastric and gastroesophageal cancer) |
-| `analysis/README_v46_map.md` | **the map from each table, figure panel and reported number of the current manuscript to the script that produces it** (`analysis/README.md`: the earlier version) |
+| `analysis/17_v47_v48/` | the protocols with their hashes, outcomes, scripts and figure scripts of the current manuscript (a reference gene chosen in single-arm data, a coexpression-matched random reference, simple T-cell means, the MSS/EBV-negative gastric patients) |
+| `analysis/README_v48_map.md` | **the map from each table, figure panel and reported number of the current manuscript to the script that produces it** (`analysis/README.md`: the earlier version) |
 
 ## The score
 

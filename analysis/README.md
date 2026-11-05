@@ -1,6 +1,6 @@
 # barriernet — analysis code map
 
-**The current manuscript (calibration framework, randomized comparisons, barriernet 0.3, source-paper review) is mapped in [`README_v46_map.md`](README_v46_map.md): run order, Tables 1–2, every panel of Figs 2–7, the reported numbers, the supplementary figures and the workbook sheets, with the few items whose script could not be recovered listed at its end. Its scripts, protocols and outcomes are in `15_v19_v41/`. The map below covers the earlier (v14) version of the manuscript.**
+**The current manuscript (calibration framework, randomized comparisons, barriernet 0.3, source-paper review) is mapped in [`README_v48_map.md`](README_v48_map.md): run order, Tables 1–2, every panel of Figs 2–6 and Supplementary Figs S36–S38, the reported numbers, the supplementary figures and the workbook sheets, with the few items whose script could not be recovered listed at its end. Its scripts, protocols and outcomes are in `15_v19_v41/`. The map below covers the earlier (v14) version of the manuscript.**
 
 Every script the manuscript depends on, grouped by stage, with the run order and the map from each
 table, figure and reported number to the script that writes it. `python collect.py` re-copies the

@@ -1,0 +1,16 @@
+# E46 outcome
+
+Protocol E46_prereg.md (hash fcf577dd..., logged 2026-11-05T19:53:14Z); addendum E46b_addendum.md (hash 58541fdf..., logged 19:58:32Z, written after part D was seen). Results: results/E46_*.csv, E46b_ispy2.csv.
+
+Eight of nine expectations held. D1 failed by the rule and is reported as failed.
+
+- A. Three-gene mean (CD8A, PRF1, GZMA): +0.221 (0.068 to 0.373; P = 0.014), rank 25 of 2,082, renal +0.239, breast +0.179. Of 51 distinct signatures, 0 above, 16 below; median detectable difference 0.199. Minus CD8A +0.003 (P = 0.91), minus CXCL10 +0.119 (P = 0.052). 13-gene mean: +0.180 (0.040 to 0.319; P = 0.020), renal +0.187, breast +0.129; 1 above (Teff_McDermott, +0.06, P = 0.046), 11 below. In the breast pool: three-gene mean 1 above, 3 below; 13-gene mean 7 above.
+- A, steadiness. Median |renal - breast|: 25 panel genes 0.136, 19 inflamed signatures 0.085 (Mann-Whitney P = 0.27, not significant); 0.059 for each mean; CD8A 0.209, CXCL10 0.344, T-cell-inflamed list 0.026.
+- B. Gene chosen on five comparisons, tested on the sixth: +0.190 (0.040 to 0.341; P = 0.023) against an apparent best of +0.282 (CXCL13). Chosen genes: STAT1, CXCL13, CXCL13, CXCL13, LAG3, STAT1. Minus three-gene mean -0.024 (P = 0.67); minus T-cell-inflamed list -0.012 (P = 0.81). Within the 13 T-cell genes: +0.154 against +0.229; minus three-gene mean -0.067 (P = 0.044).
+- C. 73 MSS, EBV-negative gastric patients, 28 responders (PRJEB25780 33 with 2 responders; PRJEB60680 40 with 26): CD8A +0.400 (-0.245 to 1.045; P = 0.225); three-gene mean +0.418 (P = 0.20); barriernet 0.3 +0.388 (P = 0.23); Immune +0.404 (P = 0.22); CXCL13 +0.688 (P = 0.060); CXCL10 +0.563 (P = 0.061). 45 of 51 positive, 0 at P < 0.05 by fixed effect, by the main-text rule, or in PRJEB60680 alone.
+- D. The E37 rule flagged 15 of 29 ISPY2_durva controls (0 in the reverse direction). Addendum E46b: the flag rate among durvalumab-olaparib-treated patients, who cannot be patients of the pembrolizumab comparison, was 32 of 71; 41 of 47 flags pointed to one sample; the best gene-centered correlation between controls was 0.605 (0.617 for treated patients), against 0.915 or more for a simulated duplicate, all of which were detected. No shared control. The rule's flag came from one sample correlating with many. Removing the 15 changed nothing (CD8A +0.230, three-gene mean +0.222, T-cell-inflamed list +0.206).
+- E. Distinct counts: results/E46_E_distinct.csv. The two rows of the same 18 genes have identical estimates in the six comparisons.
+
+E46b_ispy2.py was rerun once after its first run: reading flag identifiers as integers gave zero flag rates, and a view of the diagonal overwritten before it was summarized gave the positive control a value of -2. The protocol was not changed.
+
+E46c addendum (hash 1a1afded..., logged 2026-11-05T20:31:32Z), prompted by the independent fact-check: inside ISPY2_pembro three pairs of controls correlate above 0.8 on gene-centered profiles (255577-934906 0.869; 491526-495440 0.827; 495440-703401 0.812). The top pair are the arrays with the largest deviations (SD 1.77 and 1.60; median 0.69). Expression alone cannot show these are the same patient. Removing 495440, 703401 and 934906: CD8A +0.227, three-gene mean +0.221, T-cell-inflamed list +0.205.

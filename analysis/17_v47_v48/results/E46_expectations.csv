@@ -1,0 +1,10 @@
+id,expectation,held,result
+A1,R3 favors the checkpoint arm in the six comparisons at P < 0.05,True,"+0.221, P 0.014"
+A2,at most 2 of the 51 distinct signatures significantly above R3,True,"0 above, 16 below"
+A3,R3 larger breast and smaller renal interaction than CD8A,True,breast +0.179 vs +0.060; renal +0.239 vs +0.269
+A4,median D of inflamed signatures below that of panel genes,True,0.085 vs 0.136; Mann-Whitney P 0.265
+B1,held-out interaction of the gene chosen in advance below the apparent best,True,+0.190 vs +0.282
+B2,gene chosen in advance does not significantly exceed R3,True,"-0.024, P 0.672"
+C1,"CD8A positive fixed-effect log-odds in the 73 patients, P >= 0.05",True,"+0.400, P 0.225"
+C2,fewer than 5 of 51 distinct signatures at P < 0.05 by fixed effect in the 73,True,0
+D1,no I-SPY2 control flagged as shared,False,15 flagged
