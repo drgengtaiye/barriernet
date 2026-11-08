@@ -184,3 +184,11 @@ def test_job_runs_in_its_own_process_and_cancels():
     assert B["pooled"].set_index("score").loc["IFN_Ayers", "est"] == B["pooled"].set_index("score").loc["IFN_Ayers", "est"]
     k = Job(dict(spec, n_random=500, n_boot=300)); time.sleep(3); k.cancel()
     assert k.done(); k.cleanup()
+
+
+def test_precomputed_demonstration():
+    from barriernet.demo import DEMO_SETTINGS, precomputed_benchmark
+    B = precomputed_benchmark()
+    st = B["settings"].iloc[0]
+    assert int(st.n_random) == DEMO_SETTINGS["n_random"] and int(st.n_boot) == DEMO_SETTINGS["n_boot"]
+    assert B["pooled"].query("kind == 'signature'").est.notna().sum() == 51 and len(B["summary"]) == 11

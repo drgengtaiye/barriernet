@@ -1,0 +1,12 @@
+test	nominal	fdr	of
+favor the checkpoint arm	20	17	51
+favor the control arm	1	1	51
+beyond size-matched random genes	22	21	51
+above T-cell mean (13 genes)	1	0	51
+below T-cell mean (13 genes)	25	17	51
+above T-cell mean (CD8A, PRF1, GZMA)	0	0	51
+below T-cell mean (CD8A, PRF1, GZMA)	22	17	51
+above CD8A	0	0	51
+below CD8A	6	1	51
+above CXCL10	1	0	51
+below CXCL10	4	1	51

@@ -1,0 +1,52 @@
+signature	family	direction	published_engine	pmid	n_genes
+ADO_Sidders	Confounder	-1	GSVA	31953314	14
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	8
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	18
+Bcell_Budczies	Other	1	GSVA	33520406	8
+Bcell_Helmink	Other	1	GSVA	31942075	66
+Blood_Friedlander	Other	1	GSVA	28807052	15
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	58
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	21
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	23
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	34
+CIN25_Carter	Confounder	-1	GSVA	16921376	25
+CIN70_Carter	Confounder	-1	GSVA	16921376	70
+CRMA_Shukla	Other	-1	GSVA	29656892	5
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	5
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	7
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	12
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	12
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	18
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	10
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	6
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	28
+IMS_Cui	Other	1	GSVA	33542239	18
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	17
+IRG_Yang	Other	1	Weighted Mean	31741756	11
+ImmuneCells_Xiong	Other	1	GSVA	33033253	108
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	41
+ImmunoScore_Hao	Other	1	GSVA	29661778	76
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	27
+KDM5A_Wang	Other	1	GSVA	32908002	8
+M1_Hwang	Other	1	ssGSEA	31959763	13
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	13
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	8
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	45
+Macrophage_Danaher	Other	1	GSVA	28239471	4
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	6
+NonResponse_Chen	Other	-1	GSVA	32907939	258
+PDL1_Nishino	Other	1	GSVA	28653677/30127393	3
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	263
+Response_Chen	Other	1	GSVA	32907939	436
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	39
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	19
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	9
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	29
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	107
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	18
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	8
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	5
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	12
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	17
+peri-Tcell_Hwang	Other	1	ssGSEA	31959763	3
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	10

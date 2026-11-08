@@ -1,6 +1,6 @@
-# barriernet v0.4.0
+# barriernet v0.4.1
 
-> 0.4.0 adds the analyses of a benchmark of published immune signatures in randomized checkpoint-inhibitor trials:
+> 0.4.1 puts the web app in the browser at https://drgengtaiye.github.io/barriernet/ (CHANGELOG.md). 0.4.0 adds the analyses of a benchmark of published immune signatures in randomized checkpoint-inhibitor trials:
 > `barriernet benchmark` (51 published signatures against simple T-cell scores, single genes and random genes),
 > `singlearm`, `published` (pooling published subgroup hazard ratios), `design` (events needed), an HTML/PDF report and
 > a web app (`barriernet app`); see sections 5 and 6 and CHANGELOG.md. 0.3.0 added the barriernet 0.3 weighted score and
@@ -198,6 +198,9 @@ write_report("out", benchmark=B, published=pool_published(example_table()))
 ```
 
 ### 6) Web app
+
+The app runs in the browser at https://drgengtaiye.github.io/barriernet/, with nothing to install; there the benchmark shows a demonstration
+computed in advance and runs your own data in the page, more slowly than on a computer. To run it locally:
 
 ```bash
 pip install 'barriernet[app]'

@@ -4,6 +4,11 @@ A Shiny for Python app (`app.py`) for the analyses of barriernet 0.4: the benchm
 randomized trials (synthetic demonstration or your own trials), single-arm cohorts, pooling of published subgroup
 results with an editable table, the trial-design calculator and the signature library. No R packages are used.
 
+It runs in the browser at https://drgengtaiye.github.io/barriernet/ (built by `.github/workflows/pages.yml` with Shinylive, Python compiled
+to WebAssembly). There nothing leaves the visitor's computer; a browser has no worker processes, so the benchmark shows
+a demonstration computed in advance at once and runs uploaded data in the page on one core, with at most 200 random sets
+and 100 resamples.
+
 Run it on your computer from this folder:
 
 ```bash

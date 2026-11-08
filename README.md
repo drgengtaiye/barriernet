@@ -3,16 +3,16 @@
 Marker-level Barrier / Immune / NetImmune scoring for spatial, single-cell, bulk and protein data, a framework that
 calibrates predictive claims for expression scores in randomized trials (`barriernet calibrate`), the benchmark of
 published immune signatures against simple T-cell scores with a web app (`barriernet benchmark`, `barriernet app`,
-from version 0.4.0), and the analysis code behind the manuscript *Benchmarking published immune signatures against
+from version 0.4.0; in the browser at https://drgengtaiye.github.io/barriernet/), and the analysis code behind the manuscript *Benchmarking published immune signatures against
 simple T-cell scores in randomized checkpoint-inhibitor trials*.
 
 ## What is here
 
 | Path | Contents |
 |---|---|
-| `barriernet/` | the Python package, version 0.4.0 (see `barriernet/CHANGELOG.md`): the library of 51 published signatures, the benchmark against T-cell references, single genes and random genes, single-arm cohorts, pooling of published subgroup results, trial design, an HTML/PDF report and the web app; the frozen barriernet 0.3 weights and the calibration framework of 0.3.0; 0.2.1 corrected the Visium neighborhood of 0.2.0, and every spatial result in the paper was computed on the corrected lattice |
-| `barriernet/shiny_app/` | the web app (`app.py`, Shiny for Python), its requirements and `make_bundle.sh`, which makes a self-contained folder for Shiny Server |
-| `barriernet-0.4.0-py3-none-any.whl`, `barriernet_0.4.0.zip` | built wheel and source archive of 0.4.0 (0.3.0 and 0.2.1 kept beside them) |
+| `barriernet/` | the Python package, version 0.4.1 (see `barriernet/CHANGELOG.md`): the library of 51 published signatures, the benchmark against T-cell references, single genes and random genes, single-arm cohorts, pooling of published subgroup results, trial design, an HTML/PDF report and the web app; the frozen barriernet 0.3 weights and the calibration framework of 0.3.0; 0.2.1 corrected the Visium neighborhood of 0.2.0, and every spatial result in the paper was computed on the corrected lattice |
+| `barriernet/shiny_app/` | the web app (`app.py`, Shiny for Python), its requirements and `make_bundle.sh`, which makes a self-contained folder for Shiny Server; the same app runs in the browser at https://drgengtaiye.github.io/barriernet/ (`.github/workflows/pages.yml`) |
+| `barriernet-0.4.1-py3-none-any.whl`, `barriernet_0.4.1.zip` | built wheel and source archive of 0.4.1 (0.4.0, 0.3.0 and 0.2.1 kept beside them) |
 | `analysis/15_v19_v41/protocols/` | the later analysis protocols with their SHA-256 hashes and outcomes, the frozen barriernet 0.3 weights' hash, and the **analysis plan for the controlled-access randomized trials** (`E37_registration.md` and `E37_registration_addendum.md`) |
 | `analysis/` | every analysis and figure script behind the manuscript, grouped by stage |
 | `analysis/16_v42_v46/` | the protocols with their hashes, outcomes, scripts and figure scripts added after the v0.3.0 release (published randomized trials, barriernet 0.3 against each signature, absolute benefit, gastric and gastroesophageal cancer) |

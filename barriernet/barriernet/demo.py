@@ -65,3 +65,29 @@ def demo_cohorts(seed: int = 2, sizes=(48, 60, 72, 40, 110, 56, 90, 64)) -> List
         lp = -0.9 + 0.45 * T
         out.append(Cohort(f"Synthetic cohort {i + 1}", Z, (rng.random(n) < 1 / (1 + np.exp(-lp))).astype(float)))
     return out
+
+
+DEMO_SETTINGS = dict(n_random=1000, n_boot=300, seed=0)
+
+
+def precomputed_benchmark() -> dict:
+    """The benchmark of the synthetic trials computed in advance with DEMO_SETTINGS (data/demo_benchmark/), so that a
+    page can show it at once; ``write_demo_benchmark`` recomputes it."""
+    from importlib import resources
+    out = {}
+    base = resources.files("barriernet").joinpath("data/demo_benchmark")
+    for k in ("per_trial", "pooled", "paired", "summary", "meta", "settings"):
+        with base.joinpath(f"benchmark_{k}.tsv").open("r", encoding="utf-8") as fh:
+            out[k] = pd.read_csv(fh, sep="\t", dtype={"pmid": str} if k == "meta" else None, keep_default_na=True)
+    out["summary"]["fdr"] = out["summary"]["fdr"].astype(float)
+    return out
+
+
+def write_demo_benchmark(folder, n_jobs: int = 1) -> None:
+    """Recompute the precomputed demonstration (used when the package is built)."""
+    import pathlib
+    from .benchmark import benchmark
+    folder = pathlib.Path(folder); folder.mkdir(parents=True, exist_ok=True)
+    B = benchmark(demo_trials(), n_jobs=n_jobs, **DEMO_SETTINGS)
+    for k, df in B.items():
+        df.to_csv(folder / f"benchmark_{k}.tsv", sep="\t", index=False)

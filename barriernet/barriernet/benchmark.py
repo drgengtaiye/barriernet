@@ -7,7 +7,10 @@ Benjamini-Hochberg correction within each family of tests over the signatures. A
 scored in at least ``min_trials`` comparisons (default: 60% of them, at least two; four of six in the manuscript)."""
 from __future__ import annotations
 import math
-import multiprocessing as mp
+try:
+    import multiprocessing as mp
+except ImportError:                  # e.g. Python in a web browser (Pyodide)
+    mp = None
 import os
 from typing import Callable, Dict, Optional, Sequence
 import numpy as np
@@ -32,7 +35,7 @@ def _ref_task(args):
 
 def _map(fn, items, n_jobs, say, label):
     items = list(items); out = []
-    if n_jobs > 1 and len(items) > 1 and "fork" in mp.get_all_start_methods():
+    if n_jobs > 1 and len(items) > 1 and mp is not None and "fork" in mp.get_all_start_methods():
         with mp.get_context("fork").Pool(n_jobs) as P:
             for i, r in enumerate(P.imap(fn, items, chunksize=1)):
                 out.append(r); say(label, i + 1, len(items))

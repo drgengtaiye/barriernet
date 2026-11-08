@@ -1,0 +1,2 @@
+trials	min_trials	n_random	n_boot	seed	boot_seed	main_reference
+6	4	1000	300	0	1000	T-cell mean (13 genes)

@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import pathlib
 import shutil
+import sys
 import tempfile
 import zipfile
 import numpy as np
@@ -26,12 +27,16 @@ def _env_int(name: str, default: int) -> int:
         return default
 
 
+# In a web browser (Shinylive, Python compiled to WebAssembly) there are no worker processes: the benchmark runs in
+# the page, one core, so its limits are lower.
+IN_BROWSER = sys.platform == "emscripten" or os.environ.get("BARRIERNET_BROWSER_MODE") == "1"
 # Limits for a shared server; each can be changed with an environment variable.
 CPU = os.cpu_count() or 2
-MAX_WORKERS = max(1, _env_int("BARRIERNET_MAX_WORKERS", max(1, min(4, CPU - 1))))   # worker processes per benchmark
+MAX_WORKERS = 1 if IN_BROWSER else max(1, _env_int("BARRIERNET_MAX_WORKERS", max(1, min(4, CPU - 1))))   # per benchmark
 MAX_JOBS = max(1, _env_int("BARRIERNET_MAX_JOBS", 1))                              # benchmarks running at once
-MAX_RANDOM = max(0, _env_int("BARRIERNET_MAX_RANDOM", 1000))
-MAX_BOOT = max(20, _env_int("BARRIERNET_MAX_BOOT", 300))
+MAX_RANDOM = max(0, _env_int("BARRIERNET_MAX_RANDOM", 200 if IN_BROWSER else 1000))
+MAX_BOOT = max(20, _env_int("BARRIERNET_MAX_BOOT", 100 if IN_BROWSER else 300))
+DEFAULT_RUN = 50 if IN_BROWSER else 200
 MAX_UPLOAD_MB = max(1, _env_int("BARRIERNET_MAX_UPLOAD_MB", 200))
 JOBS = MAX_WORKERS
 _ACTIVE: set = set()                                                                 # benchmarks running in this process
@@ -51,18 +56,24 @@ body{font-family:-apple-system,Helvetica,Arial,sans-serif}
 
 def _sidebar_bm():
     return ui.sidebar(
-        ui.input_radio_buttons("bm_src", "Randomized trials", {"demo": "Synthetic demonstration (not patient data)", "zip": "Upload a zip"}),
+        ui.input_radio_buttons("bm_src", "Randomized trials", {"pre": "Synthetic demonstration, computed in advance",
+                                                               "demo": "Synthetic demonstration, run now", "zip": "Upload a zip"}),
+        ui.p("The synthetic trials are simulated, not patient data. Computed in advance: 1,000 random gene sets and 300 resamples, "
+             "shown at once.", class_="bn-note"),
         ui.panel_conditional("input.bm_src === 'zip'",
                              ui.input_file("bm_zip", "Zip with trials.yaml and the tables it names", accept=[".zip"]),
                              ui.p("Same YAML layout as the command line (README, 'benchmark').", class_="bn-note")),
         ui.input_file("bm_sigs", "Your signatures (optional)", accept=[".tsv", ".csv", ".txt"]),
         ui.p("Long table: signature, gene, and optionally weight, direction (1 or -1), family.", class_="bn-note"),
-        ui.input_numeric("bm_nrand", "Random gene sets per signature", min(200, MAX_RANDOM), min=0, max=MAX_RANDOM, step=100),
-        ui.input_numeric("bm_nboot", "Patient resamples per trial", min(200, MAX_BOOT), min=20, max=MAX_BOOT, step=50),
+        ui.input_numeric("bm_nrand", "Random gene sets per signature", min(DEFAULT_RUN, MAX_RANDOM), min=0, max=MAX_RANDOM, step=50),
+        ui.input_numeric("bm_nboot", "Patient resamples per trial", min(DEFAULT_RUN, MAX_BOOT), min=20, max=MAX_BOOT, step=50),
         ui.input_numeric("bm_seed", "Seed", 0),
-        ui.input_numeric("bm_jobs", "Worker processes", JOBS, min=1, max=MAX_WORKERS),
+        None if IN_BROWSER else ui.input_numeric("bm_jobs", "Worker processes", JOBS, min=1, max=MAX_WORKERS),
         ui.input_action_button("bm_run", "Run the benchmark", class_="btn-primary"),
-        ui.p("The manuscript used 1,000 random sets and 300 resamples; fewer run faster with more Monte Carlo error.", class_="bn-note mt-2"),
+        ui.p("The manuscript used 1,000 random sets and 300 resamples; fewer run faster with more Monte Carlo error." +
+             (" This page runs Python inside your browser: nothing you upload leaves your computer, and a benchmark run here "
+              "uses one core, so it takes several minutes even with the small settings shown." if IN_BROWSER else ""),
+             class_="bn-note mt-2"),
         width=330)
 
 
@@ -213,7 +224,11 @@ def server(input, output, session):
             _ACTIVE.discard(j)
         if len(_ACTIVE) >= MAX_JOBS:
             ui.notification_show("Another benchmark is running on this server. Please try again in a few minutes.", type="warning"); return
-        synthetic = input.bm_src() == "demo"; z = _opt(input, "bm_zip"); sg = _opt(input, "bm_sigs")
+        src = input.bm_src()
+        if src == "pre":
+            from .demo import precomputed_benchmark
+            bm.set(dict(B=precomputed_benchmark(), synthetic=True, pre=True)); return
+        synthetic = src == "demo"; z = _opt(input, "bm_zip"); sg = _opt(input, "bm_sigs")
         if not synthetic and not z:
             ui.notification_show("Upload a zip first.", type="warning"); return
         if _too_big((z if not synthetic else None) or []) or _too_big(sg or []):
@@ -221,8 +236,26 @@ def server(input, output, session):
         spec = dict(source="demo" if synthetic else "zip", zip=z[0]["datapath"] if z and not synthetic else None,
                     signatures=sg[0]["datapath"] if sg else None, n_random=_clamp(input.bm_nrand(), 0, MAX_RANDOM, 200),
                     n_boot=_clamp(input.bm_nboot(), 20, MAX_BOOT, 200), seed=_clamp(input.bm_seed(), 0, 2 ** 31 - 1, 0),
-                    n_jobs=_clamp(input.bm_jobs(), 1, MAX_WORKERS, 1),
+                    n_jobs=_clamp(_opt(input, "bm_jobs"), 1, MAX_WORKERS, 1),
                     synthetic=synthetic)
+        if IN_BROWSER:                                        # no subprocesses here: run in the page
+            with ui.Progress(min=0, max=1) as p:
+                p.set(0.05, message="Running in your browser", detail="this takes several minutes")
+                try:
+                    from .library import combine
+                    lib = load_library()
+                    if spec["signatures"]:
+                        lib = combine(lib, read_signature_table(spec["signatures"]))
+                    if synthetic:
+                        from .demo import demo_trials
+                        trials = demo_trials()
+                    else:
+                        from .bundle import load_trials_zip
+                        trials, _ = load_trials_zip(spec["zip"])
+                    B = benchmark(trials, library=lib, n_random=spec["n_random"], n_boot=spec["n_boot"], seed=spec["seed"], n_jobs=1)
+                except Exception as e:
+                    ui.notification_show(f"The benchmark failed: {e}", type="error", duration=None); return
+            bm.set(dict(B=B, synthetic=synthetic)); return
         from .jobs import Job
         j = Job(spec); _ACTIVE.add(j); _mine.clear(); _mine.append(j)
         bm.set(None); prog.set(("starting", 0, 1)); job.set(j)
@@ -262,9 +295,11 @@ def server(input, output, session):
     def bm_text():
         v = bm()
         if v is None:
-            return None if job() is not None else ui.p("Choose the data and press Run. With the settings shown, the synthetic "
-                                                       "demonstration takes a few minutes.", class_="bn-note")
+            return None if job() is not None else ui.p("Choose the data and press Run. The demonstration computed in advance "
+                                                       "appears at once; running it now takes a few minutes.", class_="bn-note")
         out = [ui.p(benchmark_text(v["B"]))]
+        if v.get("pre"):
+            out.insert(0, ui.p("Computed in advance with 1,000 random gene sets and 300 resamples.", class_="bn-note"))
         if v["synthetic"]:
             out.insert(0, ui.p("Synthetic demonstration: simulated trials, not patient data.", class_="bn-note bn-synthetic"))
         return ui.div(*out)

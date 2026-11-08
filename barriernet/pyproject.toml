@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "barriernet"
-version = "0.4.0"
+version = "0.4.1"
 description = "Benchmarking published immune signatures against simple T-cell scores in randomized checkpoint-inhibitor trials; Barrier/NetImmune scoring and Visium ring/peak summaries."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -32,4 +32,4 @@ barriernet = "barriernet.cli:main"
 packages = ["barriernet"]
 
 [tool.setuptools.package-data]
-barriernet = ["data/*.yaml", "data/*.tsv", "data/*.txt"]
+barriernet = ["data/*.yaml", "data/*.tsv", "data/*.txt", "data/demo_benchmark/*.tsv"]

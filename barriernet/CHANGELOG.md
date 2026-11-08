@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.1 (2026-11-08)
+
+### Added
+- The web app also runs inside a web browser (Shinylive, Python compiled to WebAssembly) and is published on GitHub
+  Pages at https://drgengtaiye.github.io/barriernet/; nothing a visitor uploads leaves their computer. A browser has no worker processes, so there the
+  benchmark runs in the page on one core with lower limits (200 random sets, 100 resamples).
+- A synthetic demonstration computed in advance (1,000 random sets, 300 resamples; `data/demo_benchmark/`,
+  `demo.precomputed_benchmark`), shown at once in the app.
+- `.github/workflows/pages.yml` builds the browser version with Shinylive and deploys it to GitHub Pages.
+
+### Changed
+- `multiprocessing` is optional; `shiny_app/make_bundle.sh` no longer needs rsync.
+
 ## 0.4.0 (2026-11-08)
 
 ### Added

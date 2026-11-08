@@ -6,5 +6,7 @@ out="${1:?usage: make_bundle.sh OUTPUT_FOLDER}"
 mkdir -p "$out"
 cp "$here/app.py" "$here/requirements.txt" "$here/README.md" "$out/"
 cp "$here/../../LICENSE" "$out/LICENSE"
-rsync -a --delete --exclude '__pycache__' "$here/../barriernet/" "$out/barriernet/"
+rm -rf "$out/barriernet"
+cp -R "$here/../barriernet" "$out/barriernet"
+find "$out/barriernet" -name __pycache__ -prune -exec rm -rf {} +
 echo "bundle written to $out"

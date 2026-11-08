@@ -1,0 +1,47 @@
+name: Web app on GitHub Pages
+
+# Builds the barriernet web app with Shinylive (Python compiled to WebAssembly, run in the visitor's browser) and
+# deploys it to GitHub Pages.
+on:
+  push:
+    branches: [main]
+    paths: ["barriernet/barriernet/**", "barriernet/shiny_app/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Shinylive
+        run: python -m pip install shinylive==0.8.13
+      - name: Export the app
+        run: |
+          barriernet/shiny_app/make_bundle.sh bundle
+          rm bundle/README.md bundle/LICENSE
+          shinylive export bundle site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
