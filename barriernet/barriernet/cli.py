@@ -42,12 +42,9 @@ def cmd_bulk(args) -> int:
     print(f"[barriernet bulk] wrote outputs to: {out}")
     return 0
 
-def cmd_calibrate(args) -> int:
-    """Calibrate scores over randomized trials described in a YAML file (see README, 'calibrate')."""
-    import yaml
-    from .calibrate import Trial, calibrate
-    out = _ensure_out(args.out)
-    cfg = yaml.safe_load(open(args.config))
+def _load_trials(cfg):
+    """Trials from the YAML layout of 'calibrate' (see README)."""
+    from .calibrate import Trial
     trials = []
     for t in cfg["trials"]:
         expr, _ = load_expr_matrix(t["expr"], gene_col=t.get("gene_col"), orientation=t.get("orientation", "auto"))
@@ -65,6 +62,38 @@ def cmd_calibrate(args) -> int:
                             event=c[t["event_col"]].to_numpy(int) if t.get("event_col") else None,
                             response=c[t["response_col"]].to_numpy(float) if t.get("response_col") else None,
                             covariates=c[cov].to_numpy(float) if cov else None))
+    return trials
+
+
+def _load_cohorts(cfg):
+    """Single-arm cohorts: name, expr, clinical, sample_col, response_col (1 = responder), optional covariates."""
+    from .singlearm import Cohort
+    out = []
+    for t in cfg["cohorts"]:
+        expr, _ = load_expr_matrix(t["expr"], gene_col=t.get("gene_col"), orientation=t.get("orientation", "auto"))
+        if t.get("log2p1"):
+            expr = np.log2(expr.clip(lower=0) + 1)
+        clin = read_table(t["clinical"]).set_index(t.get("sample_col", "sample_id"))
+        ids = [i for i in expr.index if i in clin.index and pd.notna(clin.loc[i, t["response_col"]])]
+        X = expr.loc[ids].T; X = X[X.std(axis=1) > 0]; Z = X.sub(X.mean(axis=1), axis=0).div(X.std(axis=1), axis=0)
+        cov = t.get("covariates") or []
+        out.append(Cohort(t["name"], Z, clin.loc[ids, t["response_col"]].to_numpy(float), clin.loc[ids, cov].to_numpy(float) if cov else None))
+    return out
+
+
+def _save(res: dict, out: Path, prefix: str) -> None:
+    for k, df in res.items():
+        if isinstance(df, pd.DataFrame):
+            df.to_csv(out / f"{prefix}_{k}.tsv", sep="\t", index=False)
+
+
+def cmd_calibrate(args) -> int:
+    """Calibrate scores over randomized trials described in a YAML file (see README, 'calibrate')."""
+    import yaml
+    from .calibrate import calibrate
+    out = _ensure_out(args.out)
+    cfg = yaml.safe_load(open(args.config))
+    trials = _load_trials(cfg)
     gs = load_yaml(default_yaml("rna")); wt = load_weights(cfg.get("weights"))
     scores = {"barriernet03": wt["weights"]}
     net = {g: 0.25 / len(gs.modules[m]) for m in ("APM", "IFN", "TLS_B", "T_CELL") for g in gs.modules[m]}
@@ -72,9 +101,8 @@ def cmd_calibrate(args) -> int:
     scores["NetImmune"] = net
     for nm, w in (cfg.get("scores") or {}).items():
         scores[nm] = {str(k).upper(): float(v) for k, v in w.items()}
-    genes = cfg.get("genes") or ["CD8A", "CD8B", "CD3D", "CD3E", "CD3G", "CD2", "CD247", "GZMA", "GZMB", "GZMH", "GZMK",
-                                 "PRF1", "NKG7", "IFNG", "CXCL9", "CXCL10", "CXCL11", "CXCL13", "CCR5", "STAT1", "IDO1",
-                                 "CD274", "PDCD1", "LAG3", "TIGIT", "CTLA4", "HAVCR2"]
+    from .library import PANEL_GENES
+    genes = cfg.get("genes") or list(PANEL_GENES)
     res = calibrate(trials, scores, genes, n_random=int(cfg.get("n_random", 1000)), n_boot=int(cfg.get("n_boot", 300)),
                     seed=int(cfg.get("seed", 0)))
     for k, df in res.items():
@@ -82,6 +110,159 @@ def cmd_calibrate(args) -> int:
     print(res["pooled"].round(3).to_string(index=False))
     print(f"[barriernet calibrate] wrote outputs to: {out}")
     return 0
+
+
+# ------------------------------------------------------------------ 0.4: the manuscript's analyses
+def _progress(stage, i, n):
+    if n and (i == n or i % max(1, n // 10) == 0):
+        print(f"  {stage}: {i}/{n}", flush=True)
+
+
+def cmd_library(args) -> int:
+    from .library import load_library
+    L = load_library(distinct=not args.all); L.to_csv(args.out, sep="\t", index=False)
+    print(f"[barriernet library] {L.signature.nunique()} signatures, {len(L)} gene rows -> {args.out}"); return 0
+
+
+def cmd_benchmark(args) -> int:
+    import yaml
+    from .benchmark import benchmark
+    from .library import combine, load_library, read_signature_table
+    out = _ensure_out(args.out); cfg = yaml.safe_load(open(args.config)); trials = _load_trials(cfg)
+    lib = load_library()
+    if args.signatures:
+        U = read_signature_table(args.signatures); lib = U if args.only_user else combine(lib, U)
+    B = benchmark(trials, library=lib, n_random=args.n_random, n_boot=args.n_boot, seed=args.seed, boot_seed=args.boot_seed,
+                  min_trials=args.min_trials, n_jobs=args.jobs, progress=_progress)
+    _save(B, out, "benchmark"); print(B["summary"].to_string(index=False))
+    if not args.no_report:
+        from .report import write_report
+        r = write_report(out, benchmark=B, title="Benchmark of published signatures"); print(f"[barriernet benchmark] report: {r['html']}")
+    print(f"[barriernet benchmark] wrote outputs to: {out}"); return 0
+
+
+def cmd_singlearm(args) -> int:
+    import yaml
+    from .library import load_library, read_signature_table, reference_weights, signature_weights
+    from .singlearm import concordance, single_arm
+    out = _ensure_out(args.out); cfg = yaml.safe_load(open(args.config)); cohorts = _load_cohorts(cfg)
+    lib = read_signature_table(args.signatures) if args.signatures else load_library()
+    scores = {**signature_weights(lib), **reference_weights()}
+    S = single_arm(cohorts, scores, min_cohorts=args.min_cohorts); _save(S, out, "singlearm")
+    conc = None
+    if args.randomized:
+        conc = concordance(S["pooled"], pd.read_csv(args.randomized, sep=None, engine="python"))
+        conc["table"].to_csv(out / "singlearm_concordance.tsv", sep="\t", index=False)
+        print(f"Spearman with the randomized interaction: {conc['rho']:.3f} over {conc['n']} scores")
+    print(S["pooled"].sort_values("est", ascending=False).head(20).round(3).to_string(index=False))
+    if not args.no_report:
+        from .report import write_report
+        write_report(out, single_arm=S, concordance=conc, title="Single-arm cohorts")
+    print(f"[barriernet singlearm] wrote outputs to: {out}"); return 0
+
+
+def _published_rows(res):
+    return pd.DataFrame([dict(analysis=k, **{c: v.get(c) for c in ("k", "est", "lo", "hi", "p", "tau2", "I2", "pi_lo", "pi_hi", "t", "trials")})
+                         for k, v in res.items() if isinstance(v, dict)])
+
+
+def cmd_published(args) -> int:
+    from .published import example_table, pool_published
+    out = _ensure_out(args.out)
+    T = example_table() if args.example else pd.read_csv(args.table, sep=None, engine="python")
+    res = pool_published(T); A = _published_rows(res); A.to_csv(out / "published_analyses.tsv", sep="\t", index=False)
+    res["per_trial"].to_csv(out / "published_per_trial.tsv", sep="\t", index=False)
+    print(A.drop(columns=["trials"]).round(4).to_string(index=False))
+    if not args.no_report:
+        from .report import write_report
+        write_report(out, published=res, title="Published randomized trials")
+    print(f"[barriernet published] wrote outputs to: {out}"); return 0
+
+
+def cmd_design(args) -> int:
+    from .design import curve, detectable_difference, events_needed, power
+    rows = []
+    for r in args.rho:
+        for d in args.delta:
+            row = dict(rho=r, delta=d, events_needed=events_needed(d, r, args.allocation, args.power, args.alpha, args.inflation))
+            if args.events:
+                row.update(events=args.events, power_at_events=power(args.events, d, r, args.allocation, args.alpha, args.inflation),
+                           detectable_at_events=detectable_difference(args.events, r, args.allocation, args.power, args.alpha, args.inflation))
+            rows.append(row)
+    T = pd.DataFrame(rows); print(T.round(3).to_string(index=False))
+    if args.out:
+        out = _ensure_out(args.out); T.to_csv(out / "design_table.tsv", sep="\t", index=False)
+        C = curve(deltas=tuple(args.delta), allocation=args.allocation, power_=args.power, alpha=args.alpha, inflation=args.inflation)
+        C.to_csv(out / "design_curve.tsv", sep="\t", index=False)
+        if not args.no_report:
+            from .report import write_report
+            write_report(out, design=C, design_marks={f"r = {r:g}": r for r in args.rho}, title="Trial design")
+        print(f"[barriernet design] wrote outputs to: {out}")
+    return 0
+
+
+def cmd_report(args) -> int:
+    """Rebuild report.html and report.pdf from the tables written by the other commands in one folder."""
+    from .report import write_report
+    d = Path(args.dir)
+
+    def rd(n):
+        return pd.read_csv(d / n, sep="\t") if (d / n).exists() else None
+    B = None
+    if (d / "benchmark_pooled.tsv").exists():
+        B = {k: rd(f"benchmark_{k}.tsv") for k in ("per_trial", "pooled", "paired", "summary", "meta", "settings")}
+        B["paired"] = B["paired"] if B["paired"] is not None else pd.DataFrame()
+    S = {k: rd(f"singlearm_{k}.tsv") for k in ("per_cohort", "pooled")} if (d / "singlearm_pooled.tsv").exists() else None
+    conc = None
+    if (d / "singlearm_concordance.tsv").exists():
+        from scipy.stats import spearmanr
+        T = rd("singlearm_concordance.tsv"); r = spearmanr(T.interaction, T.single_arm)
+        conc = dict(rho=float(r[0]), p=float(r[1]), n=len(T), table=T)
+    pub = None
+    if (d / "published_per_trial.tsv").exists():
+        I = rd("published_per_trial.tsv"); A = rd("published_analyses.tsv")
+        pub = {r.analysis: r.dropna().to_dict() for _, r in A.iterrows()}; pub["per_trial"] = I
+    C = rd("design_curve.tsv")
+    r = write_report(d, benchmark=B, single_arm=S, concordance=conc, published=pub, design=C, title=args.title)
+    print(f"[barriernet report] {r['html']} and {r['pdf']}"); return 0
+
+
+def cmd_demo(args) -> int:
+    """Every analysis on synthetic data (not patient data), with the report."""
+    from .benchmark import benchmark
+    from .demo import demo_cohorts, demo_trials
+    from .design import curve
+    from .library import load_library, reference_weights, signature_weights
+    from .published import example_table, pool_published
+    from .report import write_report
+    from .singlearm import concordance, single_arm
+    out = _ensure_out(args.out); n_r, n_b = (100, 100) if args.quick else (1000, 300)
+    print("synthetic randomized trials ...")
+    B = benchmark(demo_trials(), n_random=n_r, n_boot=n_b, n_jobs=args.jobs, progress=_progress); _save(B, out, "benchmark")
+    print("synthetic single-arm cohorts ...")
+    S = single_arm(demo_cohorts(), {**signature_weights(load_library()), **reference_weights()}); _save(S, out, "singlearm")
+    conc = concordance(S["pooled"], B["pooled"]); conc["table"].to_csv(out / "singlearm_concordance.tsv", sep="\t", index=False)
+    pub = pool_published(example_table()); _published_rows(pub).to_csv(out / "published_analyses.tsv", sep="\t", index=False)
+    pub["per_trial"].to_csv(out / "published_per_trial.tsv", sep="\t", index=False)
+    C = curve(); C.to_csv(out / "design_curve.tsv", sep="\t", index=False)
+    r = write_report(out, benchmark=B, single_arm=S, concordance=conc, published=pub, design=C,
+                     design_marks={"r = 0.55": 0.55, "r = 0.81": 0.81, "r = 0.84": 0.84}, title="barriernet demonstration",
+                     note="The randomized trials and single-arm cohorts here are synthetic, simulated with a known interaction on a T-cell "
+                          "programme; they are not patient data. The published-trials section uses subgroup results extracted from "
+                          "published reports; check them against the sources before relying on them.")
+    print(B["summary"].to_string(index=False)); print(f"[barriernet demo] report: {r['html']}"); return 0
+
+
+def cmd_app(args) -> int:
+    try:
+        import shiny  # noqa: F401
+    except ImportError:
+        raise SystemExit("the web app needs Shiny for Python: pip install 'barriernet[app]'")
+    import uvicorn
+    from .app import app
+    print(f"barriernet app on http://{args.host}:{args.port}")
+    uvicorn.run(app, host=args.host, port=args.port, log_level="warning"); return 0
+
 
 def cmd_ihc(args) -> int:
     out = _ensure_out(args.out)
@@ -191,7 +372,7 @@ def _spatial_args(p):
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="barriernet",
-        description="Barrier/NetImmune portable scoring (bulk, IHC/IF) + Visium spatial ring/peak summaries."
+        description="Benchmarking immune signatures in randomized checkpoint trials; Barrier/NetImmune scoring (bulk, IHC/IF) and Visium ring/peak summaries."
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
@@ -213,6 +394,72 @@ def build_parser() -> argparse.ArgumentParser:
     p_cal.add_argument("--config", required=True, help="YAML listing the trials (expression, clinical table, columns).")
     p_cal.add_argument("--out", required=True)
     p_cal.set_defaults(func=cmd_calibrate)
+
+    p_lib = sub.add_parser("library", help="Export the bundled library of published immune signatures (genes, weights, family, direction).")
+    p_lib.add_argument("--out", required=True)
+    p_lib.add_argument("--all", action="store_true", help="Keep TIS_Damotte, a duplicate of Tcell-inflamed_Ayers.")
+    p_lib.set_defaults(func=cmd_library)
+
+    p_bm = sub.add_parser("benchmark", help="Benchmark the published signatures (and your own) in randomized trials against "
+                                            "T-cell references, random genes and single genes.")
+    p_bm.add_argument("--config", required=True, help="YAML listing the trials (same layout as 'calibrate').")
+    p_bm.add_argument("--signatures", help="Your signatures as a long table: signature, gene, optional weight, direction, family.")
+    p_bm.add_argument("--only-user", action="store_true", help="Benchmark only the signatures in --signatures.")
+    p_bm.add_argument("--n-random", type=int, default=1000)
+    p_bm.add_argument("--n-boot", type=int, default=300)
+    p_bm.add_argument("--seed", type=int, default=0)
+    p_bm.add_argument("--boot-seed", type=int, default=None)
+    p_bm.add_argument("--min-trials", type=int, default=None, help="Pool a signature scored in at least this many trials (default 60%%, at least 2).")
+    p_bm.add_argument("--jobs", type=int, default=1, help="Worker processes (-1: all cores).")
+    p_bm.add_argument("--no-report", action="store_true")
+    p_bm.add_argument("--out", required=True)
+    p_bm.set_defaults(func=cmd_benchmark)
+
+    p_sa = sub.add_parser("singlearm", help="Single-arm checkpoint cohorts: pooled log-odds of response per SD and agreement with "
+                                            "the randomized interaction.")
+    p_sa.add_argument("--config", required=True, help="YAML listing the cohorts (name, expr, clinical, sample_col, response_col).")
+    p_sa.add_argument("--signatures")
+    p_sa.add_argument("--min-cohorts", type=int, default=None)
+    p_sa.add_argument("--randomized", help="benchmark_pooled.tsv from 'benchmark', for the concordance.")
+    p_sa.add_argument("--no-report", action="store_true")
+    p_sa.add_argument("--out", required=True)
+    p_sa.set_defaults(func=cmd_singlearm)
+
+    p_pub = sub.add_parser("published", help="Pool published subgroup hazard ratios (signature high and low) of randomized trials.")
+    g3 = p_pub.add_mutually_exclusive_group(required=True)
+    g3.add_argument("--table", help="One row per trial: trial, endpoint, hr_high, lo_high, hi_high, hr_low, lo_low, hi_low, ...")
+    g3.add_argument("--example", action="store_true", help="The 19 comparisons extracted from published reports for the manuscript.")
+    p_pub.add_argument("--no-report", action="store_true")
+    p_pub.add_argument("--out", required=True)
+    p_pub.set_defaults(func=cmd_published)
+
+    p_des = sub.add_parser("design", help="Events needed to tell two correlated scores apart in a randomized trial.")
+    p_des.add_argument("--delta", type=float, nargs="+", default=[0.10], help="Difference in interaction per SD.")
+    p_des.add_argument("--rho", type=float, nargs="+", default=[0.55, 0.81, 0.84], help="Correlation of the two scores.")
+    p_des.add_argument("--allocation", type=float, default=0.5)
+    p_des.add_argument("--power", type=float, default=0.8)
+    p_des.add_argument("--alpha", type=float, default=0.05)
+    p_des.add_argument("--inflation", type=float, default=1.0)
+    p_des.add_argument("--events", type=float, default=None, help="Also give power and detectable difference at this many events.")
+    p_des.add_argument("--no-report", action="store_true")
+    p_des.add_argument("--out", default=None)
+    p_des.set_defaults(func=cmd_design)
+
+    p_rep = sub.add_parser("report", help="Rebuild report.html and report.pdf from the tables in a results folder.")
+    p_rep.add_argument("--dir", required=True)
+    p_rep.add_argument("--title", default="barriernet report")
+    p_rep.set_defaults(func=cmd_report)
+
+    p_demo = sub.add_parser("demo", help="Run every analysis on synthetic data and write the report.")
+    p_demo.add_argument("--out", required=True)
+    p_demo.add_argument("--quick", action="store_true", help="100 random draws and 100 resamples.")
+    p_demo.add_argument("--jobs", type=int, default=1)
+    p_demo.set_defaults(func=cmd_demo)
+
+    p_app = sub.add_parser("app", help="Open the web app (Shiny for Python).")
+    p_app.add_argument("--host", default="127.0.0.1")
+    p_app.add_argument("--port", type=int, default=8000)
+    p_app.set_defaults(func=cmd_app)
 
     p_ihc = sub.add_parser("ihc", help="Compute Barrier/NetImmune axes from IHC/IF/protein panel table.")
     p_ihc.add_argument("--table", required=True, help="Long table with marker columns + sample_id column (ROI/cell rows allowed).")

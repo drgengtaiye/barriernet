@@ -1,0 +1,2113 @@
+signature	family	direction	published_engine	pmid	gene	weight	duplicate_of
+ADO_Sidders	Confounder	-1	GSVA	31953314	PPARG	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	CYBB	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	COL3A1	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	FOXP3	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	LAG3	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	APP	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	CD81	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	GPI	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	PTGS2	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	CASP1	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	FOS	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	MAPK1	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	MAPK3	1.0	
+ADO_Sidders	Confounder	-1	GSVA	31953314	CREB1	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	B2M	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	CALR	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	NLRC5	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	PSMB9	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	PSME1	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	PSME3	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	RFX5	1.0	
+APM_Thompson	Inflamed/IFN	1	GSVA	33028693	HSP90AB1	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB5	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB6	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB7	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB8	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB9	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PSMB10	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	TAP1	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	TAP2	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	ERAP1	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	ERAP2	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	CANX	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	CALR	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	PDIA3	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	TAPBP	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	B2M	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	HLA-A	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	HLA-B	1.0	
+APM_Wang	Inflamed/IFN	1	GSVA	31767055	HLA-C	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	BLK	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	CD19	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	FCRL2	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	MS4A1	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	TNFRSF17	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	TCL1A	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	SPIB	1.0	
+Bcell_Budczies	Other	1	GSVA	33520406	PNOC	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	RASGEF1B	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CD83	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	DNAJB14	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CCR7	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	IQCN	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	REL	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	HSPH1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	KDM6B	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	BTG1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	BCL11A	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	NR4A2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CEMIP2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	C9orf72	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	DDX27	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	LY9	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	NR4A1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	PER1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ARHGAP24	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	NR4A3	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	SKIL	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ZNF331	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	GPR183	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CXCR4	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	PRDM2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TUBA1A	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	MS4A1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ARRDC2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	PRMT9	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ZFP36L2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	RUBCNL	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	NFKBID	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	FCMR	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	AREG	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	USP36	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	RANBP2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	BORCS5	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CHD1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TENT5C	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	DNAJA1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	SLC2A3	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	EZR	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CALM2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	RGPD5	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	VPS37B	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TGIF1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CREM	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	YPEL5	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	BANK1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	HERPUD1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	JUND	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TSC22D2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ZNF141	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	WDR45B	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TRA2A	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CKS2	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	CD69	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	DDX3Y	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	SMCHD1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	WDR74	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	SIGLEC14	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ALG13	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	ZNF165	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	TUBA1C	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	DNAJB1	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	SDCBP	1.0	
+Bcell_Helmink	Other	1	GSVA	31942075	RILPL2	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	ADAM17	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	CDK2	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	CDKN2A	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	DPP4	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	ERBB2	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	HLA-DRA	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	ICOS	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	ITGA4	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	LARGE1	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	MYC	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	NAB2	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	NRAS	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	RHOC	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	TGFB1	1.0	
+Blood_Friedlander	Other	1	GSVA	28807052	TIMP1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	TNXB	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	DPT	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	GPM6B	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MFAP4	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	DCN	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FBLN5	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	JAM2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MYH11	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ABI3BP	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	RECK	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	PDGFRA	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	LAMA2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	CCN1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FGF2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL4A6	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	DDR2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ECM2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL14A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	A2M	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL4A3	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FBLN1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ITGA9	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL4A4	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	CCN2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FLRT2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	TLL1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	LAMC3	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MFAP5	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MMP11	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ADAMTS14	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	SERPINH1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL10A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL11A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MMP1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL1A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	LOXL2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MMP9	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ACAN	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	SPP1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FAP	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ADAM8	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL5A2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	TIMP1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MMP12	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ITGAX	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL5A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL7A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL5A3	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	TGFBI	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COMP	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	MFAP2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	VCAN	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL1A2	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	COL3A1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	SULF1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	POSTN	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	FN1	1.0	
+C-ECM_Chakravarthy	Confounder	-1	ssGSEA	30410077	ADAM12	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CCL5	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD2	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD247	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD3E	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD4	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD53	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD86	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CD8A	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	CXCL9	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	DOCK2	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	GBP2	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	GZMK	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	IL10RA	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	IL2RB	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	IRF1	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	LAPTM5	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	LCP1	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	PTPRC	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	SLC7A7	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	STAT1	1.0	
+CCL5-CXCL9_Dangaj	Inflamed/IFN	1	GSVA	31185212	TNFRSF9	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	ENTPD1	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	B2M	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	CD2	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	CD247	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	CD96	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	CXCL13	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	CXCR6	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	GNLY	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	GZMA	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	HCST	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	HLA-B	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	IKZF3	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	ITGAL	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	KLRB1	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	KLRC1	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	LCK	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	LSP1	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	PDCD1	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	PTPN22	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	TNIP3	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	TRAV12-3	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	TRBV4-2	1.0	
+CD39-CD8Tcell_Chow	Inflamed/IFN	-1	GSVA	36574773	ZNF683	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	IL7R	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	GPR183	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	LMNA	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	NR4A3	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	TCF7	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	MGAT4A	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	CD55	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	CRYBG1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	PER1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	FOSL2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	EGR1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	TSPYL2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	YPEL5	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	CSRNP1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	REL	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	SKIL	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	PIK3R1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	FOXP1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	RGCC	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	PFKFB3	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	MYADM	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	ZFP36L2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	USP36	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	TC2N	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	FAM177A1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	BTG2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	TSC22D2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	RIPOR2	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	STAT4	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	RGPD5	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	NEU1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	IFRD1	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	PDE4B	1.0	
+CD8_Sade-Feldman	Inflamed/IFN	1	GSVA	30388456	NR4A1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	TGIF2	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	CCNB2	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	CCT5	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	CDC45	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	ESPL1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	FEN1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	FOXM1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	KIF20A	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	MAD2L1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	MCM2	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	MCM7	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	MELK	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	PCNA	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	PRC1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	RAD51AP1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	RFC4	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	RNASEH2A	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	TOP2A	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	TPX2	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	TRIP13	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	TTK	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	UBE2C	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	CDK1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	H2AZ1	1.0	
+CIN25_Carter	Confounder	-1	GSVA	16921376	NCAPD2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	TPX2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	PRC1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	FOXM1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDK1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	TGIF2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MCM2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	H2AZ1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	TOP2A	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	PCNA	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	UBE2C	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MELK	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	TRIP13	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NCAPD2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MCM7	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RNASEH2A	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RAD51AP1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	KIF20A	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDC45	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MAD2L1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ESPL1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CCNB2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	FEN1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	TTK	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CCT5	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RFC4	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ATAD2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CKAP5	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NUP205	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDC20	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CKS2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RRM2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ELAVL1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CCNB1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RRM1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	AURKB	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MSH6	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	EZH2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CTPS1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	DKC1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	OIP5	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDCA8	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	PTTG1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CEP55	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	H2AX	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CMAS	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NCAPH	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MCM10	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	LSM4	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ASF1B	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ZWINT	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	PBK	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ZWILCH	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDCA3	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ECT2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	CDC6	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	UNG	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	MTCH2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	RAD21	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	ACTL6A	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	PDCD2L	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	SRSF2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	HDGF	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NXT1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NEK2	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	DHCR7	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	AURKA	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NDUFAB1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NEMP1	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	KIF4A	1.0	
+CIN70_Carter	Confounder	-1	GSVA	16921376	NCAPG2	1.0	
+CRMA_Shukla	Other	-1	GSVA	29656892	MAGEA2	1.0	
+CRMA_Shukla	Other	-1	GSVA	29656892	MAGEA2B	1.0	
+CRMA_Shukla	Other	-1	GSVA	29656892	MAGEA3	1.0	
+CRMA_Shukla	Other	-1	GSVA	29656892	MAGEA6	1.0	
+CRMA_Shukla	Other	-1	GSVA	29656892	MAGEA12	1.0	
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	CD8A	1.0	
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	CD8B	1.0	
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	GZMA	1.0	
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	GZMB	1.0	
+CTL_Jiang	Inflamed/IFN	1	Weighted Mean	30127393	PRF1	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	CD247	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	CD2	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	CD3E	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	GZMH	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	NKG7	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	PRF1	1.0	
+CYT_Davoli	Inflamed/IFN	-1	GSVA	28104840	GZMK	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL2	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL3	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL4	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL5	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL8	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL18	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL19	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CCL21	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CXCL9	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CXCL10	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CXCL11	1.0	
+Chemokine_Messina	Inflamed/IFN	1	GSVA	23097687	CXCL13	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	CDH1	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	CDH3	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	CLDN4	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	EPCAM	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	ST14	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	MAL2	-1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	VIM	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	SNAI2	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	ZEB2	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	FN1	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	MMP2	1.0	
+EMT_Thompson	Confounder	-1	Weighted Mean	31683225	AGER	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	CALU	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	FLNA	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	LRP1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	EMP3	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	SERPINE2	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	CALD1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	FN1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	FOXC2	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	COL6A2	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	LAMA2	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	LOX	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	VIM	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	ECM1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	CTHRC1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	FBN1	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	COL6A3	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	MFAP5	1.0	
+EMTstroma_Wang	Confounder	-1	GSVA	30158554	TNC	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CXCL9	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CCL5	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CD8A	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CD80	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CXCL13	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	IDO1	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	PDCD1	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CD274	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	CTLA4	1.0	
+GeparSixto_Karn	Other	1	Weighted Mean	32461104	FOXP3	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	IDO1	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCL10	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCL9	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-DRA	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	STAT1	1.0	
+IFN_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	IFNG	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	BTLA	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	VSIR	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD200	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD200R1	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD27	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD274	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD276	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD28	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD40	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD80	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CD86	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CEACAM1	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	CTLA4	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	HAVCR2	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	IDO1	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	IL2RB	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	LAG3	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	PDCD1	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	PDCD1LG2	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	PVR	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	NECTIN2	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TIGIT	-1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFRSF14	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFRSF18	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFRSF4	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFRSF9	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFSF4	1.0	
+IMPRES_Auslander	Other	1	Weighted Mean	30127394	TNFSF9	1.0	
+IMS_Cui	Other	1	GSVA	33542239	FAP	1.0	
+IMS_Cui	Other	1	GSVA	33542239	PDGFRB	1.0	
+IMS_Cui	Other	1	GSVA	33542239	CD163	1.0	
+IMS_Cui	Other	1	GSVA	33542239	SIGLEC1	1.0	
+IMS_Cui	Other	1	GSVA	33542239	IL10	1.0	
+IMS_Cui	Other	1	GSVA	33542239	CCL2	1.0	
+IMS_Cui	Other	1	GSVA	33542239	CCL8	1.0	
+IMS_Cui	Other	1	GSVA	33542239	CCL13	1.0	
+IMS_Cui	Other	1	GSVA	33542239	INHBA	1.0	
+IMS_Cui	Other	1	GSVA	33542239	VCAN	1.0	
+IMS_Cui	Other	1	GSVA	33542239	AXL	1.0	
+IMS_Cui	Other	1	GSVA	33542239	TWIST2	1.0	
+IMS_Cui	Other	1	GSVA	33542239	ADAM12	1.0	
+IMS_Cui	Other	1	GSVA	33542239	COL6A3	1.0	
+IMS_Cui	Other	1	GSVA	33542239	STC1	1.0	
+IMS_Cui	Other	1	GSVA	33542239	ISG15	1.0	
+IMS_Cui	Other	1	GSVA	33542239	BCAT1	1.0	
+IMS_Cui	Other	1	GSVA	33542239	OLFML2B	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD3D	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	IDO1	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CIITA	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD3E	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CCL5	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	GZMK	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD2	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-DRA	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCL13	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	IL2RG	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	NKG7	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-E	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCR6	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	TAGAP	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCL10	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	STAT1	1.0	
+IRG_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	GZMB	1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	LEPR	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	PRLHR	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	NR2F2	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	PRL	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	NRP1	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	ANGPTL5	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	IGF1	-1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	TNFRSF10B	1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	TNFRSF10A	1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	PLAU	1.0	
+IRG_Yang	Other	1	Weighted Mean	31741756	IFI30	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ADAM21	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ALDH1L2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	APBB2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	APOC2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ARSF	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ASAH2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ASPM	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	BIRC5	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	C6orf223	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CACNG1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CCL18	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CD177	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CD244	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CDCA5	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CDH1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CEACAM6	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CILP2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CLDN7	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CLNK	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CORO7	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CR2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CRTAM	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	CYTL1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	DHRS9	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	DLK1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	DUSP13	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	EIF4A2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ENTHD1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	FBLN1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	FBLN2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	FMOD	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	FOLR2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	FOXI1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GBP1P1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GDF1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GIMAP4	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GPR31	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GRIA1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	GRM7	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ITGA3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	JMJD7	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	KIR2DL4	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	KIRREL2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	KLHDC8B	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	KRT4	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	LALBA	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	LEF1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	LINC00243	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	LYSMD2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MAEL	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MAP2K5	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MATN3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MFAP2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MKI67	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MMP12	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MMP9	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MT1G	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MUSK	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MXRA8	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MYL1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	MYO1G	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	NACA2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	NACA3P	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	NUDT10	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	NUPR1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	OTOF	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PCLAF	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PKDCC	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PLA2G2D	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PPA2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PPP4R3C	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PRPH	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	PRUNE2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	RASL12	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	RIMS2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	RNASE1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ROR1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	RPL36AP41	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	RRM2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SCGB2A2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SELENOP	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SH2D2A	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SHC3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SLC16A3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SPATA13	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SPC24	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SPP1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	STC1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	STC2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	STOML3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	SYT6	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TDRD15	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TEAD2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TK1	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TM4SF19	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TMEM171	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TRAF3IP2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TREM2	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TRPC4	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TSHZ3	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TUBA8	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	TYMS	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	UBE2C	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	UNC80	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ZNF219	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ZNF462	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ZNF610	1.0	
+ImmuneCells_Xiong	Other	1	GSVA	33033253	ZNF880	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	GZMA	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	GZMB	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	PRF1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	GNLY	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-A	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-B	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-C	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-E	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-F	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-G	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-H	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DMA	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DMB	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DOA	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DOB	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DPA1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DPB1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DQA1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DQA2	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DQB1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DRA	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	HLA-DRB1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	IFNG	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	IFNGR1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	IFNGR2	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	IRF1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	STAT1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	PSMB9	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CCR5	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CCL3	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CCL4	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CCL5	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CXCL9	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CXCL10	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	CXCL11	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	ICAM1	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	ICAM2	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	ICAM3	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	ICAM4	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	ICAM5	1.0	
+ImmuneScore_Roh	Inflamed/IFN	1	GSVA	28251903	VCAM1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	GMPR	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CCL13	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD38	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	MMP12	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	MAK	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TAP1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CCR2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD70	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CCR7	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	IL21R	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	LTK	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	FADD	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TAP2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ASB2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	GRB2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CCL5	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD7	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	NUCB2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ITGAL	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	GPRC5C	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	NKG7	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	FCN1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TIGIT	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	IGSF6	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	PDCD1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	UBASH3A	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	LAMP3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	LCK	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	AHCYL1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	AIM2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HK3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HLA-DMB	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	GZMA	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CDC7	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CXCR4	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	SIRPG	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	SLC15A3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	IRF1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CCL18	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD3G	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ACAP1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	FCRL3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD3D	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	DAXX	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HLA-E	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CLECL1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	IKZF1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	BIRC5	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HAPLN3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TAPBP	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HLA-DOA	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD8A	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	EZH2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	RAET1E	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	IL2RB	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	HLA-F	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ICAM3	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CXCR6	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	BTN3A2	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	PTGS1	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	LILRA5	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	NOL11	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TBX21	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	MMP25	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD300LF	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD96	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	TFEC	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD6	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ACP5	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	MLST8	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ST3GAL6	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	DUSP6	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	CD97	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	ITK	1.0	
+ImmunoScore_Hao	Other	1	GSVA	29661778	PTGS2	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CCL5	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CCR5	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CD274	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CD3D	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CD3E	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CD8A	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CIITA	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CTLA4	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CXCL10	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CXCL11	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CXCL13	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	CXCL9	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	GZMA	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	GZMB	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	HLA-DRA	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	HLA-DRB1	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	HLA-E	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	IDO1	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	IL2RG	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	ITGAL	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	LAG3	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	NKG7	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	PDCD1	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	PRF1	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	PTPRC	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	STAT1	1.0	
+Inflammatory_Thompson	Inflamed/IFN	1	GSVA	31683225	TAGAP	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	KDM5A	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	RIOK1	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	MVB12B	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	HMCN1	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	FAM13C	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	PDE1A	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	IKZF3	1.0	
+KDM5A_Wang	Other	1	GSVA	32908002	ANO3	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	CBLB	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	CCR7	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	CD27	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	CD48	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	FOXO1	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	FYB1	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	HLA-B	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	HLA-G	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	IFIH1	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	IKZF4	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	LAMP3	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	NFKBIA	1.0	
+M1_Hwang	Other	1	ssGSEA	31959763	SAMHD1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DMA	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DMB	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DOA	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DOB	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DPA1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DPB1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DQA1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DQA2	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DQB1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DQB2	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DRA	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DRB1	1.0	
+MHC-II_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-DRB5	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-A	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-B	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-C	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-E	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	HLA-F	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	TAP1	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	TAP2	1.0	
+MHC-I_Liu	Inflamed/IFN	1	ssGSEA	31792460	B2M	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	AKR1C3	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	BMP1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	CRTAC1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	ECEL1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	ERC2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	FAM110C	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	FUT9	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	GABRA2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	GAP43	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	GREM1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	HECW1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	KLHL1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	KRT12	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	LHFPL4	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	NEFL	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	NEFM	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	NETO1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	NKX2-2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	NSG2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	OCIAD2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	OTOP1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	PDE3B	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	PTPRN2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	PTPRT	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SIGLEC15	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SLC13A5	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SLC9A2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SLITRK6	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SNAP91	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	STON2	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	TAC1	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	VAT1L	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	WNT5A	1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	ALX1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	BRD7	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	DTD1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	GRSF1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	HCN1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	LTA4H	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	OXCT1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	PATJ	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	PLXNC1	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	SSBP4	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	TELO2	-1.0	
+MPS_Guijarro	Other	-1	Weighted Mean	32284588	TMEM177	-1.0	
+Macrophage_Danaher	Other	1	GSVA	28239471	CD68	1.0	
+Macrophage_Danaher	Other	1	GSVA	28239471	CD84	1.0	
+Macrophage_Danaher	Other	1	GSVA	28239471	CD163	1.0	
+Macrophage_Danaher	Other	1	GSVA	28239471	MS4A4A	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	CD1A	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	CD1B	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	CD1E	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	CLEC10A	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	CLIC2	1.0	
+Myeloid-DC_Helmink	Other	-1	GSVA	31942075	WFDC21P	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LRR1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPS24	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MASTL	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DNAJC9	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MRPL42	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDCA5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	AUNIP	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FAM83D	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MELK	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DLGAP5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NOP16	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SNRPF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ALYREF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RRM2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SPDL1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BORA	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UCK2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ECE2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPW	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CKS2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MSH6	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MAD2L1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PARPBP	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DONSON	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FOXM1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF20A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NDC80	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDK1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPL8	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GPSM2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SPC25	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GTPBP4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FAM72D	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF11	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BRIX1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	POLE2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BIRC5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PDCD5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCDC167	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ATAD2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF4A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CTSV	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NCAPG	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NUP205	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM7	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NUDT5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF2C	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC20	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NUSAP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SNRPD1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PTTG1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ZNF670	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	EXO1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RFC3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NME1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NCAPG2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NEIL3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RAD54L	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NUF2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BUB1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PRC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDCA7	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RACGAP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NOP58	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC45	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KNSTRN	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	WDR12	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PRR11	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PSMG1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BLM	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF18A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC25A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UBE2T	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GGH	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PKMYT1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DDIAS	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PSMD14	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPA	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	VRK1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPL6	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PRDX4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SMC2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPL34	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCNA2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FANCD2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPS21	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MRPS17	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MRPL3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	H2AZ1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UCHL5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF14	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ENY2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UHRF1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SNRPG	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PGAM5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDCA2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ESPL1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GINS3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NME1-NME2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PDSS1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	WDR43	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FANCI	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	APOBEC3A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HJURP	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RAD54B	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PLK4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TIMM8A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FEN1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TMPO	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PBK	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LMNB1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FAM72A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC25C	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	STMN1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SGO2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CMSS1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RAD51	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ZWINT	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TUBA1C	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UQCRB	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	POP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MND1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DSCC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPN	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SNRPC	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCNE1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TOP2A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FBXO5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FANCB	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HMMR	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	POLQ	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPL	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PPAT	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF23	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RAD51AP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RIPK2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TIMELESS	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	EZH2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SPAG5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NDC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CKS1B	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MRPL13	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RNASEH2A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KPNA2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UBE2C	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TXN	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RFC2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TACC3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	JPT1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPO	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCNB1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RANBP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UBE2S	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NEK2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCNE2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MRPL15	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TROAP	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LRP8	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RPL29	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ORC6	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDCA8	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UNG	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BYSL	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UBQLN1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC7	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	FAM91A1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MTERF3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ERCC6L	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ELOC	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SNRPA1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIFC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PCLAF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PLK1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CSE1L	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ACTL6A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDKN3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TICRR	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCT3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TOMM5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LYAR	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UBE2V2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	E2F2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCNB2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	KIF15	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	AURKA	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PHF19	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DTL	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM6	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ILF2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPK	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TRIP13	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GMPS	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PIMREG	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TTK	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NCBP2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TYMS	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NOLC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PTTG3P	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	NUP155	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPM	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDC123	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPE	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HDGF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ASPM	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	STIL	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CENPI	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CIP2A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TPX2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CTPS1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDCA3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	BOP1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CKAP2L	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CMC2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HPRT1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LIN9	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ANLN	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TUBA1B	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CBX2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CHCHD3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MTHFD2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ORC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	POC1A	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HSPA14	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DIAPH3	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SEH1L	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	AURKB	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MTFR1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	XPOT	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PNP	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	ECT2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	POLR2D	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PCNA	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	TIPIN	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HSPD1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CCDC138	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	UQCRH	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DKC1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	OIP5	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PRELID3B	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	HELLS	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RAB5IF	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SRPK1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	SGO1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CHEK1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	GABPB1	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	PSMD12	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	RFC4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DHFR	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	DEPDC1B	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CDK4	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CHEK2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	CEP55	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	LMNB2	1.0	
+NonResponse_Chen	Other	-1	GSVA	32907939	MCM10	1.0	
+PDL1_Nishino	Other	1	GSVA	28653677/30127393	CD274	1.0	
+PDL1_Nishino	Other	1	GSVA	28653677/30127393	PDCD1LG2	1.0	
+PDL1_Nishino	Other	1	GSVA	28653677/30127393	PDCD1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ITGB7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD79A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TRIB1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CXCL10	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HLA-C	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PLEK	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SDCBP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	VNN2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CSTB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD8A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ANKRD22	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD52	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NCF1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BHLHE41	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HSD17B14	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PARP10	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BACE2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IRF8	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GMPR	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	UPP1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BIRC3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HACD1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SOX13	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ROPN1B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TBC1D7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CCL5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SNCA	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BCL2A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SLC11A2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NAPSB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MAZ	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ISG20	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FBXW5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TAPBP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RAB32	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	INPP4B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SWAP70	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MICAL1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	JADE2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BIRC7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	UBE2L6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PLAAT4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LYN	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HCG4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GSDMD	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RAC2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SLC9A3R1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RUNX3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DIPK1A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FCRLA	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ST3GAL6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IRF1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ECHDC3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD38	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SIGIRR	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ROPN1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FYB1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SNX10	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HCST	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HERC5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	OAS2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MCOLN2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	APOE	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IFIH1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SAT1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RAB38	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD79B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SOD2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GNPTAB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PSMB9	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TMEM140	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GZMB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HPS1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RPS6KA5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MFSD6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PRKCB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	QPCT	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IFI27	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RGS10	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GSTO1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CXCL9	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NKG7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PLXNC1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RAB27A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	KAT2B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SLC45A2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ADAMDEC1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HIGD1A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IL18BP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GPNMB	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PHACTR1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD3D	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RIPOR2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GBP5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PARP9	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HLA-B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD48	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HCP5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HLA-F	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TRIM63	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PLA1A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TYSND1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CXCL13	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	C2orf88	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CABLES1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MCOLN3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HRK	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	OSTM1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ASB9	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FCMR	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	VAT1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ARL6IP5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	S100A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GYG2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LY96	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CD44	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HLA-E	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FBXO6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HLA-G	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MITF	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RTP4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SERPINB1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CBR3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ST6GALNAC2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MYO5A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PSMB8	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PRKCD	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CEACAM1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IRF4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IFI35	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	STX7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TRPV2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CHCHD6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CASP1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	STAT1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	P2RX7	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LYST	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CAPN3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MBP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PIR	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TAP1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LGALS3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TNFRSF14	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	WARS	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ADGRG1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	UBD	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RENBP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NSG1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TYR	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MLANA	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CADM1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DACT3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SLIT2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PCDH18	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DIAPH3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NREP	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	EFNB2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HOXB5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MOXD1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PCDH17	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PHLDB2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CDH2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DDAH1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	POSTN	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ID3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TENT5A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SBK1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	UBE2E3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ERRFI1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NTM	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PMEPA1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ANGPT1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PCOLCE	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FZD1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CDK14	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SPRY2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CDK6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	VCAN	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DPYSL3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	H19	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TUSC3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	EDNRA	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FZD2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LMNB2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ANTXR1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PXDN	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MLLT11	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	S1PR3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ATP2B1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CLIP3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RBBP4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SPON1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CBX2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	HOXA5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ADGRL2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	DKK3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	IGFBP2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LOX	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FOXC1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PAM	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LIMCH1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CPXM1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ZNF286A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LAMB1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	KLF12	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	BCAT1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	UBA52	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ZNF84	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TSPAN5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TMTC4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TCF12	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	AUTS2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ID1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TRIL	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	KDM5B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	OLFML2A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LRP5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	EFEMP2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ZNF512	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	EXTL2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	POGLUT2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	GPC6	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TRO	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TMEM47	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RBP1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RCAN2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ZNF395	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	COL8A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TLE4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	RGS4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ENC1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SOX4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PEG10	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	LAMC1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PKIA	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CNPY4	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CENPV	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ITPRID2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	FSCN1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	MEIS2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TCF3	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SOCS2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ZNF532	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	NR4A2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SKP2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	STK32B	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	COL16A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	TMSB15A	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SALL2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SYT11	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	COL5A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ITGB5	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ESM1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	ENAH	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	COL12A1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PRDM8	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	EMILIN1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PRICKLE1	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	COL5A2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	CPE	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SDC2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	PRICKLE2	1.0	
+PTEN-MITF_Cabrita	Other	-1	Weighted Mean	32245160	SPRY1	1.0	
+Response_Chen	Other	1	GSVA	32907939	MOB3A	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL21R	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASSF4	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOCK2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD52	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD40LG	1.0	
+Response_Chen	Other	1	GSVA	32907939	ADCY7	1.0	
+Response_Chen	Other	1	GSVA	32907939	TCL1A	1.0	
+Response_Chen	Other	1	GSVA	32907939	WAS	1.0	
+Response_Chen	Other	1	GSVA	32907939	TCIRG1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP9	1.0	
+Response_Chen	Other	1	GSVA	32907939	RAC2	1.0	
+Response_Chen	Other	1	GSVA	32907939	SYK	1.0	
+Response_Chen	Other	1	GSVA	32907939	LCK	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH3BP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	STAT2	1.0	
+Response_Chen	Other	1	GSVA	32907939	IRF8	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRANK1	1.0	
+Response_Chen	Other	1	GSVA	32907939	APOBEC3H	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRAT1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH2D3C	1.0	
+Response_Chen	Other	1	GSVA	32907939	DNASE1L3	1.0	
+Response_Chen	Other	1	GSVA	32907939	MIAT	1.0	
+Response_Chen	Other	1	GSVA	32907939	XAF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	IFNAR2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD53	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLC9A9	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASAL3	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCHSD2	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-DMA	1.0	
+Response_Chen	Other	1	GSVA	32907939	VASH1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFSF14	1.0	
+Response_Chen	Other	1	GSVA	32907939	FYN	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCRL3	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF13B	1.0	
+Response_Chen	Other	1	GSVA	32907939	LST1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF4	1.0	
+Response_Chen	Other	1	GSVA	32907939	POU2F2	1.0	
+Response_Chen	Other	1	GSVA	32907939	C2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLCL2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ICAM2	1.0	
+Response_Chen	Other	1	GSVA	32907939	MSN	1.0	
+Response_Chen	Other	1	GSVA	32907939	APOE	1.0	
+Response_Chen	Other	1	GSVA	32907939	RGS19	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD79B	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCER2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CYBB	1.0	
+Response_Chen	Other	1	GSVA	32907939	LGALS9	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGEF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL15	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD22	1.0	
+Response_Chen	Other	1	GSVA	32907939	SAMD3	1.0	
+Response_Chen	Other	1	GSVA	32907939	BCL11B	1.0	
+Response_Chen	Other	1	GSVA	32907939	CR2	1.0	
+Response_Chen	Other	1	GSVA	32907939	LTA	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-E	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLX	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-DPB1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CSF1R	1.0	
+Response_Chen	Other	1	GSVA	32907939	GMIP	1.0	
+Response_Chen	Other	1	GSVA	32907939	GAS7	1.0	
+Response_Chen	Other	1	GSVA	32907939	EFHD2	1.0	
+Response_Chen	Other	1	GSVA	32907939	GNAI2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD3G	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFSF13	1.0	
+Response_Chen	Other	1	GSVA	32907939	APOBEC3G	1.0	
+Response_Chen	Other	1	GSVA	32907939	TXK	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD27	1.0	
+Response_Chen	Other	1	GSVA	32907939	AIM2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ADAM7	1.0	
+Response_Chen	Other	1	GSVA	32907939	GZMK	1.0	
+Response_Chen	Other	1	GSVA	32907939	RFTN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	HCLS1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TOX2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTPRCAP	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLC7A6	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARMH1	1.0	
+Response_Chen	Other	1	GSVA	32907939	BTN3A3	1.0	
+Response_Chen	Other	1	GSVA	32907939	C1QC	1.0	
+Response_Chen	Other	1	GSVA	32907939	RUNX3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CASP4LP	1.0	
+Response_Chen	Other	1	GSVA	32907939	SEL1L3	1.0	
+Response_Chen	Other	1	GSVA	32907939	RAB37	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD1C	1.0	
+Response_Chen	Other	1	GSVA	32907939	LRCH4	1.0	
+Response_Chen	Other	1	GSVA	32907939	GBP5	1.0	
+Response_Chen	Other	1	GSVA	32907939	DEF6	1.0	
+Response_Chen	Other	1	GSVA	32907939	HCST	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD3D	1.0	
+Response_Chen	Other	1	GSVA	32907939	JAML	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCRL5	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP15	1.0	
+Response_Chen	Other	1	GSVA	32907939	CMKLR1	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOCK10	1.0	
+Response_Chen	Other	1	GSVA	32907939	GVINP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	RAB8B	1.0	
+Response_Chen	Other	1	GSVA	32907939	KLRD1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ALOX5	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD3E	1.0	
+Response_Chen	Other	1	GSVA	32907939	EHD1	1.0	
+Response_Chen	Other	1	GSVA	32907939	LILRB4	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTGDS	1.0	
+Response_Chen	Other	1	GSVA	32907939	TLR9	1.0	
+Response_Chen	Other	1	GSVA	32907939	PITPNM2	1.0	
+Response_Chen	Other	1	GSVA	32907939	DPEP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	APBB1IP	1.0	
+Response_Chen	Other	1	GSVA	32907939	GZMB	1.0	
+Response_Chen	Other	1	GSVA	32907939	SIRPA	1.0	
+Response_Chen	Other	1	GSVA	32907939	GBP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	P2RY10	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOK3	1.0	
+Response_Chen	Other	1	GSVA	32907939	GBP4	1.0	
+Response_Chen	Other	1	GSVA	32907939	SOCS1	1.0	
+Response_Chen	Other	1	GSVA	32907939	DCANP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CXorf65	1.0	
+Response_Chen	Other	1	GSVA	32907939	PSMB10	1.0	
+Response_Chen	Other	1	GSVA	32907939	SERPING1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SHISAL2A	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD48	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLCB2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ICOS	1.0	
+Response_Chen	Other	1	GSVA	32907939	PAQR8	1.0	
+Response_Chen	Other	1	GSVA	32907939	NAPSA	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL18BP	1.0	
+Response_Chen	Other	1	GSVA	32907939	RHOF	1.0	
+Response_Chen	Other	1	GSVA	32907939	DENND3	1.0	
+Response_Chen	Other	1	GSVA	32907939	LPXN	1.0	
+Response_Chen	Other	1	GSVA	32907939	PNOC	1.0	
+Response_Chen	Other	1	GSVA	32907939	GZMH	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARRDC5	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASGRP3	1.0	
+Response_Chen	Other	1	GSVA	32907939	NKG7	1.0	
+Response_Chen	Other	1	GSVA	32907939	LILRB3	1.0	
+Response_Chen	Other	1	GSVA	32907939	KLHL6	1.0	
+Response_Chen	Other	1	GSVA	32907939	MICAL1	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-DOA	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCL22	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLCG2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PRAM1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH3TC1	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLAC8	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF1B	1.0	
+Response_Chen	Other	1	GSVA	32907939	TCF4	1.0	
+Response_Chen	Other	1	GSVA	32907939	VAMP5	1.0	
+Response_Chen	Other	1	GSVA	32907939	TAPBP	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNIP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	LAG3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CYTIP	1.0	
+Response_Chen	Other	1	GSVA	32907939	POU2AF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ELMO1	1.0	
+Response_Chen	Other	1	GSVA	32907939	GNGT2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PBX4	1.0	
+Response_Chen	Other	1	GSVA	32907939	BTLA	1.0	
+Response_Chen	Other	1	GSVA	32907939	LBH	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTK2B	1.0	
+Response_Chen	Other	1	GSVA	32907939	AKNA	1.0	
+Response_Chen	Other	1	GSVA	32907939	TBC1D2B	1.0	
+Response_Chen	Other	1	GSVA	32907939	VCAM1	1.0	
+Response_Chen	Other	1	GSVA	32907939	PCSK7	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTGER4	1.0	
+Response_Chen	Other	1	GSVA	32907939	C1QA	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLEKHA2	1.0	
+Response_Chen	Other	1	GSVA	32907939	LAT2	1.0	
+Response_Chen	Other	1	GSVA	32907939	APOBEC3C	1.0	
+Response_Chen	Other	1	GSVA	32907939	BTN3A1	1.0	
+Response_Chen	Other	1	GSVA	32907939	INPP5D	1.0	
+Response_Chen	Other	1	GSVA	32907939	GIMAP7	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD8A	1.0	
+Response_Chen	Other	1	GSVA	32907939	CSK	1.0	
+Response_Chen	Other	1	GSVA	32907939	SAP25	1.0	
+Response_Chen	Other	1	GSVA	32907939	LY9	1.0	
+Response_Chen	Other	1	GSVA	32907939	NCF1C	1.0	
+Response_Chen	Other	1	GSVA	32907939	LYL1	1.0	
+Response_Chen	Other	1	GSVA	32907939	NAPSB	1.0	
+Response_Chen	Other	1	GSVA	32907939	PRKCH	1.0	
+Response_Chen	Other	1	GSVA	32907939	MYO9B	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFAIP3	1.0	
+Response_Chen	Other	1	GSVA	32907939	PIK3CD	1.0	
+Response_Chen	Other	1	GSVA	32907939	S1PR4	1.0	
+Response_Chen	Other	1	GSVA	32907939	MYO1G	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL18R1	1.0	
+Response_Chen	Other	1	GSVA	32907939	GMFG	1.0	
+Response_Chen	Other	1	GSVA	32907939	EML3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CHKB	1.0	
+Response_Chen	Other	1	GSVA	32907939	NLRP3	1.0	
+Response_Chen	Other	1	GSVA	32907939	GZMA	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL32	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH3KBP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRAF3IP3	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLEKHO1	1.0	
+Response_Chen	Other	1	GSVA	32907939	NAGK	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-DOB	1.0	
+Response_Chen	Other	1	GSVA	32907939	HVCN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCND2	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOCK8	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRBV2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTPN7	1.0	
+Response_Chen	Other	1	GSVA	32907939	LAT	1.0	
+Response_Chen	Other	1	GSVA	32907939	PAG1	1.0	
+Response_Chen	Other	1	GSVA	32907939	NR1H3	1.0	
+Response_Chen	Other	1	GSVA	32907939	DENND1C	1.0	
+Response_Chen	Other	1	GSVA	32907939	FAM30A	1.0	
+Response_Chen	Other	1	GSVA	32907939	NCR3	1.0	
+Response_Chen	Other	1	GSVA	32907939	NLRP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD37	1.0	
+Response_Chen	Other	1	GSVA	32907939	EMP3	1.0	
+Response_Chen	Other	1	GSVA	32907939	UBASH3A	1.0	
+Response_Chen	Other	1	GSVA	32907939	TESPA1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TMEM119	1.0	
+Response_Chen	Other	1	GSVA	32907939	SPOCK2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ABI3	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP25	1.0	
+Response_Chen	Other	1	GSVA	32907939	IGSF6	1.0	
+Response_Chen	Other	1	GSVA	32907939	CAPN3	1.0	
+Response_Chen	Other	1	GSVA	32907939	ITGB2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CXCR5	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL7R	1.0	
+Response_Chen	Other	1	GSVA	32907939	DAB2	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRIM38	1.0	
+Response_Chen	Other	1	GSVA	32907939	SMAP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRBV29-1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZBED2	1.0	
+Response_Chen	Other	1	GSVA	32907939	TBXAS1	1.0	
+Response_Chen	Other	1	GSVA	32907939	NCF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD79A	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF25	1.0	
+Response_Chen	Other	1	GSVA	32907939	ITGB7	1.0	
+Response_Chen	Other	1	GSVA	32907939	ADAP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLEKHO2	1.0	
+Response_Chen	Other	1	GSVA	32907939	BANK1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CSF2RA	1.0	
+Response_Chen	Other	1	GSVA	32907939	RHOG	1.0	
+Response_Chen	Other	1	GSVA	32907939	MEF2C	1.0	
+Response_Chen	Other	1	GSVA	32907939	THEMIS	1.0	
+Response_Chen	Other	1	GSVA	32907939	MAL	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD84	1.0	
+Response_Chen	Other	1	GSVA	32907939	GPR18	1.0	
+Response_Chen	Other	1	GSVA	32907939	LSP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD72	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLC1A3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD86	1.0	
+Response_Chen	Other	1	GSVA	32907939	SELPLG	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD2	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLC15A3	1.0	
+Response_Chen	Other	1	GSVA	32907939	ST8SIA4	1.0	
+Response_Chen	Other	1	GSVA	32907939	PATL2	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLA2	1.0	
+Response_Chen	Other	1	GSVA	32907939	STK4	1.0	
+Response_Chen	Other	1	GSVA	32907939	RNF166	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLAMF7	1.0	
+Response_Chen	Other	1	GSVA	32907939	CXCR3	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRPV2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP30	1.0	
+Response_Chen	Other	1	GSVA	32907939	TLR10	1.0	
+Response_Chen	Other	1	GSVA	32907939	KIF21B	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL10RA	1.0	
+Response_Chen	Other	1	GSVA	32907939	ITGAX	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD74	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCAR	1.0	
+Response_Chen	Other	1	GSVA	32907939	TRAF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	MAP4K1	1.0	
+Response_Chen	Other	1	GSVA	32907939	BTN3A2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ACVRL1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ENG	1.0	
+Response_Chen	Other	1	GSVA	32907939	MEI1	1.0	
+Response_Chen	Other	1	GSVA	32907939	VPREB3	1.0	
+Response_Chen	Other	1	GSVA	32907939	PRF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CARD11	1.0	
+Response_Chen	Other	1	GSVA	32907939	TMEM140	1.0	
+Response_Chen	Other	1	GSVA	32907939	SASH3	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZAP70	1.0	
+Response_Chen	Other	1	GSVA	32907939	PLEK	1.0	
+Response_Chen	Other	1	GSVA	32907939	LCP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL12RB1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CST7	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLC7A7	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZNF366	1.0	
+Response_Chen	Other	1	GSVA	32907939	TIMD4	1.0	
+Response_Chen	Other	1	GSVA	32907939	KLRG1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SEMA4D	1.0	
+Response_Chen	Other	1	GSVA	32907939	GIMAP4	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD28	1.0	
+Response_Chen	Other	1	GSVA	32907939	DNAH1	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-DMB	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD5	1.0	
+Response_Chen	Other	1	GSVA	32907939	TBC1D10C	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL16	1.0	
+Response_Chen	Other	1	GSVA	32907939	PRKCB	1.0	
+Response_Chen	Other	1	GSVA	32907939	BIN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	HLA-F	1.0	
+Response_Chen	Other	1	GSVA	32907939	SYNE3	1.0	
+Response_Chen	Other	1	GSVA	32907939	NRROS	1.0	
+Response_Chen	Other	1	GSVA	32907939	ST3GAL5	1.0	
+Response_Chen	Other	1	GSVA	32907939	STK10	1.0	
+Response_Chen	Other	1	GSVA	32907939	FNBP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCMR	1.0	
+Response_Chen	Other	1	GSVA	32907939	GRAP	1.0	
+Response_Chen	Other	1	GSVA	32907939	LTB	1.0	
+Response_Chen	Other	1	GSVA	32907939	PAPLN	1.0	
+Response_Chen	Other	1	GSVA	32907939	IPCEF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	GNLY	1.0	
+Response_Chen	Other	1	GSVA	32907939	GIMAP5	1.0	
+Response_Chen	Other	1	GSVA	32907939	TAGAP	1.0	
+Response_Chen	Other	1	GSVA	32907939	LAPTM5	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASSF2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CORO1A	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCR7	1.0	
+Response_Chen	Other	1	GSVA	32907939	CELF2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PIK3IP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	MCOLN2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PPP1R16B	1.0	
+Response_Chen	Other	1	GSVA	32907939	MX2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ICAM3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CXCL9	1.0	
+Response_Chen	Other	1	GSVA	32907939	IGFLR1	1.0	
+Response_Chen	Other	1	GSVA	32907939	RIN3	1.0	
+Response_Chen	Other	1	GSVA	32907939	MATK	1.0	
+Response_Chen	Other	1	GSVA	32907939	WIPF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SIPA1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLAMF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASSF5	1.0	
+Response_Chen	Other	1	GSVA	32907939	SPI1	1.0	
+Response_Chen	Other	1	GSVA	32907939	MYO1F	1.0	
+Response_Chen	Other	1	GSVA	32907939	RENBP	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLA	1.0	
+Response_Chen	Other	1	GSVA	32907939	NIBAN3	1.0	
+Response_Chen	Other	1	GSVA	32907939	GPR132	1.0	
+Response_Chen	Other	1	GSVA	32907939	SCIMP	1.0	
+Response_Chen	Other	1	GSVA	32907939	BATF3	1.0	
+Response_Chen	Other	1	GSVA	32907939	MGAT1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH2D1A	1.0	
+Response_Chen	Other	1	GSVA	32907939	SYT11	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL4R	1.0	
+Response_Chen	Other	1	GSVA	32907939	PIP4K2A	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCR2	1.0	
+Response_Chen	Other	1	GSVA	32907939	RCSD1	1.0	
+Response_Chen	Other	1	GSVA	32907939	STAB1	1.0	
+Response_Chen	Other	1	GSVA	32907939	FERMT3	1.0	
+Response_Chen	Other	1	GSVA	32907939	NLRC5	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGEF18	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTPRC	1.0	
+Response_Chen	Other	1	GSVA	32907939	KLRB1	1.0	
+Response_Chen	Other	1	GSVA	32907939	PARVG	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOK2	1.0	
+Response_Chen	Other	1	GSVA	32907939	IRF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	FAM78A	1.0	
+Response_Chen	Other	1	GSVA	32907939	RAPGEF1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZNF831	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD1B	1.0	
+Response_Chen	Other	1	GSVA	32907939	RAB33A	1.0	
+Response_Chen	Other	1	GSVA	32907939	LGALS2	1.0	
+Response_Chen	Other	1	GSVA	32907939	PDCD1	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH3BGRL3	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD247	1.0	
+Response_Chen	Other	1	GSVA	32907939	MAN2B1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD7	1.0	
+Response_Chen	Other	1	GSVA	32907939	BLK	1.0	
+Response_Chen	Other	1	GSVA	32907939	GIMAP6	1.0	
+Response_Chen	Other	1	GSVA	32907939	LCP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF6B	1.0	
+Response_Chen	Other	1	GSVA	32907939	CLECL1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ETS1	1.0	
+Response_Chen	Other	1	GSVA	32907939	KBTBD8	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP45	1.0	
+Response_Chen	Other	1	GSVA	32907939	BTK	1.0	
+Response_Chen	Other	1	GSVA	32907939	CTLA4	1.0	
+Response_Chen	Other	1	GSVA	32907939	PTPN6	1.0	
+Response_Chen	Other	1	GSVA	32907939	PVRIG	1.0	
+Response_Chen	Other	1	GSVA	32907939	SP140	1.0	
+Response_Chen	Other	1	GSVA	32907939	GPSM3	1.0	
+Response_Chen	Other	1	GSVA	32907939	LIME1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD40	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL2RG	1.0	
+Response_Chen	Other	1	GSVA	32907939	NCF4	1.0	
+Response_Chen	Other	1	GSVA	32907939	IL18RAP	1.0	
+Response_Chen	Other	1	GSVA	32907939	TNFRSF14	1.0	
+Response_Chen	Other	1	GSVA	32907939	CXCR6	1.0	
+Response_Chen	Other	1	GSVA	32907939	SH2B3	1.0	
+Response_Chen	Other	1	GSVA	32907939	RASGRP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CYBC1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CTSW	1.0	
+Response_Chen	Other	1	GSVA	32907939	SLCO2B1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD6	1.0	
+Response_Chen	Other	1	GSVA	32907939	IFFO1	1.0	
+Response_Chen	Other	1	GSVA	32907939	TLN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	MYCBP2	1.0	
+Response_Chen	Other	1	GSVA	32907939	FCN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	FGR	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD4	1.0	
+Response_Chen	Other	1	GSVA	32907939	LY86	1.0	
+Response_Chen	Other	1	GSVA	32907939	CYTH1	1.0	
+Response_Chen	Other	1	GSVA	32907939	GAB3	1.0	
+Response_Chen	Other	1	GSVA	32907939	DGKA	1.0	
+Response_Chen	Other	1	GSVA	32907939	SELL	1.0	
+Response_Chen	Other	1	GSVA	32907939	ADGRE5	1.0	
+Response_Chen	Other	1	GSVA	32907939	PDE4DIP	1.0	
+Response_Chen	Other	1	GSVA	32907939	PARP15	1.0	
+Response_Chen	Other	1	GSVA	32907939	ABI3BP	1.0	
+Response_Chen	Other	1	GSVA	32907939	RGL4	1.0	
+Response_Chen	Other	1	GSVA	32907939	VAV1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ACSL5	1.0	
+Response_Chen	Other	1	GSVA	32907939	PRDM8	1.0	
+Response_Chen	Other	1	GSVA	32907939	SPNS3	1.0	
+Response_Chen	Other	1	GSVA	32907939	EVI2B	1.0	
+Response_Chen	Other	1	GSVA	32907939	CASP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	C1orf162	1.0	
+Response_Chen	Other	1	GSVA	32907939	P2RY8	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCL19	1.0	
+Response_Chen	Other	1	GSVA	32907939	PPM1M	1.0	
+Response_Chen	Other	1	GSVA	32907939	IRAG2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ARHGAP4	1.0	
+Response_Chen	Other	1	GSVA	32907939	CD19	1.0	
+Response_Chen	Other	1	GSVA	32907939	BIRC3	1.0	
+Response_Chen	Other	1	GSVA	32907939	ADA	1.0	
+Response_Chen	Other	1	GSVA	32907939	ACAP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	FGD2	1.0	
+Response_Chen	Other	1	GSVA	32907939	STAT4	1.0	
+Response_Chen	Other	1	GSVA	32907939	EOMES	1.0	
+Response_Chen	Other	1	GSVA	32907939	LYN	1.0	
+Response_Chen	Other	1	GSVA	32907939	PSTPIP1	1.0	
+Response_Chen	Other	1	GSVA	32907939	ANXA2R	1.0	
+Response_Chen	Other	1	GSVA	32907939	PYHIN1	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCM2	1.0	
+Response_Chen	Other	1	GSVA	32907939	CETP	1.0	
+Response_Chen	Other	1	GSVA	32907939	MSC	1.0	
+Response_Chen	Other	1	GSVA	32907939	TIFAB	1.0	
+Response_Chen	Other	1	GSVA	32907939	PPP1R18	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZBTB32	1.0	
+Response_Chen	Other	1	GSVA	32907939	ITK	1.0	
+Response_Chen	Other	1	GSVA	32907939	CCL5	1.0	
+Response_Chen	Other	1	GSVA	32907939	NFS1	1.0	
+Response_Chen	Other	1	GSVA	32907939	NPSR1	1.0	
+Response_Chen	Other	1	GSVA	32907939	DOCK11	1.0	
+Response_Chen	Other	1	GSVA	32907939	BACH2	1.0	
+Response_Chen	Other	1	GSVA	32907939	ZNF683	1.0	
+Response_Chen	Other	1	GSVA	32907939	NCKAP1L	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	STAT1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GBP1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	IRF1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	WARS	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	PLAAT4	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CXCL9	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GBP5	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	LAP3	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	APOL3	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	IDO1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GBP4	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	LAG3	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CXCL10	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GZMA	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	PRF1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	IFNG	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GBP2	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CCR5	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	SLC31A2	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	APOL6	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CXCL11	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	SERPINA1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	FCGR1B	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	TNFSF10	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GZMK	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CST7	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	FGL2	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	TAP1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	SERPING1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	FCER1G	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CD2	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GIMAP4	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	IFIT3	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CCL4	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	CXCR6	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	GIMAP5	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	XAF1	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	SLAMF7	1.0	
+STAT1_Care	Inflamed/IFN	1	GSVA	31316010; 26362649	ANKRD22	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	ACTA2	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	ACTG2	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	ADAM12	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	ADAM19	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	CNN1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	COL4A1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	CCN2	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	CTPS1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	RFLNB	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	FSTL3	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	HSPB1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	IGFBP3	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	PXDC1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	SEMA7A	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	SH3PXD2A	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	TAGLN	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	TGFBI	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	TNS1	1.0	
+TGFB_Mariathasan	Other	-1	Weighted Mean	29443960	TPM1	1.0	
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CD276	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	HLA-DQA1	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CD274	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	IDO1	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	HLA-DRB1	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	HLA-E	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CMKLR1	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	PDCD1LG2	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	PSMB10	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	LAG3	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CXCL9	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	STAT1	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CD8A	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CCL5	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	NKG7	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	TIGIT	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CD27	1.0	Tcell-inflamed_Ayers
+TIS_Damotte	Inflamed/IFN	1	GSVA	31684954	CXCR6	1.0	Tcell-inflamed_Ayers
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	CD79B	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	CD1D	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	CCR6	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	LAT	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	SKAP1	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	CETP	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	EIF1AY	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	RBP5	1.0	
+TLS_Cabrita	Inflamed/IFN	1	GSVA	31942071	PTGDS	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	ADAM12	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	ADAP2	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	CHN1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	CMTM8	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	COL5A3	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	EGFL6	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	FJX1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	FOXF2	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	FZD10	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	HOPX	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	HSPA6	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	ISG15	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	LCP2	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	MMP9	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	MUC1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	MXRA5	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	PAMR1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	PLXDC1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	PMAIP1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	POSTN	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	RPS11	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	SCIN	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	SPP1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	STC1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	TNFAIP6	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	TNFRSF21	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	TWIST1	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	VCAN	1.0	
+TUMOR-VASCULATURE-UP_Lu	Confounder	-1	GSVA	17308118	WDR77	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	ATIC	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	BTF3	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	CHCHD2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	EEF1G	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	EIF3G	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	EIF3M	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	EIF4A1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	ENO1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	EXOSC4	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	FARSA	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	GAPDH	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	H19	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HNRNPA1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	LSM7	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MAGEA4	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MAGEC1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MDH2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NIFK	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MLLT11	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MRPS24	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NACA	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NDUFB9	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NME1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NREP	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL13AP5	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL18A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL19	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL26	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL27A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL31	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL32	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL35A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL36	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL37	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL37A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL39	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL6	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPL7	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPLP2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS11	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS13	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS14	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS15	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS16	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS17	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS18	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS20	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS21	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS23	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS25	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS27A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS28	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS4X	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS5	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RPS6	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	SMARCA4	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	SNRPD2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	STOML2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	TIMM13	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	TPI1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	UBA52	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	BUD23	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	APOD	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	APOE	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	ATP1A1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	B2M	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	CAPN3	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	CD63	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	CDH1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	CTSD	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	DAAM2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	GPNMB	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	ADGRG1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HLA-A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HLA-B	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HLA-C	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HLA-F	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HLA-H	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HPS5	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	HSP90AA1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	IFI27	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	IRF4	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	LGALS3	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	LGALS3BP	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MCAM	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L10	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L2	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L3	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L4	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L6	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	MTRNR2L8	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	NSG1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	PLXNC1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	PSAP	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	QPCT	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	RAB5B	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	S100A1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	S100B	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	SAT1	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	SEC11C	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	SLC7A8	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	ST3GAL6	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	TMED10	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	TMEM255A	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	TYR	1.0	
+Tcell-exclusion_Arnon	Other	-1	GSVA	30388455	VAT1	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CCL5	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD27	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD274	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD276	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CD8A	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CMKLR1	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCL9	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	CXCR6	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-DQA1	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-DRB1	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	HLA-E	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	IDO1	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	LAG3	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	NKG7	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	PDCD1LG2	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	TIGIT	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	PSMB10	1.0	
+Tcell-inflamed_Ayers	Inflamed/IFN	1	Weighted Mean	28650338	STAT1	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	CD8A	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	GZMA	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	GZMB	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	IFNG	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	EOMES	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	CXCL9	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	CXCL10	1.0	
+Teff-IFNG_Fehrenbacher	Inflamed/IFN	1	GSVA	26970723	TBX21	1.0	
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	CD8A	1.0	
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	IFNG	1.0	
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	EOMES	1.0	
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	PRF1	1.0	
+Teff_McDermott	Inflamed/IFN	1	GSVA	29867230	CD274	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	CTLA4	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	IL7R	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	GZMA	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	PRF1	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	IFNG	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	PDCD1	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	FOXP3	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	CXCL9	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	CXCL10	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	CXCL11	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	GZMB	1.0	
+VIGex_Hernando-Calvo	Other	1	GSVA	37572657	CD274	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	WNT2B	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	WNT11	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	WNT5A	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	FZD6	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	FZD7	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	LRP4	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	LRP6	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	LRP8	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	AXIN1	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	AXIN2	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	DVL2	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	DVL3	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	CTNNB1	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	MYC	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	VEGFA	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	SOX9	1.0	
+WNT-beta-catenin_Takeuchi	Other	-1	ssGSEA	34767457	EFNB3	1.0	
+peri-Tcell_Hwang	Other	1	ssGSEA	31959763	GPR18	1.0	
+peri-Tcell_Hwang	Other	1	ssGSEA	31959763	HLA-DOA	1.0	
+peri-Tcell_Hwang	Other	1	ssGSEA	31959763	STAT1	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	BUB1	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	CCNB2	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	CDK1	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	CDKN3	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	FOXM1	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	PCLAF	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	MAD2L1	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	MELK	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	MKI67	1.0	
+proliferation_Pabla	Confounder	-1	Weighted Mean	30709424	TOP2A	1.0	

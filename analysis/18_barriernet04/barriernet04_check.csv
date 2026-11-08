@@ -1,0 +1,79 @@
+item,package,article,abs_diff,tolerance,ok,note
+signatures pooled (of 51),51.0,51.0,0.0,0.0,True,
+"pooled interaction, max |difference| over 51",6.230370938220542e-06,0.0,6.230370938220542e-06,1e-05,True,package Cox solver against lifelines
+"pooled interaction P, max |difference|",5.472287920094132e-05,0.0,5.472287920094132e-05,0.0001,True,
+"comparisons scored, mismatches",0.0,0.0,0.0,0.0,True,
+"empirical P < 0.05 classification, disagreements",0.0,0.0,0.0,0.0,True,random draws differ from E32 (seeding by trial subset)
+"empirical P, max |difference|",0.03296703296703296,0.0,0.03296703296703296,0.05,True,"Monte Carlo error with 1,000 draws"
+"favor checkpoint arm, P < 0.05",16.0,16.0,0.0,0.0,True,
+"favor control arm, P < 0.05",1.0,1.0,0.0,0.0,True,
+"favor checkpoint arm, q < 0.05",0.0,0.0,0.0,0.0,True,
+"beyond size-matched random genes, P < 0.05",25.0,25.0,0.0,0.0,True,
+"beyond size-matched random genes, q < 0.05",24.0,24.0,0.0,0.0,True,
+"R3: signatures above, P < 0.05",0.0,0.0,0.0,0.0,True,
+"R3: signatures below, P < 0.05",16.0,16.0,0.0,0.0,True,
+R3: paired differences equal to 1e-4 (of 51),50.0,50.0,0.0,0.0,True,CRMA_Shukla differs: in JAVELIN Renal 101 its score has 30 distinct values in 726 patients and a few resamples give near-degenerate Cox fits
+"R13: signatures above, P < 0.05",1.0,1.0,0.0,0.0,True,
+"R13: signatures below, P < 0.05",11.0,11.0,0.0,0.0,True,
+R13: paired differences equal to 1e-4 (of 51),50.0,50.0,0.0,0.0,True,CRMA_Shukla differs: in JAVELIN Renal 101 its score has 30 distinct values in 726 patients and a few resamples give near-degenerate Cox fits
+"CD8A: signatures below, P < 0.05",15.0,15.0,0.0,0.0,True,
+"CD8A: signatures above, P < 0.05",0.0,0.0,0.0,0.0,True,
+"T-cell mean (13 genes): pooled interaction (manuscript, 2 decimals)",0.18,0.18,0.0,0.0,True,
+"T-cell mean (CD8A, PRF1, GZMA): pooled interaction (manuscript, 2 decimals)",0.22,0.22,0.0,0.0,True,
+single-arm per-cohort rows matched,911.0,911.0,0.0,0.0,True,
+"single-arm per-cohort log-odds, max |difference|",4.440892098500626e-16,0.0,4.440892098500626e-16,1e-06,True,
+"single-arm pooled, max |difference|",9.020562075079397e-17,0.0,9.020562075079397e-17,1e-06,True,
+"single-arm pooled P, max |difference|",9.660241356845845e-17,0.0,9.660241356845845e-17,1e-06,True,
+"Spearman, single-arm against randomized (52 rows)",0.83,0.83,0.0,0.0,True,E40_outcome.md
+published primary: est,0.24674365947465626,0.246744941897985,1.2824233287245246e-06,5e-05,True,
+published primary: lo,0.087932814963529,0.0879322627882612,5.521752678011582e-07,5e-05,True,
+published primary: hi,0.4055545039857835,0.405557621007708,3.1170219244591735e-06,5e-05,True,
+published primary: p,0.004435677140710955,0.0044358764812336,1.9934052264500984e-07,5e-05,True,
+published primary: k,18.0,18.0,0.0,0.0,True,
+published per_sd: est,0.14588820029466082,0.145889236832462,1.0365378011745197e-06,5e-05,True,
+published per_sd: lo,0.05657064298214519,0.0565693387993578,1.3041827873899736e-06,5e-05,True,
+published per_sd: hi,0.23520575760717644,0.235209134865565,3.377258388559401e-06,5e-05,True,
+published per_sd: p,0.0030840521371237528,0.0030844919189179,4.3978179414729673e-07,5e-05,True,
+published per_sd: k,18.0,18.0,0.0,0.0,True,
+published pdl1: est,0.16418654282811587,0.164193788465215,7.2456370991402785e-06,5e-05,True,
+published pdl1: lo,-0.09631352938293661,-0.0963193177443674,5.788361430794642e-06,5e-05,True,
+published pdl1: hi,0.4246866150391684,0.424706894674797,2.0279635628617232e-05,5e-05,True,
+published pdl1: p,0.18768037580871447,0.187682735501441,2.3596927265223666e-06,5e-05,True,
+published pdl1: k,10.0,10.0,0.0,0.0,True,
+published tmb: est,0.0712393344276284,0.0712392233781459,1.110494825123931e-07,5e-05,True,
+published tmb: lo,-0.3043817697672167,-0.304382503742558,7.339753412827221e-07,5e-05,True,
+published tmb: hi,0.44686043862247354,0.44686095049885,5.118763764522249e-07,5e-05,True,
+published tmb: p,0.6589541089560264,0.658955119113044,1.0101570177001307e-06,5e-05,True,
+published tmb: k,7.0,7.0,0.0,0.0,True,
+published signature_where_pdl1: est,0.23766899565938723,0.237668995659387,2.220446049250313e-16,5e-05,True,
+published signature_where_pdl1: lo,0.05750756908285817,0.0575075690828581,7.632783294297951e-17,5e-05,True,
+published signature_where_pdl1: hi,0.41783042223591627,0.417830422235916,2.7755575615628914e-16,5e-05,True,
+published signature_where_pdl1: p,0.01534368576965305,0.0153436857696531,4.85722573273506e-17,5e-05,True,
+published signature_where_pdl1: k,10.0,10.0,0.0,0.0,True,
+published leave one out: lowest,0.20203036103989697,0.202030906987049,5.459471520419257e-07,5e-05,True,
+published leave one out: highest,0.27454735253049634,0.274547352530496,3.3306690738754696e-16,5e-05,True,
+published Egger P,0.262342189205881,0.262349429468279,7.2402623980116765e-06,0.0005,True,
+"events, delta 0.05, r 0.5 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.5 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.5 (ratio to E39)",1.0000001557068419,1.0,1.5570684186450023e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.5 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.05, r 0.6 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.6 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.6 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.6 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.05, r 0.7 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.7 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.7 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.7 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.05, r 0.8 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.8 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.8 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.8 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.05, r 0.9 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.9 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.9 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.9 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.05, r 0.95 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.1, r 0.95 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.15, r 0.95 (ratio to E39)",1.000000155706842,1.0,1.5570684208654484e-07,1e-06,True,E39 used rounded normal quantiles
+"events, delta 0.2, r 0.95 (ratio to E39)",1.0000001557068423,1.0,1.5570684230858944e-07,1e-06,True,E39 used rounded normal quantiles

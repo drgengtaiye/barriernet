@@ -1,0 +1,8 @@
+# Python packages for the barriernet web app (Python >= 3.9).
+# Tested with Python 3.14.0, shiny 1.9.0, numpy 2.3.5, pandas 2.3.3, scipy 1.17.1, PyYAML 6.0.3, matplotlib 3.11.0.
+shiny>=1.0
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+PyYAML>=6.0
+matplotlib>=3.5

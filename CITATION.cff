@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "barriernet: marker-level Barrier/NetImmune scoring for spatial, single-cell, bulk and protein data"
-version: 0.3.0
-date-released: 2026-10-31
+title: "barriernet: benchmarking immune signatures in randomized checkpoint-inhibitor trials, and marker-level Barrier/NetImmune scoring"
+version: 0.4.0
+date-released: 2026-11-08
 license: MIT
 repository-code: "https://github.com/drgengtaiye/barriernet"
 authors:

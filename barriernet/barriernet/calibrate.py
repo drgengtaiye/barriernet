@@ -218,8 +218,9 @@ def random_reference(trials: Sequence[Trial], sizes_weights: Dict[str, np.ndarra
     return np.array([pool(D[b, :, 0], D[b, :, 1])["est"] for b in range(n_draws)])
 
 
-def bootstrap_indices(trial: Trial, n_boot: int = 300, seed: int = 0) -> List[np.ndarray]:
-    """Within-arm patient resamples (each arm resampled with replacement at its own size)."""
+def bootstrap_indices(trial: Trial, n_boot: int = 300, seed=0) -> List[np.ndarray]:
+    """Within-arm patient resamples (each arm resampled with replacement at its own size); ``seed``: an int or a
+    sequence of ints for numpy's default_rng."""
     rng = np.random.default_rng(seed); i1, i0 = np.where(trial.arm == 1)[0], np.where(trial.arm == 0)[0]
     return [np.concatenate([rng.choice(i1, len(i1)), rng.choice(i0, len(i0))]) for _ in range(n_boot)]
 

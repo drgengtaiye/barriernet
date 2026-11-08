@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.4.0 (2026-11-08)
+
+### Added
+- **Signature library** (`barriernet.library`, `data/signatures_io.tsv`): the 52 immuno-oncology entries of
+  SignatureSets (BHKLAB, MIT License, `data/SignatureSets_LICENSE.txt`) with published weights (1 where none is given),
+  declared direction and family (Inflamed/IFN 20, Other 24, Confounder 8); TIS_Damotte repeats the 18 genes of
+  Tcell-inflamed_Ayers, so 51 are distinct. The 13-gene T-cell panel, the 14-gene interferon-γ and checkpoint panel,
+  and two T-cell references (the 13-gene mean and the CD8A-PRF1-GZMA mean). `score_signature` skips missing values
+  sample by sample.
+- **`barriernet benchmark`** (`barriernet.benchmark.benchmark`): pooled score × arm interaction per signature, a
+  minimum number of comparisons for pooling, size-matched random genes with the empirical P in the declared direction,
+  paired differences from the T-cell references and single genes, Benjamini-Hochberg q values within each family of
+  tests, and a summary of how many signatures pass each test. Multi-process bootstrap and random reference (`--jobs`).
+- **`barriernet singlearm`** (`barriernet.singlearm`): log-odds of response per SD in single-arm cohorts, pooled
+  by DerSimonian-Laird with the wider of the Hartung-Knapp and DerSimonian-Laird intervals, and the Spearman agreement
+  with the randomized interaction.
+- **`barriernet published`** (`barriernet.published`): pooling of published subgroup hazard ratios (signature high
+  and low) by REML with the Knapp-Hartung adjustment, per-SD conversion from the reported split, leave-one-out, Egger
+  test, PD-L1 and TMB over the same trials; `example_table()` holds the 19 comparisons extracted for the benchmark.
+- **`barriernet design`** (`barriernet.design`): events needed, power and detectable difference for telling two
+  correlated scores apart.
+- **Report** (`barriernet.report`, `barriernet report`): figures and an HTML page and PDF; needs the `report` extra.
+- **Web app** (`barriernet app`, `barriernet.app`, `shiny_app/`): needs the `app` extra (Shiny for Python). The benchmark
+  runs in a separate process, so the page stays responsive and can be cancelled; one benchmark at a time, with limits on
+  workers, draws and uploads for a shared server. `shiny_app/make_bundle.sh` makes a folder for Shiny Server.
+- `barriernet demo` and `barriernet.demo`: synthetic randomized trials and single-arm cohorts with a known interaction.
+- `barriernet library`: export of the bundled library.
+
+### Changed
+- `calibrate.bootstrap_indices` accepts a sequence of integers as the seed.
+- `barriernet calibrate` and `benchmark` share the trial loader.
+
+### Checked
+Run on the six randomized comparisons of the benchmark, version 0.4.0 reproduces the analysis code: pooled interactions
+within 1e-5 for all 51 signatures; the same counts of signatures favouring either arm, beyond random genes (25; 24 after
+correction) and above or below the T-cell references and CD8A; paired differences equal to 1e-4 for 50 of 51 signatures
+(CRMA_Shukla differs because its score takes 30 values in 726 patients of one trial and a few resamples give
+near-degenerate Cox fits); single-arm log-odds and pooled values within 1e-6; published-trial pooling within 5e-5; and
+the design formula.
+
 ## 0.3.0 (2026-10-31)
 
 ### Added
